@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Timesheet_Test.AddEmployeeTest">
+      <class name="test.RLDashboardTest">
         <methods>
-          <include name="addNewEmpoyeeTest"/>
-          <include name="setup"/>
+          <include name="beforeMethod"/>
+          <include name="TC_295"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- Timesheet_Test.AddEmployeeTest -->
+      </class> <!-- test.RLDashboardTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

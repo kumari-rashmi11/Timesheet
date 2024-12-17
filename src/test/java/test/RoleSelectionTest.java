@@ -1,18 +1,18 @@
-package Timesheet_Test;
+package test;
 
 import org.testng.annotations.Test;
+
+import helper.BaseTest;
 import pages.RoleSelectionPage;
 
 public class RoleSelectionTest extends BaseTest {
 
     @Test
     public void testRoleSelection() {
-        login(); // Perform login first
 
         RoleSelectionPage roleSelectionPage = new RoleSelectionPage(driver);
         roleSelectionPage.switchToIframe();
-
-        // Select the desired role (e.g., RL role)
-        roleSelectionPage.selectHRRole();
+        // Select the desired role
+        roleSelectionPage.selectRLRole();
     }
 }
