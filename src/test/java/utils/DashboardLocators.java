@@ -19,7 +19,9 @@ public class DashboardLocators {
 	public By repddPL = By.cssSelector("div:nth-of-type(50) .appmagic-dropdown");
 //	public By repnamePL = By.id("appmagic-dropdownFlyoutdropdown_siena_799876570590a9f_1");
 	public By repnamePL = By.cssSelector("div[role='listbox'] > div:nth-of-type(2)");
-
+	public By switchoffPL = By.cssSelector("div[role='switch'] > .appmagic-toggleSwitch-off");
+	public By switchonPL = By.cssSelector("div[role='switch'] > .appmagic-toggleSwitch-on");
+	
 	
 	public By filterbtnPL = By.cssSelector("div:nth-of-type(51) .powerapps-icon");
 	public By notstartedyet = By.cssSelector(".appmagic-card.card_c5uw0h > div:nth-of-type(15) div[role='presentation'] > .appmagic-label-text");

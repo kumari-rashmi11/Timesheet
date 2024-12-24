@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.RLDashboardTest">
+      <class name="test.HumanResource.EmployeesTest_HR">
         <methods>
-          <include name="beforeMethod"/>
-          <include name="TC_295"/>
+          <include name="modify_Employee_Status_HR_TC161"/>
           <include name="afterMethod"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- test.RLDashboardTest -->
+      </class> <!-- test.HumanResource.EmployeesTest_HR -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
