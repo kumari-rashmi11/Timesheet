@@ -31,7 +31,7 @@ public class BaseTest {
     }
     
     @BeforeMethod
-    public void beforeMethod() {
+    public void beforeMethod() throws InterruptedException {
     	loadProperties();
     	driver = new EdgeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
@@ -40,12 +40,12 @@ public class BaseTest {
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         
        
-        
-        NavigateToTimesheet nt = new NavigateToTimesheet(driver);
-    	nt.clickTeamsBtn();
-    	nt.clickTimesheetBtn();
-    	nt.clickTimesheetGeneral();
-    	nt.clickTimesheetLink();
+//        
+//        NavigateToTimesheet nt = new NavigateToTimesheet(driver);
+//    	nt.clickTeamsBtn();
+//    	nt.clickTimesheetBtn();
+//    	nt.clickTimesheetGeneral();
+//    	nt.clickTimesheetLink();
     	
     	
     	
@@ -53,9 +53,10 @@ public class BaseTest {
     	RoleSelection roleSelectionPage = new RoleSelection(driver);
 //        roleSelectionPage.switchToIframe();
         // Select the desired role 
+    	roleSelectionPage.timesheetNavigation();
         roleSelectionPage.iframeSwitch1();
         roleSelectionPage.iframeSwitch2();
-        roleSelectionPage.HRRoleBtn();
+        roleSelectionPage.ViewerRoleBtn();
     	
 //		
     }

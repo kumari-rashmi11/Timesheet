@@ -91,11 +91,11 @@ public class DashboardPage {
     }
 
     public void clickreportee_Viewer() {
-        clickingHelper.clickElement(this.locator.edreportee);
-    }
-    public void clickreporteeViewer_Viewer() {
         clickingHelper.clickElement(this.locator.clickreporteeViewer);
     }
+//    public void clickreporteeViewer_Viewer() {
+//        clickingHelper.clickElement(this.locator.clickreporteeViewer);
+//    }
     
     public void clickGreenRlButton_Viewer() {
         clickingHelper.clickElement(this.locator.greenrl);
@@ -116,10 +116,24 @@ public class DashboardPage {
     public void switchon_Viewer() {
         clickingHelper.clickElement(this.locator.switchonViewer);
     }
+    
+    public void allclients_Viewer() {
+	 	System.out.println(clickingHelper.getText(this.locator.allclients));
+    }
+    
+    public void claimedtask_Viewer() {
+	 	System.out.println(clickingHelper.getText(this.locator.claimedtask));
+    }
 
     public void clickyeardd_Viewer() {
-  	  clickingHelper.clickElement(this.locator.yeardropdown);
+  	  clickingHelper.clickElement(this.locator.yeardropdown_Viewer);
     }
+    
+    public void chooseyear_Viewer() {
+    	  clickingHelper.clickElement(this.locator.chooseyear);
+      }
+    
+    
     public void repdd_Viewer() {
    	 clickingHelper.clickElement(this.locator.repddViewer);
     }
@@ -133,7 +147,35 @@ public class DashboardPage {
     }
     
     public void notstartedyet_Viewer() {
-   	 	System.out.println(clickingHelper.getText(this.locator.notstartedyet));
+   	 	System.out.println(clickingHelper.getText(this.locator.notstartedyetViewer));
+   }
+    
+    public void draft_Viewer() {
+   	 	System.out.println(clickingHelper.getText(this.locator.draft));
+   }
+    
+    public void Submitted_Viewer() {
+   	 	System.out.println(clickingHelper.getText(this.locator.Submitted));
+   }
+    
+    public void Partially_Submitted_Viewer() {
+   	 	System.out.println(clickingHelper.getText(this.locator.Partially_Submitted));
+   }
+    
+    public void Approved_Viewer() {
+   	 	System.out.println(clickingHelper.getText(this.locator.Approved));
+   }
+    
+    public void Partially_Approved_Viewer() {
+   	 	System.out.println(clickingHelper.getText(this.locator.Partially_Approved));
+   }
+    
+    public void Rejected_Viewer() {
+   	 	System.out.println(clickingHelper.getText(this.locator.Rejected));
+   }
+    
+    public void submittedtimesheet_Viewer() {
+   	 	System.out.println(clickingHelper.getText(this.locator.submittedtimesheet));
    }
     
     

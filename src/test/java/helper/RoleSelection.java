@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.CommonLocators;
 
 import java.time.Duration;
+import java.util.concurrent.TimeoutException;
 
 public class RoleSelection {
 		WebDriver driver;
@@ -22,6 +23,24 @@ public class RoleSelection {
 	        this.locator = new CommonLocators();
 	        this.interact = new Interactions(driver);
 	    }
+	    
+	    private boolean elementIsPresent(By locator) {
+	        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			return true;
+	    }
+	    
+	    public void timesheetNavigation() throws InterruptedException {
+	        this.interact.click(this.locator.teams);
+
+	        if (elementIsPresent(this.locator.timeSheetGeneral)) {
+	        	this.interact.click(this.locator.timeSheetGeneral);
+	        } else {
+	        	this.interact.click(this.locator.timeSheet_QA);
+	        	this.interact.click(this.locator.timeSheetGeneral);
+	        }
+	        this.interact.click(this.locator.timeSheetTab);
+	        
+	    }
 	       
 	    public void iframeSwitch1() {
 	    	WebElement iframe1 = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cacheable-iframe:a6b63365-31a4-4f43-92ec-710b71557af9")));
@@ -31,6 +50,14 @@ public class RoleSelection {
 	    public void iframeSwitch2() {
 	    	WebElement iframe2 = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("fullscreen-app-host")));
 	         driver.switchTo().frame(iframe2);
+	    }
+	    
+	    public void ViewerRoleBtn() {
+	    	interact.clickElement(locator.ViewerRoleBtn);
+	    }
+	    
+	    public void PLRoleBtn() {
+	    	interact.clickElement(locator.PLRoleBtn);
 	    }
 	    
 	    public void selectRLRole() {

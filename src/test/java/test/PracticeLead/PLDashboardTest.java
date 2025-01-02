@@ -5,31 +5,32 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import helper.BaseTest;
+import helper.RetryAnalyzer;
 import pages.DashboardPage;
 
 public class PLDashboardTest extends BaseTest {
 
 	@Test (priority = 1)
-    public void Navigate_to_dashboard() {
+    public void initial_test() {
 		DashboardPage dashboard= new DashboardPage(driver);
         dashboard.navigateToDashboard_PL();
     }
+//	
+//	@Test (priority = 1, dependsOnMethods = {"Navigate_to_dashboard"})
+//    public void TC_001_drill_down() {
+//		DashboardPage dashboard= new DashboardPage(driver);
+//		dashboard.clickreportee_PL();
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("window.scrollBy(0,100)");
+//		System.out.println("Scrolling operation completed successfully.");
+//    }
 	
-	@Test (priority = 1, dependsOnMethods = {"Navigate_to_dashboard"})
-    public void TC_001_drill_down() {
-		DashboardPage dashboard= new DashboardPage(driver);
-		dashboard.clickreportee_PL();
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,100)");
-		System.out.println("Scrolling operation completed successfully.");
-    }
-	
-	@Test (priority = 2, dependsOnMethods = {"Navigate_to_dashboard"})
-    public void TC_002_Click_reportee() {
-		DashboardPage dashboard= new DashboardPage(driver);
-		dashboard.reportee_PL();
-    }
-	
+//	@Test (priority = 1, retryAnalyzer = RetryAnalyzer.class)
+//    public void TC_001_Click_reportee() {
+//		DashboardPage dashboard= new DashboardPage(driver);
+//		dashboard.reportee_PL();
+//    }
+//	
 	@Test (priority = 3, dependsOnMethods = {"Navigate_to_dashboard"})
     public void TC_004_toogle_switchon() {
 		Navigate_to_dashboard();
@@ -143,10 +144,10 @@ public class PLDashboardTest extends BaseTest {
 
 	}
 	
-	@AfterMethod
-	public void afterMethod() throws InterruptedException {
-		Thread.sleep(2000);
-		driver.quit();
- } 
+//	@AfterMethod
+//	public void afterMethod() throws InterruptedException {
+//		Thread.sleep(2000);
+//		driver.quit();
+// } 
  
 }

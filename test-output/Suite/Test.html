@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>37/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/13</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Dec 24 14:59:23 IST 2024</td>
+<td>Started on:</td><td>Wed Jan 01 13:12:36 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>2143 seconds (2143638 ms)</td>
+<tr><td>Total time:</td><td>57 seconds (57366 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,190 +76,459 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='test.HumanResource.HRDashboardTest.GreenRlButton()'><b>GreenRlButton</b><br>Test class: test.HumanResource.HRDashboardTest</td>
-<td></td>
-<td>4</td>
-<td>test.HumanResource.HRDashboardTest@17503f6b</td></tr>
+<td title='test.PracticeLead.PLDashboardTest.Navigate_to_dashboard()'><b>Navigate_to_dashboard</b><br>Test class: test.PracticeLead.PLDashboardTest</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.cssSelector: .canvasContentDiv.container_1vt1y2p &gt; div &gt; div:nth-of-type(2) button &gt; .appmagic-button.center.middle (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 131.0.2903.112, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:61057}, msedge: {msedgedriverVersion: 131.0.2903.112 (16ab910a6e7..., userDataDir: C:\Users\RASHMI~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61057/devtoo..., se:cdpVersion: 131.0.2903.112, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6df1a5c643ba9e3a947285ffbf4b1064
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at helper.Interactions.clickElement(Interactions.java:70)
+	at pages.DashboardPage.navigateToDashboard_PL(DashboardPage.java:39)
+	at test.PracticeLead.PLDashboardTest.Navigate_to_dashboard(PLDashboardTest.java:15)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace988179589", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace988179589'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.cssSelector: .canvasContentDiv.container_1vt1y2p &gt; div &gt; div:nth-of-type(2) button &gt; .appmagic-button.center.middle (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 131.0.2903.112, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:61057}, msedge: {msedgedriverVersion: 131.0.2903.112 (16ab910a6e7..., userDataDir: C:\Users\RASHMI~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61057/devtoo..., se:cdpVersion: 131.0.2903.112, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6df1a5c643ba9e3a947285ffbf4b1064
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at helper.Interactions.clickElement(Interactions.java:70)
+	at pages.DashboardPage.navigateToDashboard_PL(DashboardPage.java:39)
+	at test.PracticeLead.PLDashboardTest.Navigate_to_dashboard(PLDashboardTest.java:15)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>30</td>
+<td>test.PracticeLead.PLDashboardTest@f58853c</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
 <tr>
-<td title='test.HumanResource.EmployeesTest_HR.modify_Employee_Status_HR_TC161()'><b>modify_Employee_Status_HR_TC161</b><br>Test class: test.HumanResource.EmployeesTest_HR</td>
-<td></td>
-<td>9</td>
-<td>test.HumanResource.EmployeesTest_HR@a1f72f5</td></tr>
+<td title='test.PracticeLead.PLDashboardTest.TC_005_Verification_of_list_of_associated_clients()'><b>TC_005_Verification_of_list_of_associated_clients</b><br>Test class: test.PracticeLead.PLDashboardTest</td>
+<td><div><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_005_Verification_of_list_of_associated_clients() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2110068611", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2110068611'><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_005_Verification_of_list_of_associated_clients() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>test.PracticeLead.PLDashboardTest@f58853c</td></tr>
 <tr>
-<td title='test.HumanResource.ClientTabTest_HR.viewProjectDetails_HrRole()'><b>viewProjectDetails_HrRole</b><br>Test class: test.HumanResource.ClientTabTest_HR</td>
-<td></td>
-<td>97</td>
-<td>test.HumanResource.ClientTabTest_HR@609bcfb6</td></tr>
+<td title='test.PracticeLead.PLDashboardTest.TC_249_Verification_of_visibility_of_consumed_hours()'><b>TC_249_Verification_of_visibility_of_consumed_hours</b><br>Test class: test.PracticeLead.PLDashboardTest</td>
+<td><div><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_249_Verification_of_visibility_of_consumed_hours() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2029645118", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2029645118'><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_249_Verification_of_visibility_of_consumed_hours() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>test.PracticeLead.PLDashboardTest@f58853c</td></tr>
 <tr>
-<td title='test.HumanResource.ProjectTabTest_HR.TC_032_SearchProject_HR()'><b>TC_032_SearchProject_HR</b><br>Test class: test.HumanResource.ProjectTabTest_HR</td>
-<td></td>
-<td>4</td>
-<td>test.HumanResource.ProjectTabTest_HR@e3c0e40</td></tr>
+<td title='test.PracticeLead.PLDashboardTest.TC_002_Click_reportee()'><b>TC_002_Click_reportee</b><br>Test class: test.PracticeLead.PLDashboardTest</td>
+<td><div><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_002_Click_reportee() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace639467920", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace639467920'><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_002_Click_reportee() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>test.PracticeLead.PLDashboardTest@f58853c</td></tr>
 <tr>
-<td title='test.HumanResource.ProjectTabTest_HR.TC_033_RefreshProject_HR()'><b>TC_033_RefreshProject_HR</b><br>Test class: test.HumanResource.ProjectTabTest_HR</td>
-<td></td>
-<td>5</td>
-<td>test.HumanResource.ProjectTabTest_HR@e3c0e40</td></tr>
+<td title='test.PracticeLead.PLDashboardTest.TC_007_Verification_of_claimed_task_hours_change_with_Financial_year_dropdown()'><b>TC_007_Verification_of_claimed_task_hours_change_with_Financial_year_dropdown</b><br>Test class: test.PracticeLead.PLDashboardTest</td>
+<td><div><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_007_Verification_of_claimed_task_hours_change_with_Financial_year_dropdown() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace810262298", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace810262298'><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_007_Verification_of_claimed_task_hours_change_with_Financial_year_dropdown() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>test.PracticeLead.PLDashboardTest@f58853c</td></tr>
 <tr>
-<td title='test.HumanResource.TasksAllocationTest_HR.Search_Operation_TC_044_HR()'><b>Search_Operation_TC_044_HR</b><br>Test class: test.HumanResource.TasksAllocationTest_HR</td>
-<td></td>
-<td>4</td>
-<td>test.HumanResource.TasksAllocationTest_HR@1b45c0e</td></tr>
+<td title='test.PracticeLead.PLDashboardTest.TC_162_Verification_of_count()'><b>TC_162_Verification_of_count</b><br>Test class: test.PracticeLead.PLDashboardTest</td>
+<td><div><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_162_Verification_of_count() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1850646717", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1850646717'><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_162_Verification_of_count() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>test.PracticeLead.PLDashboardTest@f58853c</td></tr>
 <tr>
-<td title='test.HumanResource.EmployeesTest_HR.refresh_Operation_HR_TC020()'><b>refresh_Operation_HR_TC020</b><br>Test class: test.HumanResource.EmployeesTest_HR</td>
-<td></td>
-<td>8</td>
-<td>test.HumanResource.EmployeesTest_HR@a1f72f5</td></tr>
+<td title='test.PracticeLead.PLDashboardTest.TC_004_toogle_switchon()'><b>TC_004_toogle_switchon</b><br>Test class: test.PracticeLead.PLDashboardTest</td>
+<td><div><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_004_toogle_switchon() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1625939772", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1625939772'><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_004_toogle_switchon() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>test.PracticeLead.PLDashboardTest@f58853c</td></tr>
 <tr>
-<td title='test.HumanResource.HREvalSettingTest.TC_169_Verification_of_filteration_of_employee_through_employee_dropdown_HR()'><b>TC_169_Verification_of_filteration_of_employee_through_employee_dropdown_HR</b><br>Test class: test.HumanResource.HREvalSettingTest</td>
-<td></td>
-<td>8</td>
-<td>test.HumanResource.HREvalSettingTest@45a37759</td></tr>
+<td title='test.PracticeLead.PLDashboardTest.TC_001_drill_down()'><b>TC_001_drill_down</b><br>Test class: test.PracticeLead.PLDashboardTest</td>
+<td><div><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_001_drill_down() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace546217718", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace546217718'><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_001_drill_down() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>test.PracticeLead.PLDashboardTest@f58853c</td></tr>
 <tr>
-<td title='test.HumanResource.HRDashboardTest.PurplePlButton()'><b>PurplePlButton</b><br>Test class: test.HumanResource.HRDashboardTest</td>
-<td></td>
-<td>5</td>
-<td>test.HumanResource.HRDashboardTest@17503f6b</td></tr>
+<td title='test.PracticeLead.PLDashboardTest.TC_011_Verification_of_filter_reset_operation()'><b>TC_011_Verification_of_filter_reset_operation</b><br>Test class: test.PracticeLead.PLDashboardTest</td>
+<td><div><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_011_Verification_of_filter_reset_operation() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2108318195", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2108318195'><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_011_Verification_of_filter_reset_operation() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>test.PracticeLead.PLDashboardTest@f58853c</td></tr>
 <tr>
-<td title='test.HumanResource.ClientTabTest_HR.TC_026_searchClientByName_HrRole()'><b>TC_026_searchClientByName_HrRole</b><br>Test class: test.HumanResource.ClientTabTest_HR</td>
-<td></td>
-<td>7</td>
-<td>test.HumanResource.ClientTabTest_HR@609bcfb6</td></tr>
+<td title='test.PracticeLead.PLDashboardTest.TC_004_toogle_switchoff()'><b>TC_004_toogle_switchoff</b><br>Test class: test.PracticeLead.PLDashboardTest</td>
+<td><div><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_004_toogle_switchoff() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1130160902", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1130160902'><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_004_toogle_switchoff() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>test.PracticeLead.PLDashboardTest@f58853c</td></tr>
 <tr>
-<td title='test.HumanResource.HREvalSettingTest.TC_167_Verification_of_navigation_to_the_evaluation_eligibility_section_HR()'><b>TC_167_Verification_of_navigation_to_the_evaluation_eligibility_section_HR</b><br>Test class: test.HumanResource.HREvalSettingTest</td>
-<td></td>
-<td>4</td>
-<td>test.HumanResource.HREvalSettingTest@45a37759</td></tr>
+<td title='test.PracticeLead.PLDashboardTest.TC_250_Verification_of_visibility_of_submitted_or_partially_submitted_timesheet()'><b>TC_250_Verification_of_visibility_of_submitted_or_partially_submitted_timesheet</b><br>Test class: test.PracticeLead.PLDashboardTest</td>
+<td><div><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_250_Verification_of_visibility_of_submitted_or_partially_submitted_timesheet() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace185164978", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace185164978'><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_250_Verification_of_visibility_of_submitted_or_partially_submitted_timesheet() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>test.PracticeLead.PLDashboardTest@f58853c</td></tr>
 <tr>
-<td title='test.HumanResource.HRDashboardTest.BlackUserButton()'><b>BlackUserButton</b><br>Test class: test.HumanResource.HRDashboardTest</td>
-<td></td>
-<td>3</td>
-<td>test.HumanResource.HRDashboardTest@17503f6b</td></tr>
+<td title='test.PracticeLead.PLDashboardTest.TC_010_reportee_dropdown()'><b>TC_010_reportee_dropdown</b><br>Test class: test.PracticeLead.PLDashboardTest</td>
+<td><div><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_010_reportee_dropdown() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace641030345", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace641030345'><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_010_reportee_dropdown() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>test.PracticeLead.PLDashboardTest@f58853c</td></tr>
 <tr>
-<td title='test.HumanResource.TasksAllocationTest_HR.Search_and_Reset_Operation_TC_045_HR()'><b>Search_and_Reset_Operation_TC_045_HR</b><br>Test class: test.HumanResource.TasksAllocationTest_HR</td>
-<td></td>
-<td>7</td>
-<td>test.HumanResource.TasksAllocationTest_HR@1b45c0e</td></tr>
+<td title='test.PracticeLead.PLDashboardTest.TC_006_Verification_of_list_of_claimed_tasks_by_direct_reportees()'><b>TC_006_Verification_of_list_of_claimed_tasks_by_direct_reportees</b><br>Test class: test.PracticeLead.PLDashboardTest</td>
+<td><div><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_006_Verification_of_list_of_claimed_tasks_by_direct_reportees() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1870749311", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1870749311'><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_006_Verification_of_list_of_claimed_tasks_by_direct_reportees() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>test.PracticeLead.PLDashboardTest@f58853c</td></tr>
 <tr>
-<td title='test.HumanResource.HREvalSettingTest.TC_190_Search_and_refresh_of_active_CategoryHR()'><b>TC_190_Search_and_refresh_of_active_CategoryHR</b><br>Test class: test.HumanResource.HREvalSettingTest</td>
-<td></td>
-<td>8</td>
-<td>test.HumanResource.HREvalSettingTest@45a37759</td></tr>
-<tr>
-<td title='test.HumanResource.EmployeesTest_HR.change_Effective_date_current_lead_of_inactive_employee_HR_TC238()'><b>change_Effective_date_current_lead_of_inactive_employee_HR_TC238</b><br>Test class: test.HumanResource.EmployeesTest_HR</td>
-<td></td>
-<td>11</td>
-<td>test.HumanResource.EmployeesTest_HR@a1f72f5</td></tr>
-<tr>
-<td title='test.HumanResource.HREvalSettingTest.TC_170_Verification_of_refresh_operation_for_the_filter_of_employee_HR()'><b>TC_170_Verification_of_refresh_operation_for_the_filter_of_employee_HR</b><br>Test class: test.HumanResource.HREvalSettingTest</td>
-<td></td>
-<td>5</td>
-<td>test.HumanResource.HREvalSettingTest@45a37759</td></tr>
-<tr>
-<td title='test.HumanResource.HREvalSettingTest.TC_187_Verification_of_archived_section_of_categories_HR()'><b>TC_187_Verification_of_archived_section_of_categories_HR</b><br>Test class: test.HumanResource.HREvalSettingTest</td>
-<td></td>
-<td>10</td>
-<td>test.HumanResource.HREvalSettingTest@45a37759</td></tr>
-<tr>
-<td title='test.HumanResource.EmployeesTest_HR.search_Operation_HR_TC019()'><b>search_Operation_HR_TC019</b><br>Test class: test.HumanResource.EmployeesTest_HR</td>
-<td></td>
-<td>8</td>
-<td>test.HumanResource.EmployeesTest_HR@a1f72f5</td></tr>
-<tr>
-<td title='test.HumanResource.EmployeesTest_HR.details_of_employees_HR_TC017()'><b>details_of_employees_HR_TC017</b><br>Test class: test.HumanResource.EmployeesTest_HR</td>
-<td></td>
-<td>6</td>
-<td>test.HumanResource.EmployeesTest_HR@a1f72f5</td></tr>
-<tr>
-<td title='test.HumanResource.HREvalSettingTest.TC_186_Verification_of_active_section_of_categories_HR()'><b>TC_186_Verification_of_active_section_of_categories_HR</b><br>Test class: test.HumanResource.HREvalSettingTest</td>
-<td></td>
-<td>9</td>
-<td>test.HumanResource.HREvalSettingTest@45a37759</td></tr>
-<tr>
-<td title='test.HumanResource.HREvalSettingTest.TC_166_Verification_of_navigation_to_the_evaluation_categories_section_HR()'><b>TC_166_Verification_of_navigation_to_the_evaluation_categories_section_HR</b><br>Test class: test.HumanResource.HREvalSettingTest</td>
-<td></td>
-<td>4</td>
-<td>test.HumanResource.HREvalSettingTest@45a37759</td></tr>
-<tr>
-<td title='test.HumanResource.ChargeActivityTypeTest.Search_and_refresh_HR_TC_040()'><b>Search_and_refresh_HR_TC_040</b><br>Test class: test.HumanResource.ChargeActivityTypeTest</td>
-<td></td>
-<td>6</td>
-<td>test.HumanResource.ChargeActivityTypeTest@68034211</td></tr>
-<tr>
-<td title='test.HumanResource.ApprovalsTabTest_HR.TC_067_searchtimesheetbyStatus_HR()'><b>TC_067_searchtimesheetbyStatus_HR</b><br>Test class: test.HumanResource.ApprovalsTabTest_HR</td>
-<td></td>
-<td>17</td>
-<td>test.HumanResource.ApprovalsTabTest_HR@225129c</td></tr>
-<tr>
-<td title='test.HumanResource.ClientTabTest_HR.TC_027_refreshButton_HrRole()'><b>TC_027_refreshButton_HrRole</b><br>Test class: test.HumanResource.ClientTabTest_HR</td>
-<td></td>
-<td>13</td>
-<td>test.HumanResource.ClientTabTest_HR@609bcfb6</td></tr>
-<tr>
-<td title='test.HumanResource.HREvalSettingTest.TC_171_Verification_of_filteration_of_quarters_by_Review_Period_dropdown_HR()'><b>TC_171_Verification_of_filteration_of_quarters_by_Review_Period_dropdown_HR</b><br>Test class: test.HumanResource.HREvalSettingTest</td>
-<td></td>
-<td>153</td>
-<td>test.HumanResource.HREvalSettingTest@45a37759</td></tr>
-<tr>
-<td title='test.HumanResource.TasksAllocationTest_HR.Remaining_hours_alert_icon_TC_295_HR()'><b>Remaining_hours_alert_icon_TC_295_HR</b><br>Test class: test.HumanResource.TasksAllocationTest_HR</td>
-<td></td>
-<td>4</td>
-<td>test.HumanResource.TasksAllocationTest_HR@1b45c0e</td></tr>
-<tr>
-<td title='test.HumanResource.HRDashboardTest.different_colour_clues()'><b>different_colour_clues</b><br>Test class: test.HumanResource.HRDashboardTest</td>
-<td></td>
-<td>2</td>
-<td>test.HumanResource.HRDashboardTest@17503f6b</td></tr>
-<tr>
-<td title='test.HumanResource.HREvalSettingTest.TC_168_Verification_of_refresh_opeartion_for_data_set_changes_in_evaluation_section_HR()'><b>TC_168_Verification_of_refresh_opeartion_for_data_set_changes_in_evaluation_section_HR</b><br>Test class: test.HumanResource.HREvalSettingTest</td>
-<td></td>
-<td>8</td>
-<td>test.HumanResource.HREvalSettingTest@45a37759</td></tr>
-<tr>
-<td title='test.HumanResource.HREvalSettingTest.TC_165_Verification_of_navigation_to_the_evaluation_section_HR()'><b>TC_165_Verification_of_navigation_to_the_evaluation_section_HR</b><br>Test class: test.HumanResource.HREvalSettingTest</td>
-<td></td>
-<td>3</td>
-<td>test.HumanResource.HREvalSettingTest@45a37759</td></tr>
-<tr>
-<td title='test.HumanResource.TimesheetSettingTest_HR.Search_using_employee_TC_049_HR()'><b>Search_using_employee_TC_049_HR</b><br>Test class: test.HumanResource.TimesheetSettingTest_HR</td>
-<td></td>
-<td>3</td>
-<td>test.HumanResource.TimesheetSettingTest_HR@7d3d101b</td></tr>
-<tr>
-<td title='test.HumanResource.ClientTabTest_HR.viewClientDetails_HrRole()'><b>viewClientDetails_HrRole</b><br>Test class: test.HumanResource.ClientTabTest_HR</td>
-<td></td>
-<td>9</td>
-<td>test.HumanResource.ClientTabTest_HR@609bcfb6</td></tr>
-<tr>
-<td title='test.HumanResource.EmployeesTest_HR.add_Employee_HR_TC021()'><b>add_Employee_HR_TC021</b><br>Test class: test.HumanResource.EmployeesTest_HR</td>
-<td></td>
-<td>11</td>
-<td>test.HumanResource.EmployeesTest_HR@a1f72f5</td></tr>
-<tr>
-<td title='test.HumanResource.ApprovalsTabTest_HR.TC_066_searchtimesheetbyDate_HR()'><b>TC_066_searchtimesheetbyDate_HR</b><br>Test class: test.HumanResource.ApprovalsTabTest_HR</td>
-<td></td>
-<td>7</td>
-<td>test.HumanResource.ApprovalsTabTest_HR@225129c</td></tr>
-<tr>
-<td title='test.HumanResource.ProjectTabTest_HR.initiaTest()'><b>initiaTest</b><br>Test class: test.HumanResource.ProjectTabTest_HR</td>
-<td></td>
-<td>5</td>
-<td>test.HumanResource.ProjectTabTest_HR@e3c0e40</td></tr>
-<tr>
-<td title='test.HumanResource.TimesheetSettingTest_HR.Search_using_client_TC_050_HR()'><b>Search_using_client_TC_050_HR</b><br>Test class: test.HumanResource.TimesheetSettingTest_HR</td>
-<td></td>
-<td>4</td>
-<td>test.HumanResource.TimesheetSettingTest_HR@7d3d101b</td></tr>
-<tr>
-<td title='test.HumanResource.HREvalSettingTest.TC_189_Searching_of_active_Category_HR()'><b>TC_189_Searching_of_active_Category_HR</b><br>Test class: test.HumanResource.HREvalSettingTest</td>
-<td></td>
-<td>8</td>
-<td>test.HumanResource.HREvalSettingTest@45a37759</td></tr>
-<tr>
-<td title='test.HumanResource.TimesheetSettingTest_HR.Search_and_refresh_TC_051_HR()'><b>Search_and_refresh_TC_051_HR</b><br>Test class: test.HumanResource.TimesheetSettingTest_HR</td>
-<td></td>
-<td>6</td>
-<td>test.HumanResource.TimesheetSettingTest_HR@7d3d101b</td></tr>
+<td title='test.PracticeLead.PLDashboardTest.TC_009_navigation_to_submitted_timesheet_for_approval_or_rejection()'><b>TC_009_navigation_to_submitted_timesheet_for_approval_or_rejection</b><br>Test class: test.PracticeLead.PLDashboardTest</td>
+<td><div><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_009_navigation_to_submitted_timesheet_for_approval_or_rejection() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace276714561", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace276714561'><pre>java.lang.Throwable: Method test.PracticeLead.PLDashboardTest.TC_009_navigation_to_submitted_timesheet_for_approval_or_rejection() on instance test.PracticeLead.PLDashboardTest@f58853c depends on not successfully finished methods 
+[test.PracticeLead.PLDashboardTest.Navigate_to_dashboard() on instance test.PracticeLead.PLDashboardTest@f58853c]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>test.PracticeLead.PLDashboardTest@f58853c</td></tr>
 </table><p>
 </body>
 </html>
