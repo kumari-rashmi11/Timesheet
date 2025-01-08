@@ -200,6 +200,14 @@ public class DashboardPage {
         clickingHelper.clickElement(this.locator.blackuser);
     }
     
+    public void allclients_editor() {
+	 	System.out.println(clickingHelper.getText(this.locator.allclients_editor));
+    }
+    
+    public void claimedtask_editor() {
+	 	System.out.println(clickingHelper.getText(this.locator.claimedtask_editor));
+    }
+    
     public void clickswitchon_Editor() {
         clickingHelper.clickElement(this.locator.switchon);
     }
@@ -212,6 +220,10 @@ public class DashboardPage {
     	  clickingHelper.clickElement(this.locator.yeardropdown);
       }
      
+     public void selectyear_Editor() {
+   	  clickingHelper.clickElement(this.locator.selectyear);
+     }
+     
      public void rightarr_Editor() {
     	 clickingHelper.clickElement(this.locator.rightarrow);
      }
@@ -221,16 +233,51 @@ public class DashboardPage {
      }
     
      public void reporteedd_Editor() {
-    	 clickingHelper.clickElement(this.locator.repdd);
+    	 clickingHelper.clickElement(this.locator.repddeditor);
      }
 
      public void reporteename_Editor() {
-    	 clickingHelper.clickElement(this.locator.repname);
+    	 clickingHelper.clickElement(this.locator.repnameeditor);
      }
      
      public void reporteefilter_Editor() {
-    	 clickingHelper.clickElement(this.locator.filter);
+    	 clickingHelper.clickElement(this.locator.filterbtneditor);
      }
+     
+     public void notstartedyeteditor() {
+    	 	System.out.println(clickingHelper.getText(this.locator.notstartedyeteditor));
+    }
+     
+     public void drafteditor() {
+    	 	System.out.println(clickingHelper.getText(this.locator.drafteditor));
+    }
+     
+     public void Submittededitor() {
+    	 	System.out.println(clickingHelper.getText(this.locator.Submittededitor));
+    }
+     
+     public void Partially_Submittededitor() {
+    	 	System.out.println(clickingHelper.getText(this.locator.Partially_Submittededitor));
+    }
+     
+     public void Approvededitor() {
+    	 	System.out.println(clickingHelper.getText(this.locator.Approvededitor));
+    }
+     
+     public void Partially_Approvededitor() {
+    	 	System.out.println(clickingHelper.getText(this.locator.Partially_Approvededitor));
+    }
+     
+     public void Rejectededitor() {
+    	 	System.out.println(clickingHelper.getText(this.locator.Rejectededitor));
+    }
+     
+     public void submittedtimesheeteditor() {
+    	 	System.out.println(clickingHelper.getText(this.locator.submittedtimesheeteditor));
+    }
+     
+     
+     
      
      public void notification_Editor() {
     	 clickingHelper.clickElement(this.locator.notify);
@@ -244,8 +291,16 @@ public class DashboardPage {
     	 clickingHelper.clickElement(this.locator.approvenotify);
      }
      
+     public void selectdate(String date) {
+    	 clickingHelper.enterText(this.locator.selectdate, date);
+     }
+     
      public void reject_Editor() {
     	 clickingHelper.clickElement(this.locator.rejectbtn);
+     }
+     
+     public void rejectreason(String reason) {
+    	 clickingHelper.enterText(this.locator.rejectreason, reason);
      }
      
      public void closebtn_Editor() {
@@ -256,9 +311,7 @@ public class DashboardPage {
     	 clickingHelper.clickElement(this.locator.repyy);
      }
      
-     public void notstartedyet_Editor() {
-    	 	System.out.println(clickingHelper.getText(this.locator.notstartedyet));
-    }
+    
      
     public void repdd_Editor() {
        	 clickingHelper.clickElement(this.locator.repddViewer);

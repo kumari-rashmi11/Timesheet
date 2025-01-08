@@ -13,8 +13,8 @@ public class DashboardLocators {
 	
 	
 	//Locators for PL dashboard_tab
-    public By Leaddb = By.cssSelector(".canvasContentDiv.container_1vt1y2p > div > div:nth-of-type(2) button > .appmagic-button.center.middle");
-	public By reporteePL = By.cssSelector("[data-control-id='2021'] .appmagic-label-text");
+    public By Leaddb = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[position()=3]//div[contains(@class, 'appmagic-borderfill-container')]//div//div//div[position()=2]//div[@role='list']//div[contains(@class, 'react-gallery-items-window')]//div[position()=1]//div[contains(@class, 'canvasContentDiv') and contains(@class, 'container')]//div[position()=2]//button");
+	public By reporteePL = By.xpath("//div[text()='Sahil Subba']");
 	public By rightarrowPL = By.cssSelector("div:nth-of-type(1) > .canvasContentDiv.container_1vt1y2p > div > div:nth-of-type(6) .powerapps-icon");
 	public By approvebtnPL = By.cssSelector("div:nth-of-type(32) button > .appmagic-button.center.middle");
 	public By repddPL = By.cssSelector("div:nth-of-type(50) .appmagic-dropdown");
@@ -31,20 +31,42 @@ public class DashboardLocators {
 	
 	
 	//Locators for Editor dashboard_tab
-	public By admindb = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(4) > div > div > div:nth-child(9) > div > div > div > div > div:nth-child(2) > div > div > div > div > div.virtualized-gallery.hideScrollbar > div > div > div:nth-child(1) > div.canvasContentDiv.container_1vt1y2p > div > div:nth-child(2) > div > div > div > div > button");
-	public By edreportee = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(4) > div > div > div:nth-child(8) > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(43) > div > div > div > div > div.virtualized-gallery.hideScrollbar > div > div > div:nth-child(2) > div.canvasContentDiv.container_1vt1y2p > div > div:nth-child(1) > div > div > div > div");
-	public By switchoff = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(4) > div > div > div:nth-child(8) > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(6) > div > div > div > div > div.appmagic-toggleSwitch.no-focus-outline.left > div.appmagic-toggleSwitch-off");
-	public By switchon = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(4) > div > div > div:nth-child(8) > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(6) > div > div > div > div > div.appmagic-toggleSwitch.no-focus-outline.left > div.appmagic-toggleSwitch-on");
-	public By yeardropdown = By.cssSelector(".appmagic-card.card_c5uw0h > div:nth-of-type(51)");
+	public By admindb = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[position()=4]//div//div//div[position()=9]//div[contains(@class, 'appmagic-borderfill-container')]//div//div//div//div[position()=2]//div[@role='list']//div[contains(@class, 'react-gallery-items-window')]//div[position()=1]//div[contains(@class, 'canvasContentDiv') and contains(@class, 'container')]//div[position()=2]//button");
+	public By edreportee = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[position()=4]//div//div//div[position()=8]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'appmagic-fluidGrid')]//div//div[contains(@class, 'scrollContent_1xligvk')]//div[contains(@class, 'scrollContent_1xligvk')]//div//div[contains(@class, 'appmagic-card') and contains(@class, 'card_c5uw0h')]//div[position()=43]//div[@role='list']//div[contains(@class, 'react-gallery-items-window')]//div[position()=2]//div[contains(@class, 'canvasContentDiv') and contains(@class, 'container')]//div[position()=1]//div[@role='presentation']//div[contains(@class, 'appmagic-label-text')]");
+	public By switchoff = By.xpath("div[role='switch'] > .appmagic-toggleSwitch-off\r\n");
+	public By switchon = By.xpath("div[role='switch'] > .appmagic-toggleSwitch-on");
+	public By allclients_editor = By.xpath("//div[text()='All Clients']");
+	public By claimedtask_editor = By.xpath("//div[text()='Claimed Task']");
+	
+	
+	public By yeardropdown = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[position()=4]//div//div//div[position()=8]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'scrollContainer')]//div[contains(@class, 'scrollContent_1xligvk')]//div[contains(@class, 'scrollContent_1xligvk')]//div//div[contains(@class, 'appmagic-card') and contains(@class, 'card_c5uw0h')]//div[position()=51]");
+	public By selectyear = By.xpath("//div[contains(@class, 'appmagic-dropdownFlyout')]//div[@role='listbox']//div[position()=3]");
+	
 	public By rightarrow = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(4) > div > div > div:nth-child(8) > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(63) > div > div > div > div > div.virtualized-gallery.hideScrollbar > div > div > div:nth-child(1) > div.canvasContentDiv.container_1vt1y2p > div > div:nth-child(4) > div > div > div > div");
 	public By approvebtn = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(5) > div > div > div:nth-child(32) > div > div > div > div > button");
-	public By repdd = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(4) > div > div > div:nth-child(8) > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(56)");
-	public By repname = By.cssSelector("div[role='listbox'] > div:nth-of-type(1)");
-	public By filter = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(4) > div > div > div:nth-child(8) > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(55)");
+	public By repddeditor = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=56]//div[contains(@class, 'react-knockout-control')]//div");
+	public By repnameeditor = By.xpath("//div[contains(@class, 'drop-content')]//div[contains(@class, 'appmagic-dropdownFlyout')]//div[@role='listbox']//div[position()=8]");
+	public By filterbtneditor = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=55]//div[contains(@class, 'react-knockout-control')]//div");
+
+	public By notstartedyeteditor = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=15]//div[@role='presentation']//div[contains(@class, 'appmagic-label-text')]");
+	public By drafteditor = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=16]//div[@role='presentation']//div[contains(@class, 'appmagic-label-text')]");
+	public By Submittededitor = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=17]//div[@role='presentation']//div[contains(@class, 'appmagic-label-text')]");
+	public By Partially_Submittededitor = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=18]//div[@role='presentation']//div[contains(@class, 'appmagic-label-text')]");
+	public By Approvededitor = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=19]//div[@role='presentation']//div[contains(@class, 'appmagic-label-text')]");
+	public By Partially_Approvededitor = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=20]//div[@role='presentation']//div[contains(@class, 'appmagic-label-text')]");
+	public By Rejectededitor = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=21]//div[@role='presentation']//div[contains(@class, 'appmagic-label-text')]");
+	
+	public By submittedtimesheeteditor = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'appmagic-fluidGrid')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=63]//div[@role='list']//div[@role='listitem']//div[contains(@class, 'canvasContentDiv') and contains(@class, 'container')]//div[position()=2]//div[@role='presentation']//div[contains(@class, 'appmagic-label-text')]");
+
+	
 	public By notify = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(4) > div > div > div:nth-child(7) > div > div > div > div");
 	public By refresh = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(4) > div > div > div:nth-child(6) > div > div > div > div");
-	public By approvenotify = By.cssSelector("div:nth-of-type(7) > div[role='presentation'] > div[role='presentation'] > .ms-Button.ms-Button--primary.root-171");
+	public By approvenotify = By.cssSelector("[data-lp-id='Button - 216\\|Button - 216\\|undefined'] [class='ms-Button-label label-160']");
+	public By selectdate = By.cssSelector("input[role='combobox']");
+	
 	public By rejectbtn = By.cssSelector(".ms-Button.ms-Button--primary.root-170 .label-160.ms-Button-label");
+	public By rejectreason = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[position()=4]//div//div[position()=16]//div[@role='presentation']//div[@role='presentation']//textarea");
+	
 	public By close = By.cssSelector("div[role='presentation'] > .ms-Button.ms-Button--primary.root-164");
 	public By repyy = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(4) > div > div > div:nth-child(8) > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(51)");
 			

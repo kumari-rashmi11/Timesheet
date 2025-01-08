@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.Viewer.ViewerDashboardTest">
+      <class name="test.Editor.EditorDashboardTest">
         <methods>
-          <include name="TC_002_Verification_of_Home_Button_after_drill_down"/>
           <include name="afterMethod"/>
           <include name="beforeMethod"/>
+          <include name="TC_292_Verification_of_approving_submitted_lead_change_request"/>
         </methods>
-      </class> <!-- test.Viewer.ViewerDashboardTest -->
+      </class> <!-- test.Editor.EditorDashboardTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

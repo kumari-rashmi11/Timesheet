@@ -38,6 +38,8 @@ public class BaseTest {
         driver.get(properties.getProperty("URL"));
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+//        wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+
         
        
 //        
@@ -56,7 +58,7 @@ public class BaseTest {
     	roleSelectionPage.timesheetNavigation();
         roleSelectionPage.iframeSwitch1();
         roleSelectionPage.iframeSwitch2();
-        roleSelectionPage.ViewerRoleBtn();
+        roleSelectionPage.EditorRoleBtn();
     	
 //		
     }

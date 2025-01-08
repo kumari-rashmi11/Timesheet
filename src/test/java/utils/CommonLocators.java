@@ -23,8 +23,7 @@ public class CommonLocators {
     public By RLroleBtn = By.cssSelector(
             "#publishedCanvas > div > div.app-canvas > div:nth-child(3) > div > div > div:nth-child(3) > div > div > div > div > div.virtualized-gallery > div > div > div:nth-child(4) > div.canvasContentDiv.container_1vt1y2p > div > div:nth-child(2) > div > div > div > div > button > div");
     
-    public By EditorRoleBtn = By.cssSelector(
-            "#publishedCanvas > div > div.app-canvas > div:nth-child(3) > div > div > div:nth-child(3) > div > div > div > div > div.virtualized-gallery > div > div > div:nth-child(1) > div.canvasContentDiv.container_1vt1y2p > div > div:nth-child(2) > div > div > div > div > button > div");
+    public By EditorRoleBtn = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(3) > div > div > div:nth-child(3) > div > div > div > div > div.virtualized-gallery > div > div > div:nth-child(1) > div.canvasContentDiv.container_1vt1y2p > div > div:nth-child(2) > div > div > div > div > button > div");
     
     public By PLRoleBtn = By.xpath("//button[@title='A person in an organization who develops the practice and is involved in skill and capability development across the organization. He/She has access to not only direct reportees data but also of the whole hierarchy of people below them along with their own data']");
     
