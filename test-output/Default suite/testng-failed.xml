@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.Editor.EditorDashboardTest">
+      <class name="test.PracticeLead.PLDashboardTest">
         <methods>
-          <include name="afterMethod"/>
+          <include name="TC_250_Verification_of_visibility_of_submitted_or_partially_submitted_timesheet_to_lead_from_the_date_lead_is_selected"/>
           <include name="beforeMethod"/>
-          <include name="TC_292_Verification_of_approving_submitted_lead_change_request"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- test.Editor.EditorDashboardTest -->
+      </class> <!-- test.PracticeLead.PLDashboardTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

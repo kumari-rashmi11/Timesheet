@@ -4,20 +4,14 @@ import org.openqa.selenium.By;
 
 public class ExportLocators {
 
-	public By ExportTab = By.cssSelector(
-			"#publishedCanvas > div > div.app-canvas > div:nth-child(4) > div > div > div:nth-child(9) > div > div > div > div > div:nth-child(2) > div > div > div > div > div.virtualized-gallery.hideScrollbar > div > div > div:nth-child(10) > div.canvasContentDiv.container_1vt1y2p > div > div:nth-child(1)");
+	public By ExportTab = By.xpath(
+			"//div[contains(text(), 'Export')]//ancestor::div[@class='container_1f0sgyp']//child::div[position()=1]");
+	
+	public By exportIframe = By.xpath("//iframe[@aria-label='Power BI tile']");
 
-	public By ExportTab_PL = By.cssSelector(
-			"#publishedCanvas > div > div.app-canvas > div:nth-child(4) > div > div > div:nth-child(5) > div > div > div > div > div:nth-child(2) > div > div > div > div > div.virtualized-gallery.hideScrollbar > div > div > div:nth-child(10) > div.canvasContentDiv.container_1vt1y2p > div > div:nth-child(1)");
+	public By signInBtn = By.xpath("//button[contains(text(), 'Sign in')]");
 
-	public By ExportTab_Viewer = By.cssSelector(
-			"#publishedCanvas > div > div.app-canvas > div:nth-child(4) > div > div > div:nth-child(6) > div > div > div > div > div:nth-child(2) > div > div > div > div > div.virtualized-gallery.hideScrollbar > div > div > div:nth-child(10) > div.canvasContentDiv.container_1vt1y2p > div > div:nth-child(1)");
-
-	public By exportIframe = By.cssSelector(
-			"#publishedCanvas > div > div.app-canvas > div:nth-child(5) > div > div > div:nth-child(6) > div > div > div > div > div > iframe");
-
-	public By signInBtn = By.cssSelector("section#promptForLogin > div > button");
-
+	
 	public By totalHours = By.cssSelector("visual-container:nth-of-type(2) > .bringToFront > div[role='group']  .sub-selectable.themableBackgroundColor.themableBorderColorSolid.vcBody  visual-modern .value > tspan");
 	
 	public By timeDate = By.cssSelector("visual-container:nth-of-type(6) > .bringToFront > div[role='group']  .sub-selectable.themableBackgroundColor.themableBorderColorSolid.vcBody  visual-modern  .card  .value > tspan:nth-of-type(1)");
@@ -25,45 +19,30 @@ public class ExportLocators {
 	public By yearDropdownYearlyExtract = By.cssSelector(
 			"#pvExplorationHost > div > div > exploration > div > explore-canvas > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToPage > div.visualContainerHost.visualContainerOutOfFocus > visual-container-repeat > visual-container:nth-child(8) > transform > div > div.visualContent > div > div > visual-modern > div > div > div.slicer-content-wrapper");
 
-	public By yearDropdownMonthlyExtract = By.cssSelector(
-			"#pvExplorationHost > div > div > exploration > div > explore-canvas > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToPage > div.visualContainerHost.visualContainerOutOfFocus > visual-container-repeat > visual-container:nth-child(8) > transform > div > div.visualContent > div > div > visual-modern > div > div > div.slicer-content-wrapper");
+	public By yearDropdown = By.xpath("//div[@aria-label='Year']//parent::div[@class='slicer-content-wrapper']");
 
 	public By chooseYear = By.cssSelector(
 			"div[role='listbox'] > div[role='none'] > div[role='none'] > div > div[role='none'] > div:nth-of-type(1)");
 
-	public By statusDropdown = By.cssSelector(
-			"#pvExplorationHost > div > div > exploration > div > explore-canvas > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToPage > div.visualContainerHost.visualContainerOutOfFocus > visual-container-repeat > visual-container:nth-child(7) > transform > div > div.visualContent > div > div > visual-modern > div > div > div.slicer-content-wrapper > div");
-
-	public By statusDropdownDateWise = By.cssSelector(
-			"#pvExplorationHost > div > div > exploration > div > explore-canvas > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToPage > div.visualContainerHost.visualContainerOutOfFocus > visual-container-repeat > visual-container:nth-child(8) > transform > div > div.visualContent > div > div > visual-modern > div > div > div.slicer-content-wrapper > div");
+	public By statusDropdown = By.xpath("//div[@aria-label='Status']");
 
 	public By chooseStatusRejected = By.cssSelector(
 			"div:nth-of-type(11) div[role='listbox'] > div[role='none'] > div[role='none'] > div[role='none'] > div > div:nth-of-type(6) > div[role='option']");
 
-	public By chooseStatusSubmitted = By.cssSelector(
-			"div:nth-of-type(11) div[role='listbox'] > div[role='none'] > div[role='none'] > div[role='none'] > div > div:nth-of-type(7) > div[role='option']");
+	public By chooseStatusSubmitted = By.xpath("//div[@title='Submitted']");
 
 	public By chooseStatusDraft = By.cssSelector(
 			"div:nth-of-type(11) div[role='listbox'] > div[role='none'] > div[role='none'] > div[role='none'] > div > div:nth-of-type(3) > div[role='option']");
 
-	public By threeDots = By.cssSelector(
-			"#pvExplorationHost > div > div > exploration > div > explore-canvas > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToPage > div.visualContainerHost.visualContainerOutOfFocus > visual-container-repeat > visual-container:nth-child(10) > transform > div > visual-container-header > div > div > div > visual-container-options-menu > visual-header-item-container > div > button");
+	public By threeDots = By.xpath("//button[@class='vcMenuBtn']");
 
-	public By threeDotsMonthlyExtract = By.cssSelector(
-			"#pvExplorationHost > div > div > exploration > div > explore-canvas > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToPage > div.visualContainerHost.visualContainerOutOfFocus > visual-container-repeat > visual-container:nth-child(11) > transform > div > visual-container-header > div > div > div > visual-container-options-menu > visual-header-item-container > div > button");
+	public By hoverElement = By.xpath("(//div[@role='grid']//div[@aria-rowindex=\"1\"])[2]");
 
-	public By threeDotsDateWiseExtract = By.cssSelector(
-			"#pvExplorationHost > div > div > exploration > div > explore-canvas > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToPage > div.visualContainerHost.visualContainerOutOfFocus > visual-container-repeat > visual-container:nth-child(10) > transform > div > visual-container-header > div > div > div > visual-container-options-menu > visual-header-item-container > div > button");
+	public By exportDataBtn = By.xpath("//button[@title=\"Export data\"]");
 
-	public By hoverElement = By.cssSelector("div[role='document'] > div[role='grid'] > div:nth-of-type(1)");
+	public By exportBtn = By.xpath("//button[text() ='Export']");
 
-	public By exportDataBtn = By.cssSelector("pbi-menu#pbiMenuId > button:nth-of-type(1)");
-
-	public By exportBtn = By.cssSelector(
-			"#mat-mdc-dialog-0 > div > div > export-data-dialog > mat-dialog-actions > button.mat-focus-indicator.pbi-modern-button.primaryBtn.exportButton.mat-button.mat-button-base");
-
-	public By selectReportee = By.cssSelector(
-			"#pvExplorationHost > div > div > exploration > div > explore-canvas > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToPage > div.visualContainerHost.visualContainerOutOfFocus > visual-container-repeat > visual-container:nth-child(9) > transform > div > div.visualContent > div > div > visual-modern > div > div > div.slicer-content-wrapper");
+	public By selectReportee = By.xpath("//div[@aria-label='Reportee(s)']");
 
 	public By chooseReportee = By.cssSelector(
 			"div:nth-of-type(13) div[role='listbox'] > div[role='none'] > div[role='none'] > div > div[role='none'] > div:nth-of-type(2)");
@@ -77,31 +56,32 @@ public class ExportLocators {
 	public By selectReporteeMonthlyExtract = By.cssSelector(
 			"#pvExplorationHost > div > div > exploration > div > explore-canvas > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToPage > div.visualContainerHost.visualContainerOutOfFocus > visual-container-repeat > visual-container:nth-child(10) > transform > div > div.visualContent > div > div > visual-modern > div > div > div.slicer-content-wrapper");
 
-	public By monthlyExtract = By.cssSelector("div[role='row'] > div:nth-of-type(2)");
+	public By yearlyExtract = By.cssSelector("div[role='row'] > div:nth-of-type(1)");
+	
+	public By monthlyExtract = By.xpath("//div[contains(text(), 'Monthly Extract')]//ancestor::div[@class='small-multiples-grid-cell']");
 
-	public By weeklyExtract = By.cssSelector("div[role='row'] > div:nth-of-type(3)");
+	public By weeklyExtract = By.xpath("//div[contains(text(), 'Weekly Extract')]//ancestor::div[@class='small-multiples-grid-cell']");
 
-	public By weekDropdown = By.cssSelector(
-			"#pvExplorationHost > div > div > exploration > div > explore-canvas > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToPage > div.visualContainerHost.visualContainerOutOfFocus > visual-container-repeat > visual-container:nth-child(8) > transform > div > div.visualContent > div > div > visual-modern > div > div > div.slicer-content-wrapper");
+	public By weekDropdown = By.xpath("//div[@aria-label='Week']//parent::div[@class=\"slicer-content-wrapper\"]");
 
 	public By chooseWeek = By.cssSelector(
 			"div:nth-of-type(13) div[role='listbox'] > div[role='none'] > div[role='none'] > div > div[role='none'] > div:nth-of-type(3)");
 
-	public By datewiseExtract = By.cssSelector("div[role='row'] > div:nth-of-type(4)");
-
-	public By monthDropdown = By.cssSelector(
-			"#pvExplorationHost > div > div > exploration > div > explore-canvas > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToPage > div.visualContainerHost.visualContainerOutOfFocus > visual-container-repeat > visual-container:nth-child(9) > transform > div > div.visualContent > div > div > visual-modern > div > div > div.slicer-content-wrapper");
+//	public By datewiseExtract = By.xpath("//div[@class='small-multiples-grid-row']//descendant::div[contains(text(), 'Datewise Extract')]");
+	
+	public By datewiseExtract = By.xpath("(//div[@role='gridcell' and @aria-colindex='4'])[1]");
 
 	public By chooseMonth = By.cssSelector("div:nth-of-type(1) > div[role='option']");
 
-	public By monthDropdownMonthlyExtract = By.cssSelector(
-			"#pvExplorationHost > div > div > exploration > div > explore-canvas > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToPage > div.visualContainerHost.visualContainerOutOfFocus > visual-container-repeat > visual-container:nth-child(9) > transform > div > div.visualContent > div > div > visual-modern > div > div > div.slicer-content-wrapper");
+	public By monthDropdown = By.cssSelector(
+//			"//div[@aria-label='Year']//parent::div[@class='slicer-content-wrapper']");
+			"visual-container:nth-of-type(9) > .bringToFront > div[role='group']  .sub-selectable.themableBackgroundColor.themableBorderColorSolid.vcBody  visual-modern div[role='combobox'] > .slicer-restatement");
 
-	public By workEndDate = By.cssSelector(
-			"#pvExplorationHost > div > div > exploration > div > explore-canvas > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToPage > div.visualContainerHost.visualContainerOutOfFocus > visual-container-repeat > visual-container:nth-child(7) > transform > div > div.visualContent > div > div > visual-modern > div > div > div.slicer-content-wrapper > div > div.date-slicer-head.wrap > div > div:nth-child(2) > div > input");
+	public By workEndDate = By.xpath(
+			"//input[@aria-label='Start date. Available input range 4/1/2024 to 1/18/2025']");
 
-	public By workStartDate = By.cssSelector(
-			"div:nth-of-type(1) > .advanced-control.condition-value.size-xs.themeableElement > .date-slicer-datepicker.item-fill.ng-pristine.ng-untouched.ng-valid");
+	public By workStartDate = By.xpath(
+			"//input[@aria-label=\"Start date. Available input range 9/6/2009 to 1/25/2025\"]");
 
 	public By chooseStatus = By.cssSelector(
 			"div:nth-of-type(11) div[role='listbox'] > div[role='none'] > div[role='none'] > div[role='none'] > div > div:nth-of-type(2) > div[role='option']");
@@ -181,8 +161,7 @@ public class ExportLocators {
 	public By selectweekstatus = By.cssSelector(
 			"div:nth-of-type(11) div[role='listbox'] > div[role='none'] > div[role='none'] > div > div[role='none'] > div:nth-of-type(5) > div[role='option'] > .slicerText");
 	public By thredots = By.cssSelector(".glyph-small.glyphicon.pbi-glyph-more");
-	public By billdd = By.cssSelector(
-			"visual-container:nth-of-type(4) > .bringToFront > div[role='group']  .sub-selectable.themableBackgroundColor.themableBorderColorSolid.vcBody  visual-modern div[role='combobox'] > .slicer-restatement");
+	public By billdd = By.xpath("//div[@aria-label='Billable']");
 	public By selectbill = By.cssSelector(
 			"div:nth-of-type(10) div[role='listbox'] > div[role='none'] > div[role='none'] > div > div[role='none'] > div:nth-of-type(3) > div[role='option'] > .slicerText");
 	public By approvedstatus = By.cssSelector(

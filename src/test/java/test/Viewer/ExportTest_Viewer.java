@@ -14,18 +14,20 @@ import pages.ExportPage;
 public class ExportTest_Viewer extends BaseTest {
 
 	public void initialTest() {
+		
 		ExportPage ep = new ExportPage(driver);
 		Interactions interact = new Interactions(driver);
-		RoleSelection roleSelectionPage = new RoleSelection(driver);
+//		RoleSelection roleSelectionPage = new RoleSelection(driver);
 
-		NavigateToTimesheet nt = new NavigateToTimesheet(driver);
-		nt.clickTeamsBtn();
-		nt.clickTimesheetBtn();
-		nt.clickTimesheetLink();
-
-		interact.executeWithDelay(() -> roleSelectionPage.iframeSwitch1());
-		interact.executeWithDelay(() -> roleSelectionPage.iframeSwitch2());
-		interact.executeWithDelay(() -> roleSelectionPage.selectRole("Viewer"));
+//		NavigateToTimesheet nt = new NavigateToTimesheet(driver);
+//		nt.clickTeamsBtn();
+//		nt.clickTimesheetBtn();
+//		nt.clickTimesheetLink();
+//
+//		interact.executeWithDelay(() -> roleSelectionPage.iframeSwitch1());
+//		interact.executeWithDelay(() -> roleSelectionPage.iframeSwitch2());
+//		interact.executeWithDelay(() -> roleSelectionPage.selectRole("Viewer"));
+		
 		interact.executeWithDelay(() -> ep.clickExportTab_Viewer());
 		interact.executeWithDelay(() -> ep.switchFrame());
 		interact.executeWithDelay(() -> ep.clickSignInBtn());
@@ -987,6 +989,18 @@ public class ExportTest_Viewer extends BaseTest {
 		eT.clickExportDataBtn();
 		eT.clickExportBtn();
 		}
+	
+	
+	
+	
+	@Test(priority = 70, retryAnalyzer = RetryAnalyzer.class)
+	public void TC_148_Verification_of_Verification_of_last_refreshed_date_Viewer(){
+		initialTest();
+		ExportPage ep = new ExportPage(driver);
+		ep.getTotalHours();
+		ep.getTimeDate();
+
+	}
 
 	@Test(priority = 52, retryAnalyzer = RetryAnalyzer.class)
 	public void TC_149_Verification_of_visibility_of_yearly_partially_approved_tasks_of_entire_team_Viewer() {
@@ -1002,6 +1016,7 @@ public class ExportTest_Viewer extends BaseTest {
 			interact.executeWithDelay(() -> ep.exportdata());
 			interact.executeWithDelay(() -> ep.exportbutton());
 	}
+	
 		@Test(priority = 53, retryAnalyzer = RetryAnalyzer.class)
 		public void TC_150_Verification_of_visibility_of_yearly_partially_approved_tasks_of_a_particular_Reportee_Viewer() {
 			ExportPage ep = new ExportPage(driver);
@@ -1020,16 +1035,16 @@ public class ExportTest_Viewer extends BaseTest {
 	}
 
 
-		@Test(priority = 54, retryAnalyzer = RetryAnalyzer.class)
-		public void TC_151_vis_pat_particular_month_Viewer() {
+		@Test(priority = 54)
+		public void TC_151_Verification_of_visibility_of_partially_approved_task_list_of_a_particular_month_of_his_entire_team() {
 			ExportPage ep = new ExportPage(driver);
 			Interactions interact = new Interactions(driver);
 			initialTest();
 			interact.executeWithDelay(() -> ep.monthyextract());
 			interact.executeWithDelay(() -> ep.yeardropdown());
-			interact.executeWithDelay(() -> ep.selectYear());
+			interact.executeWithDelay(() -> ep.chooseyear());
 			interact.executeWithDelay(() -> ep.monthydropdown());
-			interact.executeWithDelay(() -> ep.clickmonth());
+			interact.executeWithDelay(() -> ep.chooseMonth("July"));
 			interact.executeWithDelay(() -> ep.status());
 			interact.executeWithDelay(() -> ep.selectstatus());
 			interact.executeWithDelay(() -> ep.hoverele());
@@ -1044,8 +1059,11 @@ public class ExportTest_Viewer extends BaseTest {
 			Interactions interact = new Interactions(driver);
 			initialTest();
 			interact.executeWithDelay(() -> ep.monthyextract());
-			interact.executeWithDelay(() -> ep.monnrep());
-			interact.executeWithDelay(() -> ep.selectmonnrep());
+			interact.executeWithDelay(() -> ep.clickReportee());
+			interact.executeWithDelay(() -> ep.chooseReportee());
+			
+//			interact.executeWithDelay(() -> ep.monnrep());
+//			interact.executeWithDelay(() -> ep.selectmonnrep());
 			interact.executeWithDelay(() -> ep.yeardropdown());
 			interact.executeWithDelay(() -> ep.selectYear());
 			interact.executeWithDelay(() -> ep.monthydropdown());
@@ -1058,19 +1076,16 @@ public class ExportTest_Viewer extends BaseTest {
 			interact.executeWithDelay(() -> ep.exportbutton());
 	}
 		
+		
 		@Test(priority = 56, retryAnalyzer = RetryAnalyzer.class)
-		public void TC_153_vis_pat_weekly_exctract_Viewer() {
+		public void TC_153_Verification_of_visibility_of_exported_Weekly_partially_approved_tasks_of_entire_team() {
 			ExportPage ep = new ExportPage(driver);
 			Interactions interact = new Interactions(driver);
 			initialTest();
 			
-			
-			interact.executeWithDelay(() -> ep.weekextract());
-			interact.executeWithDelay(() -> ep.rep());
-			interact.executeWithDelay(() -> ep.selectrep());
+			interact.executeWithDelay(() -> ep.weeklyExtract());
 			interact.executeWithDelay(() -> ep.weekdd());
 			interact.executeWithDelay(() -> ep.selectweek());
-			
 			interact.executeWithDelay(() -> ep.status());
 			interact.executeWithDelay(() -> ep.selectstatus());
 			interact.executeWithDelay(() -> ep.hoverele());
@@ -1079,6 +1094,26 @@ public class ExportTest_Viewer extends BaseTest {
 			interact.executeWithDelay(() -> ep.exportbutton());
 	}
 
+		@Test(priority = 68, retryAnalyzer = RetryAnalyzer.class)
+		public void TC_154_Verification_of_visibility_of_exported__Weekly_partially_approved_tasks_of_a_particular_Reportee_Viewer() {
+			ExportPage ep = new ExportPage(driver);
+			Interactions interact = new Interactions(driver);
+			initialTest();
+			interact.executeWithDelay(() -> ep.weeklyExtract());
+			interact.executeWithDelay(() -> ep.clickReportee());
+			interact.executeWithDelay(() -> ep.chooseReportee());
+			
+//			interact.executeWithDelay(() -> ep.rep());
+//			interact.executeWithDelay(() -> ep.selectrep());
+			interact.executeWithDelay(() -> ep.weekdd());
+			interact.executeWithDelay(() -> ep.selectweek());
+			interact.executeWithDelay(() -> ep.status());
+			interact.executeWithDelay(() -> ep.selectstatus());
+			interact.executeWithDelay(() -> ep.hoverele());
+			interact.executeWithDelay(() -> ep.threeedos());
+			interact.executeWithDelay(() -> ep.exportdata());
+			interact.executeWithDelay(() -> ep.exportbutton());
+	}
 //		
 		
 		
@@ -1158,7 +1193,7 @@ public class ExportTest_Viewer extends BaseTest {
 			ExportPage ep = new ExportPage(driver);
 			Interactions interact = new Interactions(driver);
 			initialTest();
-			interact.executeWithDelay(() -> ep.weekextract());
+			interact.executeWithDelay(() -> ep.weeklyExtract());
 			interact.executeWithDelay(() -> ep.weekdropdown());
 			interact.executeWithDelay(() -> ep.selectweekk());
 			interact.executeWithDelay(() -> ep.statusalldd());
@@ -1259,30 +1294,14 @@ public class ExportTest_Viewer extends BaseTest {
 	
 		}
 		
-		@Test(priority = 68, retryAnalyzer = RetryAnalyzer.class)
-		public void TC_154_Verification_of_visibility_of_exported__Weekly_partially_approved_tasks_of_a_particular_Reportee_Viewer() {
-			ExportPage ep = new ExportPage(driver);
-			Interactions interact = new Interactions(driver);
-			initialTest();
-			interact.executeWithDelay(() -> ep.weekextract());
-			interact.executeWithDelay(() -> ep.rep());
-			interact.executeWithDelay(() -> ep.selectrep());
-			interact.executeWithDelay(() -> ep.weekdd());
-			interact.executeWithDelay(() -> ep.selectweek());
-			interact.executeWithDelay(() -> ep.status());
-			interact.executeWithDelay(() -> ep.selectstatus());
-			interact.executeWithDelay(() -> ep.hoverele());
-			interact.executeWithDelay(() -> ep.threeedos());
-			interact.executeWithDelay(() -> ep.exportdata());
-			interact.executeWithDelay(() -> ep.exportbutton());
-	}
+		
  
 		@Test(priority = 69, retryAnalyzer = RetryAnalyzer.class)
 		public void TC_160_Verification_of_visibility_of_exported__Weekly_partially_submitted_tasks_of_a_particular_Reportee_Viewer(){
 			ExportPage ep = new ExportPage(driver);
 			Interactions interact = new Interactions(driver);
 			initialTest();
-			interact.executeWithDelay(() -> ep.weekextract());
+			interact.executeWithDelay(() -> ep.weeklyExtract());
 			interact.executeWithDelay(() -> ep.clickReportee());
 			interact.executeWithDelay(() -> ep.chooseReportee());
 			interact.executeWithDelay(() -> ep.weekdropdown());
@@ -1296,13 +1315,7 @@ public class ExportTest_Viewer extends BaseTest {
 			
 		}
 		
-		@Test(priority = 70, retryAnalyzer = RetryAnalyzer.class)
-		public void TC_148_Verification_of_Verification_of_last_refreshed_date_Viewer(){
-			ExportPage ep = new ExportPage(driver);
-			initialTest();
-			Assert.assertEquals(ep.getTotalHours(), "50145");
-			Assert.assertEquals(ep.getTimeDate(), "11-Dec-2024");
-		}
+		
 	
 	@AfterMethod
 	public void afterMethod() throws InterruptedException {

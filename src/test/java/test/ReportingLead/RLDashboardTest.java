@@ -9,62 +9,67 @@ import pages.DashboardPage;
 
 public class RLDashboardTest extends BaseTest{
 	
-	@Test (priority = 1)
-    public void Navigate_to_dashboard() {
+	@Test 
+    public void initial_test() {
 		DashboardPage dashboard= new DashboardPage(driver);
         dashboard.navigateToDashboard_RL();
     }
 	
 	@Test (priority = 1)
     public void TC_004_toogle_switchon() {
+		initial_test();
 		DashboardPage dashboard= new DashboardPage(driver);
-		dashboard.clickswitchon_RL();
+		dashboard.switchon_RL();
     }
 	
 	@Test (priority = 2)
     public void TC_004_toogle_switchoff() {
+		initial_test();
 		DashboardPage dashboard= new DashboardPage(driver);
-		dashboard.clickswitchoff_RL();
+		dashboard.switchoff_RL();
     }
 	
 	@Test (priority = 3)
     public void TC_005_Verification_of_list_of_associated_clients(){
+		initial_test(); 
 		DashboardPage dashboard= new DashboardPage(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,100)");
 		System.out.println("Scrolling operation completed successfully.");
+		dashboard.associatedclients_RL();
 	}
 	
 	@Test (priority = 4)
-    public void TC_006_Verification_of_list_of_claimed_tasks_by_direct_reportees(){
+    public void TC_006_Verification_of_list_of_claimed_tasks_by_direct_reportees_(){
+		initial_test(); 
 		DashboardPage dashboard= new DashboardPage(driver);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,100)");
-		System.out.println("Scrolling operation completed successfully.");
+		dashboard.claimedtask_RL();
 	}
 	
-	@Test (priority = 5, dependsOnMethods = {"Navigate_to_dashboard"})
+	@Test (priority = 5)
     public void TC_007_Verification_of_claimed_task_hours_change_with_Financial_year_dropdown(){
-		Navigate_to_dashboard();
+		initial_test();
 		DashboardPage dashboard= new DashboardPage(driver);
-		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,100)");
-		System.out.println("Scrolling operation completed successfully.");
-		dashboard.clickyeardd_RL();
+		dashboard.financialdropdown();
+		dashboard.selectyear_RL();
 	}
 	
-	@Test (priority = 6, dependsOnMethods = {"Navigate_to_dashboard"})
+	@Test (priority = 6)
     public void TC_009_navigation_to_submitted_timesheet_for_approval_or_rejection(){
-		Navigate_to_dashboard();
+		initial_test();
 		DashboardPage dashboard= new DashboardPage(driver);
-		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,100)");
 		System.out.println("Scrolling operation completed successfully.");
 		dashboard.rightarrow_RL();
 		dashboard.approvbtn_RL();	
     }
+	
+	
+	
+	
+	
+	
 	
 	@Test (priority = 7, dependsOnMethods = {"Navigate_to_dashboard"})
     public void TC_010_reportee_dropdown() throws InterruptedException{

@@ -3,7 +3,7 @@
     <test name="Test">
         <classes>
             <!--            <class name="Timesheet_Test.LoginTest"/>-->
-            <class name="test.PracticeLead.PLDashboardTest"/>
+            <class name="test.Editor.ExportTest_Editor"/>
             
         </classes>
     </test>

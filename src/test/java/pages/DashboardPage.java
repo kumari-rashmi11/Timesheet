@@ -40,48 +40,96 @@ public class DashboardPage {
     }	
     
     public void clickreportee_PL() {
-        clickingHelper.clickElement(this.locator.edreportee);
-    }
-    
-    public void reportee_PL() {
-        clickingHelper.clickElement(this.locator.reporteePL);
+        clickingHelper.clickElement(this.locator.clickreporteePL);
     }
     
     public void switchoff_PL() {
-        clickingHelper.clickElement(this.locator.switchoffPL);
+        clickingHelper.clickElement(this.locator.switchoffpl);
     }
     
     public void switchon_PL() {
-        clickingHelper.clickElement(this.locator.switchonPL);
+        clickingHelper.clickElement(this.locator.switchonpl);
     }
-    public void clickyeardd_PL() {
-    	  clickingHelper.clickElement(this.locator.yeardropdown);
-      }
-    public void rightarrow_PL() {
+    
+    public void allclients_pl() {
+	 	System.out.println(clickingHelper.getText(this.locator.allclientsPL));
+    }
+    
+    public void claimedtask_pl() {
+	 	System.out.println(clickingHelper.getText(this.locator.claimedtaskPL));
+    }
+    
+    public void clickyeardd_pl() {
+  	  clickingHelper.clickElement(this.locator.yeardropdown_pl);
+    }
+    
+    public void chooseyearpl() {
+  	  clickingHelper.clickElement(this.locator.chooseyearpl);
+    }
+    
+    public void rightarrowPL() {
    	 clickingHelper.clickElement(this.locator.rightarrowPL);
     }
    
-    public void approvebtn_PL() {
-   	 clickingHelper.clickElement(this.locator.approvebtnPL);
+    public void approbebtn() {
+   	 clickingHelper.clickElement(this.locator.approbebtn);
     }
-    public void repdd_PL() {
-      	 clickingHelper.clickElement(this.locator.repddPL);
+    
+    public void reporteedropdown() {
+      	 clickingHelper.clickElement(this.locator.reporteedropdown);
     }
 
-    public void repname_PL() {
-     	 clickingHelper.clickElement(this.locator.repnamePL);
+    public void choosereportee() {
+     	 clickingHelper.clickElement(this.locator.choosereportee);
    }
-    
-    public void filterbtn_PL() {
+      
+    public void filterbtnPL() {
         clickingHelper.clickElement(this.locator.filterbtnPL);
     }
        
-    public void notstartedyet_PL() {
-    	 System.out.println(clickingHelper.getText(this.locator.notstartedyet));
-    }
-    public void consumedhrs_PL() {
-   	 System.out.println(clickingHelper.getText(this.locator.consumedhrs));
+    public void notstartedyetPL() {
+   	 	System.out.println(clickingHelper.getText(this.locator.notstartedyetPL));
    }
+    
+    public void draftPL() {
+   	 	System.out.println(clickingHelper.getText(this.locator.draftPL));
+   }
+    
+    public void SubmittedPL() {
+   	 	System.out.println(clickingHelper.getText(this.locator.SubmittedPL));
+   }
+    
+    public void Partially_SubmittedPL() {
+   	 	System.out.println(clickingHelper.getText(this.locator.Partially_SubmittedPL));
+   }
+    
+    public void ApprovedPL() {
+   	 	System.out.println(clickingHelper.getText(this.locator.ApprovedPL));
+   }
+    
+    public void Partially_ApprovedPL() {
+   	 	System.out.println(clickingHelper.getText(this.locator.Partially_ApprovedPL));
+   }
+    
+    public void RejectedPL() {
+   	 	System.out.println(clickingHelper.getText(this.locator.RejectedPL));
+   }
+    
+    
+    public void choosereporteenew() {
+    	 clickingHelper.clickElement(this.locator.choosereporteenew);
+  }
+    
+    public void submittedtimesheetPL() {
+   	 	System.out.println(clickingHelper.getText(this.locator.submittedtimesheetPL));
+   }
+    
+    public void consumedhrsPL() {
+   	 	System.out.println(clickingHelper.getText(this.locator.consumedhrsPL));
+   }
+    
+    
+    
     
     
     
@@ -324,26 +372,43 @@ public class DashboardPage {
     
     // Methods to navigate to the RL Dashboard
        public void navigateToDashboard_RL() {
-    	   clickingHelper.clickElement(this.locator.admindb);
+    	   clickingHelper.clickElement(this.locator.teamsdb);
        }
-	    public void clickswitchon_RL() {
-	        clickingHelper.clickElement(this.locator.switchonRL);
-	    }
-	    
-	    public void clickswitchoff_RL() {
-	        clickingHelper.clickElement(this.locator.switchoffRL);
-	    }
-	    
-	    public void clickyeardd_RL() {
-	  	  clickingHelper.clickElement(this.locator.yeardropdown);
-	    }
+          
+       public void switchoff_RL() {
+           clickingHelper.clickElement(this.locator.switchoffViewer);
+       }
+       
+       public void switchon_RL() {
+           clickingHelper.clickElement(this.locator.switchonViewer);
+       }
+       
+       public void associatedclients_RL() {
+   	 	System.out.println(clickingHelper.getText(this.locator.associatedclients));
+       }
+       
+       public void claimedtask_RL() {
+   	 	System.out.println(clickingHelper.getText(this.locator.claimedtask_RL));
+       }
+	   
+       public void financialdropdown() {
+           clickingHelper.clickElement(this.locator.financialdropdown);
+       }
+       
+       public void selectyear_RL() {
+           clickingHelper.clickElement(this.locator.selectyear_RL);
+       }
+       
 	  public void rightarrow_RL() {
-	 	 clickingHelper.clickElement(this.locator.rightarrowPL);
+	 	 clickingHelper.clickElement(this.locator.rightarrow_RL);
 	  }
 	 
 	  public void approvebtn_RL() {
-	 	 clickingHelper.clickElement(this.locator.approvebtnPL);
+	 	 clickingHelper.clickElement(this.locator.approvebtn_Rl);
 	  }
+	  
+	  
+	  
 	  public void repdd_RL() {
 	    	 clickingHelper.clickElement(this.locator.repddPL);
 	  }
