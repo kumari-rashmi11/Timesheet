@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-16T17:59:18 IST" name="Default suite" finished-at="2025-01-16T18:00:05 IST" duration-ms="47128">
+  <suite started-at="2025-01-17T11:27:12 IST" name="Default suite" finished-at="2025-01-17T11:27:51 IST" duration-ms="38947">
     <groups>
     </groups>
-    <test started-at="2025-01-16T17:59:18 IST" name="Default test" finished-at="2025-01-16T18:00:05 IST" duration-ms="47128">
+    <test started-at="2025-01-17T11:27:12 IST" name="Default test" finished-at="2025-01-17T11:27:51 IST" duration-ms="38947">
       <class name="test.PracticeLead.PLDashboardTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.PracticeLead.PLDashboardTest@70e38ce1]" started-at="2025-01-16T17:59:18 IST" name="beforeMethod" finished-at="2025-01-16T17:59:47 IST" duration-ms="28633" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.PracticeLead.PLDashboardTest@70e38ce1]" started-at="2025-01-17T11:27:12 IST" name="beforeMethod" finished-at="2025-01-17T11:27:37 IST" duration-ms="24964" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC_250_Verification_of_visibility_of_submitted_or_partially_submitted_timesheet_to_lead_from_the_date_lead_is_selected()[pri:14, instance:test.PracticeLead.PLDashboardTest@70e38ce1]" started-at="2025-01-16T17:59:47 IST" name="TC_250_Verification_of_visibility_of_submitted_or_partially_submitted_timesheet_to_lead_from_the_date_lead_is_selected" finished-at="2025-01-16T17:59:54 IST" duration-ms="7254" status="PASS">
+        <test-method signature="TC_250_Verification_of_visibility_of_submitted_or_partially_submitted_timesheet_to_lead_from_the_date_lead_is_selected()[pri:14, instance:test.PracticeLead.PLDashboardTest@70e38ce1]" started-at="2025-01-17T11:27:37 IST" name="TC_250_Verification_of_visibility_of_submitted_or_partially_submitted_timesheet_to_lead_from_the_date_lead_is_selected" finished-at="2025-01-17T11:27:43 IST" duration-ms="5271" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_250_Verification_of_visibility_of_submitted_or_partially_submitted_timesheet_to_lead_from_the_date_lead_is_selected -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.PracticeLead.PLDashboardTest@70e38ce1]" started-at="2025-01-16T17:59:54 IST" name="afterMethod" finished-at="2025-01-16T18:00:05 IST" duration-ms="11175" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.PracticeLead.PLDashboardTest@70e38ce1]" started-at="2025-01-17T11:27:43 IST" name="afterMethod" finished-at="2025-01-17T11:27:51 IST" duration-ms="8661" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

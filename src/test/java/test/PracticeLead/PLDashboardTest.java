@@ -70,6 +70,8 @@ public class PLDashboardTest extends BaseTest {
 		js.executeScript("window.scrollBy(0,100)");
 		System.out.println("Scrolling operation completed successfully.");
 		dashboard.clickyeardd_pl();
+		dashboard.selectYear("2021-2022");
+
 	}
 
 	@Test (priority = 8)
@@ -81,7 +83,7 @@ public class PLDashboardTest extends BaseTest {
 		js.executeScript("window.scrollBy(0,100)");
 		System.out.println("Scrolling operation completed successfully.");
 		dashboard.clickyeardd_pl();
-		dashboard.chooseyearpl();
+		dashboard.selectYear("2021-2022");
 
     }
 	
@@ -105,7 +107,7 @@ public class PLDashboardTest extends BaseTest {
 		System.out.println("Scrolling operation completed successfully.");
 		dashboard.reporteedropdown();
 		Thread.sleep(2000);
-		dashboard.choosereportee();
+		dashboard.choosereportee("Abhigyan Majhi(1334)");
 
 	}
 	
@@ -118,7 +120,7 @@ public class PLDashboardTest extends BaseTest {
 		System.out.println("Scrolling operation completed successfully.");
 		dashboard.reporteedropdown();
 		Thread.sleep(2000);
-		dashboard.choosereportee();
+		dashboard.choosereportee("Abhigyan Majhi(1334)");
 		dashboard.filterbtnPL();
 	}
 
@@ -152,7 +154,7 @@ public class PLDashboardTest extends BaseTest {
 		System.out.println("Scrolling operation completed successfully.");
 		dashboard.reporteedropdown();
 		Thread.sleep(2000);
-		dashboard.choosereporteenew();
+		dashboard.choosereportee("Alter White(0007)");
 //		dashboard.submittedtimesheetPL();
 	}
 	

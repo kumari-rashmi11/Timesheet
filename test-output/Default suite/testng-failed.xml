@@ -5,8 +5,8 @@
     <classes>
       <class name="test.PracticeLead.PLDashboardTest">
         <methods>
-          <include name="TC_250_Verification_of_visibility_of_submitted_or_partially_submitted_timesheet_to_lead_from_the_date_lead_is_selected"/>
           <include name="beforeMethod"/>
+          <include name="TC_008_Verification_of_total_billable_and_non_billable_hour_according_to_year_dropdown"/>
           <include name="afterMethod"/>
         </methods>
       </class> <!-- test.PracticeLead.PLDashboardTest -->

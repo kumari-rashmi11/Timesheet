@@ -20,6 +20,7 @@ public class DashboardLocators {
 	public By allclientsPL = By.xpath("//div[text()='Associated Clients']");
 	public By claimedtaskPL = By.xpath("//div[text()='Claimed Task']");
 	public By yeardropdown_pl = By.xpath("//div[contains(@id, 'publishedCanvas')]//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'scrollContainer')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card')]//div[53]//div[contains(@class, 'react-knockout-control')]//div//div//div[contains(@role, 'button')]");
+	
 	public By chooseyearpl = By.xpath("//div[contains(@class, 'appmagic-dropdownFlyout')]//div[contains(@role, 'listbox')]/div[2]");
 	public By rightarrowPL = By.xpath("//div[contains(@id, 'publishedCanvas')]//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'appmagic-fluidGrid')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-card')]//div[58]//div[contains(@role, 'list')]//div[contains(@class, 'react-gallery-items-window')]/div[1]//div[contains(@class, 'canvasContentDiv')]//div/div[6]//div[contains(@class, 'react-knockout-control')]/div");
     public By approbebtn = By.xpath("//div[text()='Approve']");
