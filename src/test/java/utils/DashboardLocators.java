@@ -93,14 +93,20 @@ public class DashboardLocators {
 	public By selectyear_RL = By.xpath("//div[contains(@class, 'drop-content')]//div[contains(@class, 'appmagic-dropdownFlyout')]//div[@role='listbox']/div[1]");
 	public By rightarrow_RL = By.cssSelector("div:nth-of-type(1) > .canvasContentDiv.container_1vt1y2p > div > div:nth-of-type(6) .powerapps-icon");
 	public By approvebtn_Rl = By.xpath("//div[text()='Approve']");
+	public By reporteedropdown_RL = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'scrollContainer')]/div[contains(@class, 'scrollContent')]/div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card')]/div[51]//div[contains(@class, 'react-knockout-control')]/div/div");
+	public By filterbtn_RL = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[4]//div//div[5]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'scrollContent')]//div//div[contains(@class, 'appmagic-card')]//div[52]//div[contains(@class, 'react-knockout-control')]/div");
 	
-	
-	
-	
-	
+	public By notstartedyetRL = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=15]//div[@role='presentation']//div[contains(@class, 'appmagic-label-text')]");
+	public By draftRL = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=16]//div[@role='presentation']//div[contains(@class, 'appmagic-label-text')]");
+	public By SubmittedRL = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=17]//div[@role='presentation']//div[contains(@class, 'appmagic-label-text')]");
+	public By Partially_SubmittedRL = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=18]//div[@role='presentation']//div[contains(@class, 'appmagic-label-text')]");
+	public By ApprovedRL = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=19]//div[@role='presentation']//div[contains(@class, 'appmagic-label-text')]");
+	public By Partially_ApprovedRL = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=20]//div[@role='presentation']//div[contains(@class, 'appmagic-label-text')]");
+	public By RejectedRL = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=21]//div[@role='presentation']//div[contains(@class, 'appmagic-label-text')]");
+
+	public By consumedhrsRL = By.xpath("div:nth-of-type(2) > .canvasContentDiv.container_1vt1y2p  .appmagic-content-control-name.appmagic-control-view.canvasContentDiv div[role='list']  .react-gallery-items-window > div:nth-of-type(1) > .canvasContentDiv.container_1vt1y2p > div > div:nth-of-type(4) div[role='presentation'] > .appmagic-label-text");
+
 	public By calculatebtn = By.cssSelector("div[role='presentation'] > .ms-Button.ms-Button--primary.root-158");
-	public By switchoffRL = By.cssSelector("div[role='switch'] > .appmagic-toggleSwitch-off");
-	public By switchonRL = By.cssSelector("div[role='switch'] > .appmagic-toggleSwitch-on");
 	
 	
 	

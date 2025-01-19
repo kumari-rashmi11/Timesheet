@@ -59,7 +59,7 @@ public class BaseTest {
     	roleSelectionPage.timesheetNavigation();
         roleSelectionPage.iframeSwitch1();
         roleSelectionPage.iframeSwitch2();
-        roleSelectionPage.PLRoleBtn();
+        roleSelectionPage.selectRLRole();
     	
 		
     }

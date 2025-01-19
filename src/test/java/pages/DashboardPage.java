@@ -392,8 +392,14 @@ public class DashboardPage {
 		clickingHelper.clickElement(this.locator.financialdropdown);
 	}
 
-	public void selectyear_RL() {
-		clickingHelper.clickElement(this.locator.selectyear_RL);
+//	public void selectyear_RL() {
+//		clickingHelper.clickElement(this.locator.selectyear_RL);
+//	}
+	
+	public void selectyear_RL(String year) {
+		WebElement yearElement = wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(), '" + year + "')]")));
+		clickingHelper.clickElement(yearElement);
 	}
 
 	public void rightarrow_RL() {
@@ -404,47 +410,82 @@ public class DashboardPage {
 		clickingHelper.clickElement(this.locator.approvebtn_Rl);
 	}
 
-	public void repdd_RL() {
-		clickingHelper.clickElement(this.locator.repddPL);
+	public void reporteedropdown_RL() {
+		clickingHelper.clickElement(this.locator.reporteedropdown_RL);
 	}
 
-	public void repname_RL() {
-		clickingHelper.clickElement(this.locator.repnamePL);
+
+	public void choosereportee_RL(String r) {
+		WebElement reporteeElement = wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(), '" + r + "')]")));
+		clickingHelper.clickElement(reporteeElement);
 	}
+//	
+//	public void repname_RL() {
+//		clickingHelper.clickElement(this.locator.repnamePL);
+//	}
 
 	public void filterbtn_RL() {
-		clickingHelper.clickElement(this.locator.filterbtnPL);
+		clickingHelper.clickElement(this.locator.filterbtn_RL);
 	}
 
-	public void notstartedyet_RL() {
-		System.out.println(clickingHelper.getText(this.locator.notstartedyet));
+	public void notstartedyetRL() {
+		System.out.println(clickingHelper.getText(this.locator.notstartedyetRL));
+	}
+
+	public void draftRL() {
+		System.out.println(clickingHelper.getText(this.locator.draftRL));
+	}
+
+	public void SubmittedRL() {
+		System.out.println(clickingHelper.getText(this.locator.SubmittedRL));
+	}
+
+	public void Partially_SubmittedRL() {
+		System.out.println(clickingHelper.getText(this.locator.Partially_SubmittedRL));
+	}
+
+	public void ApprovedRL() {
+		System.out.println(clickingHelper.getText(this.locator.ApprovedRL));
+	}
+
+	public void Partially_ApprovedRL() {
+		System.out.println(clickingHelper.getText(this.locator.Partially_ApprovedRL));
+	}
+
+	public void RejectedRL() {
+		System.out.println(clickingHelper.getText(this.locator.RejectedRL));
 	}
 
 	public void consumedhrs_RL() {
-		System.out.println(clickingHelper.getText(this.locator.consumedhrs));
+		System.out.println(clickingHelper.getText(this.locator.consumedhrsRL));
 	}
+	
+	
 
-	public void financialdd_RL() {
-		clickingHelper.clickElement(this.locator.finandd);
-	}
+	
 
-	public void yearr_RL() {
-		clickingHelper.clickElement(this.locator.year);
-	}
-
-	public void calculate_RL() {
-		clickingHelper.clickElement(this.locator.calculatebtn);
-	}
-
-	public void approvbtn_RL() {
-		clickingHelper.clickElement(this.locator.approvebtn);
-	}
-
-	public void reporteename_RL() {
-		clickingHelper.clickElement(this.locator.repname);
-	}
-
-	public void reporteeydd_RL() {
-		clickingHelper.clickElement(this.locator.repyy);
-	}
+//	public void financialdd_RL() {
+//		clickingHelper.clickElement(this.locator.finandd);
+//	}
+//
+//	public void yearr_RL() {
+//		clickingHelper.clickElement(this.locator.year);
+//	}
+//
+//	public void calculate_RL() {
+//		clickingHelper.clickElement(this.locator.calculatebtn);
+//	}
+//
+//	public void approvbtn_RL() {
+//		clickingHelper.clickElement(this.locator.approvebtn);
+//	}
+//
+//	public void reporteename_RL() {
+//		clickingHelper.clickElement(this.locator.repname);
+//	}
+//
+//	public void reporteeydd_RL() {
+//		clickingHelper.clickElement(this.locator.repyy);
+//	}
 }

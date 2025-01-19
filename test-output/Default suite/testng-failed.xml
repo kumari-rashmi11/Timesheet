@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.PracticeLead.PLDashboardTest">
+      <class name="test.ReportingLead.RLDashboardTest">
         <methods>
           <include name="beforeMethod"/>
-          <include name="TC_008_Verification_of_total_billable_and_non_billable_hour_according_to_year_dropdown"/>
           <include name="afterMethod"/>
+          <include name="TC_162_Verification_of_count1"/>
         </methods>
-      </class> <!-- test.PracticeLead.PLDashboardTest -->
+      </class> <!-- test.ReportingLead.RLDashboardTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

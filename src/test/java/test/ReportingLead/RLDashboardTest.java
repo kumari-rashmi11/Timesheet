@@ -51,7 +51,7 @@ public class RLDashboardTest extends BaseTest{
 		initial_test();
 		DashboardPage dashboard= new DashboardPage(driver);
 		dashboard.financialdropdown();
-		dashboard.selectyear_RL();
+		dashboard.selectyear_RL("2023-2024");
 	}
 	
 	@Test (priority = 6)
@@ -62,61 +62,65 @@ public class RLDashboardTest extends BaseTest{
 		js.executeScript("window.scrollBy(0,100)");
 		System.out.println("Scrolling operation completed successfully.");
 		dashboard.rightarrow_RL();
-		dashboard.approvbtn_RL();	
+		dashboard.approvebtn_RL();	
     }
 	
 	
-	
-	
-	
-	
-	
-	@Test (priority = 7, dependsOnMethods = {"Navigate_to_dashboard"})
-    public void TC_010_reportee_dropdown() throws InterruptedException{
-		Navigate_to_dashboard();
+	@Test (priority = 7)
+    public void TC_010_Verification_of_filter_operation_on_submitted_timesheets_using_reportee_dropdown() throws InterruptedException{
+		initial_test();
 		DashboardPage dashboard= new DashboardPage(driver);
-		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,150)");
 		System.out.println("Scrolling operation completed successfully.");
-		dashboard.reporteedd_Editor();
+		dashboard.reporteedropdown_RL();
 		Thread.sleep(2000);
-		dashboard.reporteename_RL();
+		dashboard.choosereportee_RL("Aheli Bhattacharya(1370)");
 
 	}
 	
 	@Test (priority = 8)
-    public void TC_011_Verification_of_filter_reset_operation(){
+    public void TC_011_Verification_of_filter_reset_operation() throws InterruptedException{
+		initial_test();
 		DashboardPage dashboard= new DashboardPage(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,100)");
+		js.executeScript("window.scrollBy(0,150)");
 		System.out.println("Scrolling operation completed successfully.");
-		dashboard.reporteeydd_RL();
+		dashboard.reporteedropdown_RL();
+		Thread.sleep(2000);
+		dashboard.choosereportee_RL("Aditya Dubey(1169)");
+		dashboard.filterbtn_RL();
 	}
 	
-	@Test (priority = 9, dependsOnMethods = {"Navigate_to_dashboard"})
+	@Test (priority = 9)
     public void TC_162_Verification_of_count1() {
-		Navigate_to_dashboard();
+		initial_test(); 
 		DashboardPage dashboard= new DashboardPage(driver);
-        dashboard.notstartedyet_RL();
+        dashboard.notstartedyetPL();
+        dashboard.draftPL();
+        dashboard.SubmittedPL();
+        dashboard.Partially_SubmittedPL();
+        dashboard.ApprovedPL();
+        dashboard.Partially_ApprovedPL();
+        dashboard.RejectedPL();
     }
 	
-	@Test (priority = 10, dependsOnMethods = {"Navigate_to_dashboard"})
-    public void TC_249_Verification_of_visibility_of_consumed_hours1() {
-		Navigate_to_dashboard();
+	@Test (priority = 10)
+    public void TC_249_Verification_of_visibility_of_consumed_hours_to_lead_from_the_date_lead_is_selected() {
+		initial_test(); 
 		DashboardPage dashboard= new DashboardPage(driver);
-        dashboard.consumedhrs_RL();
-    }
+		dashboard.consumedhrs_RL();
+	}
 		
 	
-	@Test (priority = 11)
-    public void TC_295_() {
-		DashboardPage dashboard= new DashboardPage(driver);
-		dashboard.financialdd_RL();
-        dashboard.yearr_RL();
-        dashboard.calculate_RL();
-
-    }
+//	@Test (priority = 11)
+//    public void TC_295_() {
+//		DashboardPage dashboard= new DashboardPage(driver);
+//		dashboard.financialdd_RL();
+//        dashboard.yearr_RL();
+//        dashboard.calculate_RL();
+//
+//    }
 	
 	@AfterMethod
 	public void afterMethod() throws InterruptedException {
