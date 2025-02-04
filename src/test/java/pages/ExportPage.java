@@ -162,11 +162,11 @@ public class ExportPage {
 	}
 
 	public void sendWorkEndDate() {
-		interact.sendingKeys(locators.workEndDate, "4/10/2024");
+		interact.sendingKeys(locators.workEndDate, "2/15/2025");
 	}
 
 	public void sendWorkStartDate() {
-		interact.sendingKeys(locators.workStartDate, "9/11/2020");
+		interact.sendingKeys(locators.workStartDate, "9/6/2009");
 	}
 
 	public void chooseStatus() {

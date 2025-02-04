@@ -3,26 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="test.PracticeLead.PLDashboardTest">
+      <class name="test.HumanResource.HREvalSettingTest">
         <methods>
-          <include name="TC_006_Verification_of_list_of_claimed_tasks_by_direct_reportees"/>
-          <include name="Navigate_to_dashboard"/>
-          <include name="TC_250_Verification_of_visibility_of_submitted_or_partially_submitted_timesheet"/>
-          <include name="TC_001_drill_down"/>
+          <include name="TC_171_Verification_of_filteration_of_quarters_by_Review_Period_dropdown_HR"/>
           <include name="beforeMethod"/>
-          <include name="TC_004_toogle_switchoff"/>
-          <include name="TC_005_Verification_of_list_of_associated_clients"/>
-          <include name="TC_249_Verification_of_visibility_of_consumed_hours"/>
-          <include name="TC_010_reportee_dropdown"/>
-          <include name="TC_009_navigation_to_submitted_timesheet_for_approval_or_rejection"/>
-          <include name="TC_007_Verification_of_claimed_task_hours_change_with_Financial_year_dropdown"/>
-          <include name="TC_004_toogle_switchon"/>
-          <include name="TC_011_Verification_of_filter_reset_operation"/>
-          <include name="TC_162_Verification_of_count"/>
-          <include name="TC_002_Click_reportee"/>
           <include name="afterMethod"/>
         </methods>
-      </class> <!-- test.PracticeLead.PLDashboardTest -->
+      </class> <!-- test.HumanResource.HREvalSettingTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

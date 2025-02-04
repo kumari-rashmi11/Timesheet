@@ -11,42 +11,46 @@ import helper.RoleSelection;
 import pages.TasksAllocationPage;
 
 public class TasksAllocationTest_HR extends BaseTest {
-	public void initialTestFor_HR() {
+	public void initialTestFor_HR() throws InterruptedException {
 		TasksAllocationPage tasks = new TasksAllocationPage(driver);
 		Interactions interact = new Interactions(driver);
-//		RoleSelection roleSelectionPage = new RoleSelection(driver);
-//		interact.executeWithDelay(() -> roleSelectionPage.iframeSwitch1());
-//		interact.executeWithDelay(() -> roleSelectionPage.iframeSwitch2());
-//		interact.executeWithDelay(() -> roleSelectionPage.selectRole("HR"));
-		interact.executeWithDelay(() -> tasks.clickTasksAllocationTab_HR());
+		RoleSelection roleSelectionPage = new RoleSelection(driver);
+//      roleSelectionPage.switchToIframe();
+      // Select the desired role 
+		roleSelectionPage.timesheetNavigation(); 
+		roleSelectionPage.iframeSwitch1();
+		roleSelectionPage.iframeSwitch2();
+		roleSelectionPage.HRRoleBtn();
+	
+		interact.executeWithDelay(() -> tasks.clickTasksAllocationTab());
 		Assert.assertEquals(tasks.isTasksAllocationPage(), "Tasks");
 	}
 
-	@Test(priority = 2, retryAnalyzer = RetryAnalyzer.class)
-	public void Remaining_hours_alert_icon_TC_295_HR() {
+	@Test(priority = 1, retryAnalyzer = RetryAnalyzer.class)
+	public void Remaining_hours_alert_icon_TC_295_HR() throws InterruptedException {
 		TasksAllocationPage tasks = new TasksAllocationPage(driver);
 		Interactions interact = new Interactions(driver);
 		initialTestFor_HR();
-		interact.executeWithDelay(() -> tasks.alertIconHover_HR());
+		interact.executeWithDelay(() -> tasks.alertIconHover());
 	}
 
-	@Test(priority = 6, retryAnalyzer = RetryAnalyzer.class)
-	public void Search_Operation_TC_044_HR() {
+	@Test(priority = 2, retryAnalyzer = RetryAnalyzer.class)
+	public void Search_Operation_TC_044_HR() throws InterruptedException {
 		TasksAllocationPage tasks = new TasksAllocationPage(driver);
 		Interactions interact = new Interactions(driver);
 		initialTestFor_HR();
 		interact.executeWithDelay(() -> tasks.searchEmployee());
 	}
 
-	@Test(priority = 7, retryAnalyzer = RetryAnalyzer.class)
-	public void Search_and_Reset_Operation_TC_045_HR() {
+	@Test(priority = 3, retryAnalyzer = RetryAnalyzer.class)
+	public void Search_and_Reset_Operation_TC_045_HR() throws InterruptedException {
 		TasksAllocationPage tasks = new TasksAllocationPage(driver);
 		Interactions interact = new Interactions(driver);
 		initialTestFor_HR();
 		interact.executeWithDelay(() -> tasks.searchEmployee());
 		interact.executeWithDelay(() -> tasks.refreshEmployeelist());
 	}
-
+	
 	@AfterMethod
 	public void afterMethod() throws InterruptedException {
 		Thread.sleep(2000);

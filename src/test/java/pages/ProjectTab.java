@@ -1,12 +1,19 @@
 package pages;
 
-import java.time.Duration;
 
+import java.time.Duration;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import helper.Interactions;
+import utils.Approval_Locators;
 import utils.Project_Locators;
 
 public class ProjectTab {
@@ -23,127 +30,142 @@ public class ProjectTab {
 		this.action = new Actions(driver);
 	}
 
-	// selectprojecttab hr
-	// search project
+	
 	public void SelectProjectTabHr() {
 		interactions.clickElement(Project_Locators.Projecttabhr);
 	}
-
-	// Add project
-	public void addProject(String projectName, String notes, String description) throws InterruptedException {
-		// interactions.executeWithDelay(() -> myTimesheetPage.clickMyTimesheetTabPL());
-		// Define the action (click the Add Project Button)
-		// Runnable clickAction = () ->
-		// interactions.click(Project_Locators.AddProjectButton);
-
-		// Execute the action with an explicit wait (waiting for the element to be ready
-		// first)
-		// interactions.executeWithDelay(clickAction,
-		// Project_Locators.AddProjectButton);
-		// interactions.executeWithDelay(() -> myTimesheetPage.clickMyTimesheetTabPL());
+	public void SelectProjectTabEditor() {
 		interactions.clickElement(Project_Locators.ProjectTabBtn_Editor);
-		interactions.clickElement(Project_Locators.AddProjectButton);
-		interactions.sendingKeys(Project_Locators.ProjectNameInputText, projectName);
-		interactions.selectFromDropdown(Project_Locators.SelectClient, Project_Locators.clientcategory);
-		interactions.sendingKeys(Project_Locators.NotesInputText, notes);
-		interactions.sendingKeys(Project_Locators.DescriptionInputText, description);
-		interactions.clickElement(Project_Locators.SaveProjectBtn);
 	}
 
-	// search project
-	public void SearchProjectByNames(String ProjectName) throws InterruptedException {
-		interactions.clickElement(Project_Locators.ProjectTabBtn_Editor);
+	public String dynamicProjectName() {  
+		Random random = new Random();
+        int randomNumber = 10 + random.nextInt(90); 
+        String projectName = "projectName" + randomNumber;
+        return projectName;
+    }
+		public void selectClientDropdown() {
+			interactions.click(Project_Locators.SelectClient_Editor);
 
-		interactions.sendingKeys(Project_Locators.searchInputSelector, ProjectName);
-		interactions.clickElement(Project_Locators.clearButtonSelector);
+		}
+
+	public void dynamicClientSelection(String clientName) throws InterruptedException {
+		//interactions.clickElement(Project_Locators.AddProjectButton);
+		//interactions.clickElement(Project_Locators.SelectClient);
+	     Thread.sleep(3000);
+			String clientNamePath = "//span[contains(text(),'"+clientName+"')]/ancestor::li";
+			interactions.click(By.xpath(clientNamePath));
+		}
+	public void addprojectbtn() {
+		interactions.clickElement(Project_Locators.AddProjectButton_Editor);
+	}
+
+	public void addProject(String projectName, String notes, String description) {
+
+		interactions.sendingKeys(Project_Locators.ProjectNameInputText_Editor, projectName);
+		interactions.sendingKeys(Project_Locators.NotesInputText_Editor, notes);
+		interactions.sendingKeys(Project_Locators.DescriptionInputText_Editor, description);
+		interactions.clickElement(Project_Locators.SaveProjectBtn_Editor);
+	}
+
+	
+	public void SearchProjectByNames(String ProjectName)  {
+		interactions.sendingKeys(Project_Locators.searchInputSelector_Editor_Hr, ProjectName);
+		interactions.clickElement(Project_Locators.clearButtonSelector_Editor_Hr);
 
 	}
 
-	// search project hr role
-	public void SearchProject(String ProjectName) throws InterruptedException {
 
-		// interactions.click(Project_Locators.ProjectTabBtn_Editor);
-		interactions.sendingKeys(Project_Locators.searchInputSelector, ProjectName);
-		// interactions.click(Project_Locators.clearButtonSelector);
-		System.out.print("Done");
+	public void SearchProject(String ProjectName)  {
+
+		interactions.sendingKeys(Project_Locators.searchInputSelector_Editor_Hr, ProjectName);
+	
 	}
 
-	public void RefreshProject(String ProjectName) throws InterruptedException {
-		// interactions.click(Project_Locators.ProjectTabBtn_Editor);
-		interactions.sendingKeys(Project_Locators.searchInputSelector, ProjectName);
-		interactions.clickElement(Project_Locators.clearButtonSelector);
-		System.out.print("Done");
+	public void RefreshProject(String ProjectName) {
+		interactions.sendingKeys(Project_Locators.searchInputSelector_Editor_Hr, ProjectName);
+		interactions.clickElement(Project_Locators.clearButtonSelector_Editor_Hr);
 	}
 
-	// edit project
-	public void EditProjectDetails(String projectDescription, String projectNotes) {
-		interactions.clickElement(Project_Locators.ProjectTabBtn_Editor);
+	public void selectProject() throws InterruptedException {
+		Thread.sleep(2000);
+//		String Path = "//div[contains(text(), '"+ projectName+"')]";
+//		//interactions.click(Project_Locators.SelectProject1);
+//		interactions.click(By.xpath(Path));
+		  Thread.sleep(3000);
+			interactions.clickElement(Project_Locators.SelectProject1_Editor);
 
-		interactions.clickElement(Project_Locators.SelectProject);
-		interactions.clickElement(Project_Locators.SelectPencil);
+	}
+	public void selectEditBtn() throws InterruptedException {
+		
+		
+			interactions.clickElement(Project_Locators.SelectPencil_Editor);
+
+	}
+	
+	public void editClientunderProject() {
+		interactions.clickElement(Project_Locators.editClient_Editor);
+
+	}
+	public void EditProjectDetails(String projectDescription, String projectNotes) throws InterruptedException {
+		
 		// interactions.enterText(EditSelectProjectName, projectName);
 		interactions.sendingKeys(Project_Locators.EditProjectDescription, projectDescription);
+		//dynamicClientSelection("Alpha");
 		interactions.sendingKeys(Project_Locators.EditPojectNotes, projectNotes);
 		interactions.clickElement(Project_Locators.SaveEditProject);
 	}
 
-	// Delete project
-
+	
 	public void DeleteProject() throws InterruptedException {
-		interactions.clickElement(Project_Locators.ProjectTabBtn_Editor);
-
-		interactions.clickElement(Project_Locators.SelectDeleteProject);
+		Thread.sleep(2000);
 		interactions.clickElement(Project_Locators.SelectDeleteProjectBtn);
-		// interactions.click(YesDeleteProjectBtn);
-		// ineractions.click(NoDeleteProjectBtn);
+		//interactions.click(Project_Locators.ConfirmYesBtn);
+		//ineractions.click(NoDeleteProjectBtn);
 	}
 
-	// add charge code
-	public void AddChargeCode(String notes, String description) {
-		interactions.clickElement(Project_Locators.ProjectTabBtn_Editor);
+	public void dynamicChargeCodeSelection(String chargecode) throws InterruptedException {
+		Thread.sleep(2000);
+		interactions.click(Project_Locators.SelectChargeCodeBtn);
+		interactions.click(Project_Locators.SelectChargeType);
 
-		interactions.clickElement(Project_Locators.SelectchargeProject);
-		interactions.clickElement(Project_Locators.SelectChargeCodeBtn);
-		interactions.clickElement(Project_Locators.SelectChargeType);
-		interactions.clickElement(Project_Locators.ChooseChargeType);
-		interactions.clickElement(Project_Locators.SelectActivityType);
-		interactions.clickElement(Project_Locators.ChooseActivityType);
-		interactions.clickElement(Project_Locators.SelectTask);
-		interactions.clickElement(Project_Locators.ChooseTask);
+			String codetypePath = "//span[contains(text(), '"+chargecode+"')]/ancestor::li";
+			interactions.click(By.xpath(codetypePath));
+		}
+	
+	public void dynamicActivityTypeSelection(String activityType) throws InterruptedException {
+		Thread.sleep(2000);
+		
+		interactions.click(Project_Locators.SelectActivityType);
+			String codetypePath = "//span[contains(text(), '"+activityType+"')]";
+			interactions.click(By.xpath(codetypePath));
+		}
+	
+	public void dynamicTaskSelection(String task) throws InterruptedException {
+		Thread.sleep(2000);
+		
+		interactions.click(Project_Locators.SelectTask);
+			String codetypePath = "//span[contains(text(), '"+task+"')]";
+			interactions.click(By.xpath(codetypePath));
+		}
+	
+	public void AddChargeCode(String notes, String description) {
+		
 		interactions.sendingKeys(Project_Locators.Notes, notes);
 		interactions.sendingKeys(Project_Locators.Description, description);
-		interactions.clickElement(Project_Locators.ClickSaveBtn);
+		//interactions.clickElement(Project_Locators.ClickSaveBtn);
 	}
 
-	// edit charge code
-
-//public void EditChargeProjectDetails(String projectDescription, String projectNotes) throws InterruptedException {
-//    interactions.click(Project_Locators.SelecteditchargeProject);
-//    interactions.click(Project_Locators.SelectChargeCode);
-//    interactions.click(Project_Locators.SelectPencil);
-//    interactions.click(Project_Locators.SelectActivity);
-//    interactions.click(Project_Locators.ChooseActivityType);
-//    interactions.click(Project_Locators.SelectTask);
-//    interactions.click(Project_Locators.ChooseTaskType);
-//    interactions.enterText(Project_Locators.SelectDescription,projectDescription);
-//    interactions.enterText(Project_Locators.SelectNotes,projectNotes);
-//    interactions.click(Project_Locators.SelectSaveBtn);
-//    //wait.until(ExpectedConditions.elementToBeClickable(SelectCancelBtn)).click();
-//}	
-////Delete charge code
-//public void DeleteChargeCode() throws InterruptedException {
-//    interactions.click(Project_Locators.SelectDeleteChargeProject);  	
-//	interactions.click(Project_Locators.SelectDeleteChargeCodeBtn);
-//	//interactions.click(Project_Locators.ConfirmYesBtn);
-//	// interactions.click(Project.Locators.ConfirmNoBtn);
-//}
-	public void Activeclientvisibility() throws InterruptedException {
-		interactions.clickElement(Project_Locators.ProjectTabBtn_Editor);
-
-		interactions.clickElement(Project_Locators.AddProjectButton);
-		interactions.clickElement(Project_Locators.SelectClient);
-		// interactions.click(Project_Locators.ConfirmYesBtn);
-		// interactions.click(Project.Locators.ConfirmNoBtn);
-	}
-
+//	public void Activeclientvisibility() {
+//		interactions.clickElement(Project_Locators.AddProjectButton_Editor);
+//		interactions.clickElement(Project_Locators.SelectClient_Editor);
+//		    String clientListPath = "//ul[@role='listbox']";
+//		    List<WebElement> divElements = interactions.getDriver().findElements(By.xpath(clientListPath));
+//		    int totalDivs = divElements.size();
+//		    for (int i = 0; i < totalDivs; i++) {
+//		        WebElement element = divElements.get(i);
+//		        System.out.println("Div Text: " + element.getText()); 
+//		    }
+//
+//		}
 }

@@ -27,10 +27,11 @@ public class ChargeActivityTypePage {
     }
     
     public void clickChargeActivityType_Viewer() {
-    	interact.clickElement(locators.chargeActivityType_Viewer);
+    	interact.clickElement(locators.chargeActivityType);
     }
     
     public void clickChargeCode() {
+    	interact.sendingKeys(locators.search_Box, "HT");
     	interact.clickElement(locators.chargeCode);
     }
     
@@ -47,15 +48,15 @@ public class ChargeActivityTypePage {
     }
     
     public void clickeditActivityTypeMenu() {
-    	interact.clickElement(locators.editActivityTypeMenu);
+    	interact.clickElement(locators.activityType);
     }
     
     public void clickeditSelectActivityTypeMenu() {
-    	interact.clickElement(locators.editSelectActivityTypeMenu);
+    	interact.clickElement(locators.editSelectactivityType);
     }
     
     public void clickeditTask() {
-    	interact.clickElement(locators.editTask);
+    	interact.clickElement(locators.task);
     }
     
     public void clickeditSelecTask() {
@@ -103,23 +104,15 @@ public class ChargeActivityTypePage {
     }
     
     public void clickaddChargeActivityTypeBtn() {
-    	interact.clickElement(locators.addChargeActivityTypeBtn);
+    	interact.clickElement(locators.addBtn);
     }
     
-    public void clickChargeActivityType_PL() {
-    	interact.clickElement(locators.chargeActivityType_PL);
-    }
-    
-    public void clickChargeActivityType_Editor() {
-    	interact.clickElement(locators.chargeActivityType_Editor);
-    }
-    
-    public void clickChargeActivityType_HR() {
-    	interact.clickElement(locators.chargeActivityType_HR);
+    public void clickChargeActivityType() {
+    	interact.clickElement(locators.chargeActivityType);
     }
     
     public void search_using_charge_code() {
-    	interact.sendingKeys(locators.search_Box, "setuds");
+    	interact.sendingKeys(locators.search_Box, "HT");
     }
     
     public void search_using_project_Name() {

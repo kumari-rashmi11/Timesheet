@@ -4,6 +4,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
+import DataProvider.DashboardTabDataProvider;
 import helper.BaseTest;
 import pages.DashboardPage;
 
@@ -46,12 +47,12 @@ public class RLDashboardTest extends BaseTest{
 		dashboard.claimedtask_RL();
 	}
 	
-	@Test (priority = 5)
-    public void TC_007_Verification_of_claimed_task_hours_change_with_Financial_year_dropdown(){
+	@Test (priority = 5, dataProvider = "dashboardData", dataProviderClass = DashboardTabDataProvider.class)
+    public void TC_007_Verification_of_claimed_task_hours_change_with_Financial_year_dropdown(String selectyear){
 		initial_test();
 		DashboardPage dashboard= new DashboardPage(driver);
 		dashboard.financialdropdown();
-		dashboard.selectyear_RL("2023-2024");
+		dashboard.selectyear_RL(selectyear);
 	}
 	
 	@Test (priority = 6)

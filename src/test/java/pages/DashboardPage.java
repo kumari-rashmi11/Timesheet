@@ -271,7 +271,7 @@ public class DashboardPage {
 		clickingHelper.clickElement(this.locator.yeardropdown);
 	}
 
-	public void selectyear_Editor() {
+	public void selectyear_Editor(String selectyear) {
 		clickingHelper.clickElement(this.locator.selectyear);
 	}
 
@@ -287,7 +287,7 @@ public class DashboardPage {
 		clickingHelper.clickElement(this.locator.repddeditor);
 	}
 
-	public void reporteename_Editor() {
+	public void reporteename_Editor(String repnameeditor) {
 		clickingHelper.clickElement(this.locator.repnameeditor);
 	}
 

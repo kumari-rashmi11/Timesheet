@@ -4,6 +4,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
+import DataProvider.DashboardTabDataProvider;
 import helper.BaseTest;
 import helper.RetryAnalyzer;
 import pages.DashboardPage;
@@ -62,20 +63,21 @@ public class PLDashboardTest extends BaseTest {
 		dashboard.claimedtask_pl();
 	}
 	
-	@Test (priority = 7)
-    public void TC_007_Verification_of_claimed_task_hours_change_with_Financial_year_dropdown_(){
+	@Test (priority = 7, dataProvider = "dashboardData", dataProviderClass = DashboardTabDataProvider.class)
+    public void TC_007_Verification_of_claimed_task_hours_change_with_Financial_year_dropdown_(String selectyear){
 		initial_test();
 		DashboardPage dashboard= new DashboardPage(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,100)");
 		System.out.println("Scrolling operation completed successfully.");
 		dashboard.clickyeardd_pl();
-		dashboard.selectYear("2021-2022");
+//		dashboard.selectYear("2021-2022");
+		dashboard.selectYear(selectyear);
 
 	}
 
-	@Test (priority = 8)
-    public void TC_008_Verification_of_total_billable_and_non_billable_hour_according_to_year_dropdown(){
+	@Test (priority = 8, dataProvider = "dashboardData", dataProviderClass = DashboardTabDataProvider.class)
+    public void TC_008_Verification_of_total_billable_and_non_billable_hour_according_to_year_dropdown(String selectyear){
 		initial_test(); 
 		DashboardPage dashboard= new DashboardPage(driver);
 		dashboard.clickreportee_PL();
@@ -83,7 +85,9 @@ public class PLDashboardTest extends BaseTest {
 		js.executeScript("window.scrollBy(0,100)");
 		System.out.println("Scrolling operation completed successfully.");
 		dashboard.clickyeardd_pl();
-		dashboard.selectYear("2021-2022");
+//		dashboard.selectYear("2021-2022");
+		dashboard.selectYear(selectyear);
+
 
     }
 	

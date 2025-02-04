@@ -1,6 +1,9 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 import helper.Interactions;
 import utils.ClientTabLocators;
 
@@ -17,8 +20,9 @@ public class ClientTabPages {
         	interactions.click(this.locators.clientsTab);
             interactions.click(this.locators.addClientButton);
             interactions.enterText(this.locators.inputClientNameField, clientName);
-            Thread.sleep(2000);
+           
             interactions.click(this.locators.saveClientButton);
+            Thread.sleep(2000);
             System.out.println("Client added successfully: " + clientName);
             return true;
         } catch (Exception e) {
@@ -27,23 +31,31 @@ public class ClientTabPages {
             return false;
         }
     }
-
-    public boolean TC_023_editClientDetails_Editor(String newClientName, String status) {
+    
+    public boolean TC_026_searchClientByName_Editor(String clientName) {
         try {
-        	interactions.click(this.locators.clientsTab);
-            interactions.click(this.locators.clientNameSelector);
+            interactions.click(this.locators.clientsTab);
+            interactions.clearTextAndEnterText(this.locators.searchInputSelector, clientName);
+            System.out.println("Client Searched"); 
+            return true;
+        } catch (Exception e) {
+            System.err.println("Error occurred while searching for the client: " + clientName);
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean TC_023_editClientDetails_Editor(String oldClientName, String newClientName, String status) {
+        try {
+        	interactions.click(this.locators.clientNameSelector);
             interactions.click(this.locators.editClientButtonSelector);
-
-            interactions.enterText(this.locators.editclientInputSelector, newClientName);
-
+            interactions.clearTextAndEnterText(this.locators.editclientInputSelector, newClientName);
             interactions.click(this.locators.editstatusButtonSelector);
-            if (status.equalsIgnoreCase("active")) {
-                interactions.click(this.locators.editActiveSelector);
-            } else {
-                interactions.click(this.locators.editinActiveSelector);
-            }
+            String statusPath = "//span[text()='"+status+"']/ancestor::li";
+            interactions.click(By.xpath(statusPath));
 
             interactions.click(this.locators.editSaveButtonSelector);
+            Thread.sleep(2000);
             System.out.println("Client details updated successfully.");
             return true;
         } catch (Exception e) {
@@ -61,7 +73,7 @@ public class ClientTabPages {
             interactions.click(this.locators.searcherClientName);
             interactions.click(this.locators.clientNameSelector);        
             interactions.click(this.locators.clientDeleteButton);
-
+            Thread.sleep(2000);
             if (confirmDelete) {
                 interactions.click(this.locators.clientDeleteyesButtonSelector);
                 System.out.println("Client successfully deleted: " + clientName);
@@ -77,23 +89,11 @@ public class ClientTabPages {
         }
     }
 
-    public boolean TC_026_searchClientByName_Editor(String clientName) {
-        try {
-            interactions.click(this.locators.clientsTab);
-            interactions.clearTextAndEnterText(this.locators.searchInputSelector, clientName);
-            System.out.println("Client Searched"); 
-            return true;
-        } catch (Exception e) {
-            System.err.println("Error occurred while searching for the client: " + clientName);
-            e.printStackTrace();
-            return false;
-        }
-    }
-
     public boolean TC_027_refreshButton_Editor(String clientName) {
         try {
             TC_026_searchClientByName_Editor(clientName);
             interactions.click(this.locators.refreshButton);
+            Thread.sleep(1500);
             System.out.println("Refresh button working"); 
             return true;
         } catch (Exception e) {
@@ -109,6 +109,7 @@ public class ClientTabPages {
             interactions.click(this.locators.clientsDiv);
             interactions.click(this.locators.searcherClientName);
             interactions.elementVisibility(this.locators.addProjectButtonSelector);
+            Thread.sleep(1500);
             System.out.println("Add project button visibility"); 
             return true;
         } catch (Exception e) {
@@ -127,8 +128,8 @@ public class ClientTabPages {
             interactions.enterText(this.locators.projectNameInputSelector, projectName);
             interactions.enterText(this.locators.descriptionInputElement, description);
             interactions.enterText(this.locators.notesInputElement, notes);
-            Thread.sleep(2000);
             interactions.click(this.locators.saveProjectButtonSelector);
+            Thread.sleep(2000);
             System.out.println("Project added successfully: " + projectName);
             return true;
         } catch (Exception e) {
@@ -138,21 +139,27 @@ public class ClientTabPages {
         }
     }
 
-    public boolean TC_286_editClientProjectTest_Editor(String newProjectName, String newDescription, String newNotes, String clientName, String newClientName) {
+    public void selectClient(String clientName) {
+    	interactions.click(this.locators.clientDropdownList);
+    	String xpath = "//span[text()='"+clientName+"']/ancestor::li";
+    	interactions.scroll(By.xpath(xpath));
+    	interactions.click(By.xpath(xpath));
+    }
+    
+    public boolean TC_286_editClientProjectTest_Editor(String newProjectName, String newDescription, String newNotes, String clientName, String newClientName, String projectName) {
         try {
             TC_026_searchClientByName_Editor(clientName);
             interactions.click(this.locators.clientsDiv);
             interactions.click(this.locators.searcherClientName);
-            interactions.click(this.locators.projectElement);
-
+            clickProjectUnderClient(projectName);	
             interactions.click(this.locators.editButtonElement);
-//            interactions.click(this.locators.clientDropdownList);
-//            interactions.selectFromDropdown(this.locators.dropDownListOfclients, newClientName);
-
+            interactions.enterText(this.locators.editProjectNameInput, newProjectName);
+            selectClient(newClientName);
             interactions.enterText(this.locators.descriptionElement, newDescription);
             interactions.enterText(this.locators.notesElement, newNotes);
 
             interactions.click(this.locators.saveButtonElement);
+            Thread.sleep(2000);
             System.out.println("Project details updated successfully.");
             return true;
         } catch (Exception e) {
@@ -174,6 +181,7 @@ public class ClientTabPages {
             } else {
                 interactions.click(this.locators.deleteYesButton);
             }
+            Thread.sleep(2000);
             System.out.println("Project deletion action completed.");
             return true;
         } catch (Exception e) {
@@ -183,16 +191,21 @@ public class ClientTabPages {
         }
     }
     
-    public void navigateToClientsTab_HR() {
+    public void clickProjectUnderClient(String projectName) {
+    	String projectPath = "//div[text()='"+projectName+"']/ancestor::div[@class='appmagic-label no-focus-outline middle']";
+    	interactions.click(By.xpath(projectPath));
+    }
+    
+    public boolean navigateToClientsTab_HR() {
     	try {
 	    	this.interactions.click(this.locators.clientsTab_HR);
 	    	Thread.sleep(3000);
-	    	
+	    	return true;
     	}
     	catch(Exception e) {
     		System.err.println("Error while navigating to client tab");
             e.printStackTrace();
- 
+            return false;
     	}
     }
     
@@ -200,6 +213,7 @@ public class ClientTabPages {
         try {
         	navigateToClientsTab_HR();
         	interactions.clearTextAndEnterText(this.locators.searchInputSelector, clientName);
+        	Thread.sleep(1500);
             System.out.println("Client Searched"); 
             return true;
         } catch (Exception e) {
@@ -212,7 +226,6 @@ public class ClientTabPages {
     public boolean TC_027_refreshButton_HR(String clientName) {
         try {
             TC_026_searchClientByName_HR(clientName);
-         
             interactions.click(this.locators.refreshButton);
             Thread.sleep(2000);
             System.out.println("Refresh button working"); 
@@ -228,6 +241,9 @@ public class ClientTabPages {
     	try{
     		 TC_026_searchClientByName_HR(clientName);
             interactions.click(this.locators.clientsDiv);
+            interactions.click(this.locators.clientNameSelector);
+            System.out.println("view clients deatils hr executed");
+            Thread.sleep(1500);
     		return true;
     	}catch(Exception e) {
     		 System.err.println("Error while viewing client details");
@@ -236,11 +252,14 @@ public class ClientTabPages {
     	}
     }
     
-    public boolean viewProjectDetails_HR(String clientName) {
+    public boolean viewProjectDetails_HR(String clientName, String projectName) {
         try {
-        	viewClientDetails_HR(clientName);
-            interactions.click(this.locators.searcherClientName);
-            interactions.click(this.locators.projectElement);	            
+        	TC_026_searchClientByName_HR(clientName);
+            interactions.click(this.locators.clientsDiv);
+            interactions.click(this.locators.clientNameSelector);
+            clickProjectUnderClient(projectName);	
+            System.out.println("view projects deatils hr executed");
+            Thread.sleep(1500);
             return true;
         } catch (Exception e) {
             System.err.println("Error occurred while checking client details");
@@ -251,7 +270,7 @@ public class ClientTabPages {
     
     public void navigateToClientTab_PL() {
     	try {
-    		interactions.click(this.locators.clientTab_PL);
+    		interactions.click(this.locators.clientsTab);
     	}
     	catch(Exception e) {
     		System.err.println(e.getMessage());
@@ -264,8 +283,8 @@ public class ClientTabPages {
         	navigateToClientTab_PL();
         	interactions.click(this.locators.addClientButton);
         	interactions.enterText(this.locators.inputClientNameField, clientName);
-            Thread.sleep(2000);
             interactions.click(this.locators.saveClientButton);
+            Thread.sleep(2000);
             System.out.println("Client added successfully: " + clientName);
             return true;
         } catch (Exception e) {
@@ -278,19 +297,14 @@ public class ClientTabPages {
     public boolean TC_023_editClientDetails_PL(String newClientName, String status) {
         try {
         	navigateToClientTab_PL();
-            interactions.click(this.locators.clientNameSelector);
+        	interactions.click(this.locators.clientNameSelector);
             interactions.click(this.locators.editClientButtonSelector);
-
-            interactions.enterText(this.locators.editclientInputSelector, newClientName);
-
+            interactions.clearTextAndEnterText(this.locators.editclientInputSelector, newClientName);
             interactions.click(this.locators.editstatusButtonSelector);
-            if (status.equalsIgnoreCase("active")) {
-                interactions.click(this.locators.editActiveSelector);
-            } else {
-                interactions.click(this.locators.editinActiveSelector);
-            }
-
+            String statusPath = "//span[text()='"+status+"']";
+            interactions.click(By.xpath(statusPath));
             interactions.click(this.locators.editSaveButtonSelector);
+            Thread.sleep(2000);
             System.out.println("Client details updated successfully.");
             return true;
         } catch (Exception e) {
@@ -308,7 +322,7 @@ public class ClientTabPages {
             interactions.click(this.locators.searcherClientName);
             interactions.click(this.locators.clientNameSelector);        
             interactions.click(this.locators.clientDeleteButton);
-
+            Thread.sleep(1500);
             if (confirmDelete) {
                 interactions.click(this.locators.clientDeleteyesButtonSelector);
                 System.out.println("Client successfully deleted: " + clientName);
@@ -316,6 +330,7 @@ public class ClientTabPages {
                 interactions.click(this.locators.clientDeletenoButtonSelector);
                 System.out.println("Client deletion canceled for: " + clientName);
             }
+            Thread.sleep(2000);
             return true;
         } catch (Exception e) {
             System.err.println("Error occurred while trying to delete the client: " + clientName);
@@ -329,6 +344,7 @@ public class ClientTabPages {
         	navigateToClientTab_PL();
             interactions.clearTextAndEnterText(this.locators.searchInputSelector, clientName);
             System.out.println("Client Searched"); 
+            Thread.sleep(1500);
             return true;
         } catch (Exception e) {
             System.err.println("Error occurred while searching for the client: " + clientName);
@@ -342,6 +358,7 @@ public class ClientTabPages {
             TC_026_searchClientByName_PL(clientName);
             interactions.click(this.locators.refreshButton);
             System.out.println("Refresh button working"); 
+            Thread.sleep(1500);
             return true;
         } catch (Exception e) {
             System.err.println("Error occurred while refreshing the client list.");
@@ -357,6 +374,7 @@ public class ClientTabPages {
             interactions.click(this.locators.searcherClientName);
             interactions.elementVisibility(this.locators.addProjectButtonSelector);
             System.out.println("Add project button visibility"); 
+            Thread.sleep(1500);
             return true;
         } catch (Exception e) {
             System.err.println("Error occurred while checking the visibility of the add project button.");
@@ -374,8 +392,8 @@ public class ClientTabPages {
             interactions.enterText(this.locators.projectNameInputSelector, projectName);
             interactions.enterText(this.locators.descriptionInputElement, description);
             interactions.enterText(this.locators.notesInputElement, notes);
-            Thread.sleep(2000);
             interactions.click(this.locators.saveProjectButtonSelector);
+            Thread.sleep(2000);
             System.out.println("Project added successfully: " + projectName);
             return true;
         } catch (Exception e) {
@@ -385,21 +403,20 @@ public class ClientTabPages {
         }
     }
 
-    public boolean TC_286_editClientProjectTest_PL(String newProjectName, String newDescription, String newNotes, String clientName, String newClientName) {
+    public boolean TC_286_editClientProjectTest_PL(String newProjectName, String newDescription, String newNotes, String clientName, String newClientName, String projectName) {
         try {
-            TC_026_searchClientByName_PL(clientName);
+            TC_026_searchClientByName_Editor(clientName);
             interactions.click(this.locators.clientsDiv);
             interactions.click(this.locators.searcherClientName);
-            interactions.click(this.locators.projectElement);
-
+            clickProjectUnderClient(projectName);	
             interactions.click(this.locators.editButtonElement);
-//            interactions.click(this.locators.clientDropdownList);
-//            interactions.selectFromDropdown(this.locators.dropDownListOfclients, newClientName);
-
+            interactions.enterText(this.locators.editProjectNameInput, newProjectName);
+            selectClient(newClientName);
             interactions.enterText(this.locators.descriptionElement, newDescription);
             interactions.enterText(this.locators.notesElement, newNotes);
 
             interactions.click(this.locators.saveButtonElement);
+            Thread.sleep(2000);
             System.out.println("Project details updated successfully.");
             return true;
         } catch (Exception e) {
@@ -422,6 +439,7 @@ public class ClientTabPages {
                 interactions.click(this.locators.deleteYesButton);
             }
             System.out.println("Project deletion action completed.");
+            Thread.sleep(1500);
             return true;
         } catch (Exception e) {
             System.err.println("Error occurred while deleting the project.");

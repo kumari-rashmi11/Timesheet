@@ -7,14 +7,14 @@ public class DashboardLocators {
 	//Locators for HR dashboard_tab
 	public By dashboardButton = By.xpath("//div[@class='appmagic-content-control-name appmagic-control-view canvasContentDiv _vst_']//div[text()='Timesheet Dashboard']");
 //    public By dashboardButton = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(4) > div > div > div:nth-child(9) > div > div > div > div > div:nth-child(2) > div > div > div > div > div.virtualized-gallery.hideScrollbar > div > div > div:nth-child(1) > div.canvasContentDiv.container_1vt1y2p > div > div:nth-child(2) > div > div > div > div > button");
-    public By greenrl = By.xpath("//div[text()='Amisha Sen']");
-    public By purplepl = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(4) > div > div > div:nth-child(8) > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(43) > div > div > div > div > div.virtualized-gallery.hideScrollbar > div > div > div:nth-child(9) > div.canvasContentDiv.container_1vt1y2p > div > div:nth-child(1) > div > div > div > div > div");
-    public By blackuser = By.xpath("//div[text()='A test']");
+    public By greenrl = By.xpath("//div[text()='A test kim']");
+    public By purplepl = By.xpath("//div[text()='Harshita  Makode']");
+    public By blackuser = By.xpath("//div[text()='aa demo']");
 	
 	
 	//Locators for PL dashboard_tab
     public By Leaddb = By.xpath("//div[text()='Lead Dashboard']");
-    public By clickreporteePL = By.xpath("(//div[contains(text(), 'A test')]//ancestor::div[@class='container_1f0sgyp']//child::div)[1]");
+    public By clickreporteePL = By.xpath("(//div[contains(text(), 'Uddhav Gupta')]//ancestor::div[@class='container_1f0sgyp']//child::div)[1]");
     public By switchoffpl = By.cssSelector("div[role='switch'] > .appmagic-toggleSwitch-off");
 	public By switchonpl = By.cssSelector("div[role='switch'] > .appmagic-toggleSwitch-on");
 	public By allclientsPL = By.xpath("//div[text()='Associated Clients']");
@@ -57,7 +57,7 @@ public class DashboardLocators {
 	
 	public By rightarrow = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(4) > div > div > div:nth-child(8) > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(63) > div > div > div > div > div.virtualized-gallery.hideScrollbar > div > div > div:nth-child(1) > div.canvasContentDiv.container_1vt1y2p > div > div:nth-child(4) > div > div > div > div");
 	public By approvebtn = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(5) > div > div > div:nth-child(32) > div > div > div > div > button");
-	public By repddeditor = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=56]//div[contains(@class, 'react-knockout-control')]//div");
+	public By repddeditor = By.cssSelector(".dropdown_siena_7e77e0da59c62a83 [data-bind='style\\: \\{ width\\: properties\\.ChevronWidth \\}']");
 	public By repnameeditor = By.xpath("//div[contains(@class, 'drop-content')]//div[contains(@class, 'appmagic-dropdownFlyout')]//div[@role='listbox']//div[position()=8]");
 	public By filterbtneditor = By.xpath("//div[@id='publishedCanvas']//div[contains(@class, 'app-canvas')]//div[contains(@class, 'appmagic-borderfill-container')]//div[contains(@class, 'appmagic-border-inner')]//div[contains(@class, 'scrollContainer') and contains(@class, 'scrollbar')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'appmagic-card') and contains(@class, 'card')]//div[position()=55]//div[contains(@class, 'react-knockout-control')]//div");
 

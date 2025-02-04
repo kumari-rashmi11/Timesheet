@@ -1,7 +1,9 @@
 package test.Editor;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
+import DataProvider.EmployeeTabDataProvider;
 import helper.BaseTest;
 import helper.Interactions;
 import helper.NavigateToTimesheet;
@@ -13,244 +15,219 @@ public class EmployeesTest_Editor extends BaseTest {
 	public void initialTest() {
 		
 		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		RoleSelection roleSelectionPage = new RoleSelection(driver);
-		
-		NavigateToTimesheet nt = new NavigateToTimesheet(driver);
-	    nt.clickTeamsBtn();
-	    nt.clickTimesheetBtn();
-	    nt.clickTimesheetLink();
-		
-		interact.executeWithDelay(() -> roleSelectionPage.iframeSwitch1());
-		interact.executeWithDelay(() -> roleSelectionPage.iframeSwitch2());
-		interact.executeWithDelay(() -> roleSelectionPage.selectRole("Editor"));
-		interact.executeWithDelay(() -> ep.clickEmployeesTab_Editor());
+//		RoleSelection roleSelectionPage = new RoleSelection(driver);
+//		
+//		NavigateToTimesheet nt = new NavigateToTimesheet(driver);
+//		nt.clickTeamsBtn();
+//		nt.clickTimesheetBtn();
+//		nt.clickTimesheetLink();
+//		
+//		roleSelectionPage.iframeSwitch1();
+//		roleSelectionPage.iframeSwitch2();
+//		roleSelectionPage.selectRole("Editor");
+		ep.clickEmployeesTab();
 	}
 	
-	@Test(priority = 1)
+	@Test(priority = 1, retryAnalyzer = RetryAnalyzer.class)
 	public void details_of_employees_Editor_TC017() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.employeeDetails());
+		ep.employeeDetails();
 	}
 	
 	@Test(priority = 2, retryAnalyzer = RetryAnalyzer.class)
 	public void modifying_details_of_employees_Editor_TC018() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickpencilIcon());
-		interact.executeWithDelay(() -> ep.clickStatusDropDown());
-		interact.executeWithDelay(() -> ep.selectRelievedStatus());
+		ep.selectEmployeeAndPencilIcon();
+		ep.clickStatusDropDown();
+		ep.selectRelievedStatus();
 //		interact.executeWithDelay(() -> ep.clickSaveBtn());
 	}
 	
-	@Test(priority = 3, retryAnalyzer = RetryAnalyzer.class)
-	public void search_Operation_Editor_TC019() {
+	@Test(priority = 3, retryAnalyzer = RetryAnalyzer.class, dataProvider = "searchemployee", dataProviderClass = EmployeeTabDataProvider.class)
+	public void search_Operation_Editor_TC019(String name) {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.searchOperation());
+		ep.searchOperation(name);
 	}
 	
-	@Test(priority = 4, retryAnalyzer = RetryAnalyzer.class)
-	public void refresh_Operation_Editor_TC020() {
+	@Test(priority = 4, retryAnalyzer = RetryAnalyzer.class, dataProvider = "searchemployee", dataProviderClass = EmployeeTabDataProvider.class)
+	public void refresh_Operation_Editor_TC020(String name) {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.searchOperation());
-		interact.executeWithDelay(() -> ep.clickRefreshBtn());
+		ep.searchOperation(name);
+		ep.clickRefreshBtn();
 	}
 	
 	@Test(priority = 5, retryAnalyzer = RetryAnalyzer.class)
 	public void add_Employee_Editor_TC021() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.clickAddBtn());
-		interact.executeWithDelay(() -> ep.firstName());
-		interact.executeWithDelay(() -> ep.lastName());
-		interact.executeWithDelay(() -> ep.empNo());
-		interact.executeWithDelay(() -> ep.emailInput());
-		interact.executeWithDelay(() -> ep.clickLeadMenu());
-		interact.executeWithDelay(() -> ep.clickChooseLead());
-		interact.executeWithDelay(() -> ep.clickAddEmployee());
+		ep.clickAddBtn();
+		ep.firstName();
+		ep.lastName();
+		ep.empNo();
+		ep.emailInput();
+		ep.clickLeadMenu();
+//		ep.clickChooseLead();
+		ep.clickPracticeLead();
+		ep.clickAddEmployee();
 	}
 	
 	@Test(priority = 6, retryAnalyzer = RetryAnalyzer.class)
-	public void Modification_of_Employee_status_TC131() {
+	public void Modification_of_Employee_status_Editor_TC131() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickpencilIcon());
-		interact.executeWithDelay(() -> ep.clickStatusDropDown());
-		interact.executeWithDelay(() -> ep.selectRelievedStatus());
-//		interact.executeWithDelay(() -> ep.clickSaveBtn());
+		ep.selectEmployeeAndPencilIcon();
+		ep.clickStatusDropDown();
+		ep.selectRelievedStatus();
+//		ep.clickSaveBtn();
 	}
 	
 	@Test(priority = 7, retryAnalyzer = RetryAnalyzer.class)
 	public void modify_Employee_Status_Editor_TC161() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickmodifyIcon());
-		interact.executeWithDelay(() -> ep.clickStatusDropDown());
-		interact.executeWithDelay(() -> ep.selectRelievedStatus());
-//		interact.executeWithDelay(() -> ep.clickSaveBtn());
+		// change lead Name accordingly which has Modify Icon
+		ep.searchOperationForLead("Sahil");
+		ep.selectEmployeeAndPencilIcon();
+		ep.clickStatusDropDown();
+		ep.selectRelievedStatus();
+//		ep.clickSaveBtn();
 	}
 	
-	@Test(priority = 8, retryAnalyzer = RetryAnalyzer.class)
-	public void Lead_change_of_active_employee_TC234() {
-		initialTest();
-		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickpencilIcon());
-		interact.executeWithDelay(() -> ep.clickleadDropdown_Editor());
-		interact.executeWithDelay(() -> ep.clickChooseLead_Editor());
-		interact.executeWithDelay(() -> ep.enterEffectiveFrom());
-//		interact.executeWithDelay(() -> ep.clickSaveBtn());
-	}
+//	@Test(priority = 8)
+//	public void Lead_change_of_active_employee_Editor_TC234() {
+//		initialTest();
+//		EmployeesPage ep = new EmployeesPage(driver);
+//		Interactions interact = new Interactions(driver);
+//		ep.clickEmployeeAndPencilIcon();
+//		System.out.println("First");
+//		ep.clickSelectLead();
+//		System.out.println("Second");
+//		ep.enterEffectiveFrom();
+//		ep.selectReasonDropdown();
+//		ep.enterReasonDropdown();
+//		ep.clickSaveBtn();
+//	}
 	
-	@Test(priority = 9, retryAnalyzer = RetryAnalyzer.class)
-	public void Lead_change_of_Inactive_employee_TC235() {
+	@Test(priority = 9)
+	public void Lead_change_of_Inactive_employee_Editor_TC235() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.clickInactiveTab());
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickpencilIcon());
-		interact.executeWithDelay(() -> ep.clickStatusDropDown());
-		interact.executeWithDelay(() -> ep.selectActiveStatus());
+		ep.clickInactiveTab();
+		ep.selectEmployeeAndPencilIcon();
+		ep.clickStatusDropDown();
+		ep.selectActiveStatus();
 		
-		interact.executeWithDelay(() -> ep.clickleadDropdown_Editor());
-		interact.executeWithDelay(() -> ep.clickChooseLead_Editor());
-		interact.executeWithDelay(() -> ep.enterEffectiveFrom());
-//		interact.executeWithDelay(() -> ep.clickSaveBtn());
+		ep.clickleadDropdown();
+		ep.clickChooseLead();
+		ep.enterEffectiveFrom();
+//		ep.clickSaveBtn();
 	}
 	
 	@Test(priority = 10, retryAnalyzer = RetryAnalyzer.class)
-	public void Lead_change_of_Relieved_employee_TC236() {
+	public void Lead_change_of_Relieved_employee_Editor_TC236() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.clickRelievedTab());
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickpencilIcon());
-		interact.executeWithDelay(() -> ep.clickStatusDropDown());
-		interact.executeWithDelay(() -> ep.selectActiveStatus());
-		interact.executeWithDelay(() -> ep.clickleadDropdown_Editor());
-		interact.executeWithDelay(() -> ep.clickChooseLead_Editor());
-		interact.executeWithDelay(() -> ep.enterEffectiveFrom());
-		interact.executeWithDelay(() -> ep.selectReasonDropdown_Editor());
-		interact.executeWithDelay(() -> ep.enterReasonDropdown_Editor());
-//		interact.executeWithDelay(() -> ep.clickSaveBtn());
+		ep.clickRelievedTab();
+		ep.selectEmployeeAndPencilIcon();
+		ep.clickStatusDropDown();
+		ep.selectActiveStatus();
+		ep.clickleadDropdown();
+		ep.clickChooseLead();
+		ep.enterEffectiveFrom();
+		ep.selectReasonDropdown();
+		ep.enterReasonDropdown();
+//		ep.clickSaveBtn();
 	}
 	
 	@Test(priority = 11, retryAnalyzer = RetryAnalyzer.class)
-	public void Effective_date_change_of_Active_employee_TC237() {
+	public void Effective_date_change_of_Active_employee_Editor_TC237() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickpencilIcon());
-		interact.executeWithDelay(() -> ep.enterFutureEffectiveFrom());
-//		interact.executeWithDelay(() -> ep.clickSaveBtn());
+		ep.selectEmployeeAndPencilIcon();
+		ep.enterFutureEffectiveFrom();
+//		ep.clickSaveBtn();
 	}
 	
 	@Test(priority = 12, retryAnalyzer = RetryAnalyzer.class)
-	public void Effective_date_change_of_Relived_employee_TC239() {
+	public void Effective_date_change_of_Relieved_employee_Editor_TC239() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.clickRelievedTab());
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickpencilIcon());
-		interact.executeWithDelay(() -> ep.clickStatusDropDown());
-		interact.executeWithDelay(() -> ep.selectActiveStatus());
-		interact.executeWithDelay(() -> ep.enterEffectiveFrom());
-//		interact.executeWithDelay(() -> ep.clickSaveBtn());
+		ep.clickRelievedTab();
+		ep.selectEmployeeAndPencilIcon();
+		ep.clickStatusDropDown();
+		ep.selectActiveStatus();
+		ep.enterEffectiveFrom();
+//		ep.clickSaveBtn();
 	}
 	
 	@Test(priority = 13, retryAnalyzer = RetryAnalyzer.class)
-	public void Future_Effective_date_change_of_Active_employee_TC240() {
+	public void Future_Effective_date_change_of_Active_employee_Editor_TC240() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickpencilIcon());
-		interact.executeWithDelay(() -> ep.enterFutureEffectiveFrom());
+		ep.selectEmployeeAndPencilIcon();
+		ep.enterFutureEffectiveFrom();
 	}
 	
 	@Test(priority = 14, retryAnalyzer = RetryAnalyzer.class)
-	public void Past_Effective_date_change_of_Active_employee_TC241() {
+	public void Past_Effective_date_change_of_Active_employee_Editor_TC241() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickpencilIcon());
-		interact.executeWithDelay(() -> ep.enterPastEffectiveFrom());
+		ep.selectEmployeeAndPencilIcon();
+		ep.enterPastEffectiveFrom();
 	}
 	
 	@Test(priority = 15, retryAnalyzer = RetryAnalyzer.class)
-	public void Equal_Effective_date_change_of_Active_employee_TC242() {
+	public void Equal_Effective_date_change_of_Active_employee_Editor_TC242() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickpencilIcon());
-		interact.executeWithDelay(() -> ep.enterEffectiveFrom());
-//		interact.executeWithDelay(() -> ep.clickSaveBtn());
+		ep.selectEmployeeAndPencilIcon();
+		ep.enterEffectiveFrom();
+//		ep.clickSaveBtn();
 	}
 	
 	@Test(priority = 16, retryAnalyzer = RetryAnalyzer.class)
-	public void Future_Effective_date_change_of_Inactive_employee_TC243() {
+	public void Future_Effective_date_change_of_Inactive_employee_Editor_TC243() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.clickInactiveTab());
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickpencilIcon());
-		interact.executeWithDelay(() -> ep.enterFutureEffectiveFrom());
-//		interact.executeWithDelay(() -> ep.clickSaveBtn());
+		ep.clickInactiveTab();
+		ep.selectEmployeeAndPencilIcon();
+		ep.enterFutureEffectiveFrom();
+//		ep.clickSaveBtn();
 	}
 	
 	@Test(priority = 17, retryAnalyzer = RetryAnalyzer.class)
-	public void Past_Effective_date_change_of_Inactive_employee_TC244() {
+	public void Past_Effective_date_change_of_Inactive_employee_Editor_TC244() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
 		Interactions interact = new Interactions(driver);
 		interact.executeWithDelay(() -> ep.clickInactiveTab());
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickpencilIcon());
+		interact.executeWithDelay(() -> ep.selectEmployeeAndPencilIcon());
 		interact.executeWithDelay(() -> ep.enterPastEffectiveFrom());
 //		interact.executeWithDelay(() -> ep.clickSaveBtn());
 	}
 	
 	@Test(priority = 18, retryAnalyzer = RetryAnalyzer.class)
-	public void Equal_Effective_date_change_of_Inactive_employee_TC245() {
+	public void Equal_Effective_date_change_of_Inactive_employee_Editor_TC245() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
 		Interactions interact = new Interactions(driver);
 		interact.executeWithDelay(() -> ep.clickInactiveTab());
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickpencilIcon());
+		interact.executeWithDelay(() -> ep.selectEmployeeAndPencilIcon());
 		interact.executeWithDelay(() -> ep.enterEffectiveFrom());
 //		interact.executeWithDelay(() -> ep.clickSaveBtn());
 	}
 	
 	@Test(priority = 19, retryAnalyzer = RetryAnalyzer.class)
-	public void Future_Effective_date_change_of_Relieved_Employee_TC246() {
+	public void Future_Effective_date_change_of_Relieved_Employee_Editor_TC246() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
 		Interactions interact = new Interactions(driver);
 		interact.executeWithDelay(() -> ep.clickRelievedTab());
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickpencilIcon());
+		interact.executeWithDelay(() -> ep.selectEmployeeAndPencilIcon());
 		interact.executeWithDelay(() -> ep.clickStatusDropDown());
 		interact.executeWithDelay(() -> ep.selectActiveStatus());
 		interact.executeWithDelay(() -> ep.enterFutureEffectiveFrom());
@@ -258,13 +235,12 @@ public class EmployeesTest_Editor extends BaseTest {
 	}
 	
 	@Test(priority = 20, retryAnalyzer = RetryAnalyzer.class)
-	public void Past_Effective_date_change_of_Relieved_Employee_TC247() {
+	public void Past_Effective_date_change_of_Relieved_Employee_Editor_TC247() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
 		Interactions interact = new Interactions(driver);
 		interact.executeWithDelay(() -> ep.clickRelievedTab());
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickpencilIcon());
+		interact.executeWithDelay(() -> ep.selectEmployeeAndPencilIcon());
 		interact.executeWithDelay(() -> ep.clickStatusDropDown());
 		interact.executeWithDelay(() -> ep.selectActiveStatus());
 		interact.executeWithDelay(() -> ep.enterPastEffectiveFrom());
@@ -272,13 +248,12 @@ public class EmployeesTest_Editor extends BaseTest {
 	}
 	
 	@Test(priority = 21, retryAnalyzer = RetryAnalyzer.class)
-	public void Effective_date_change_of_Relieved_Employee_TC248() {
+	public void Effective_date_change_of_Relieved_Employee_Editor_TC248() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
 		Interactions interact = new Interactions(driver);
 		interact.executeWithDelay(() -> ep.clickRelievedTab());
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickpencilIcon());
+		interact.executeWithDelay(() -> ep.selectEmployeeAndPencilIcon());
 		interact.executeWithDelay(() -> ep.clickStatusDropDown());
 		interact.executeWithDelay(() -> ep.selectActiveStatus());
 		interact.executeWithDelay(() -> ep.enterEffectiveFrom());
@@ -306,8 +281,7 @@ public class EmployeesTest_Editor extends BaseTest {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
 		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickmodifyIcon());
+		interact.executeWithDelay(() -> ep.selectEmployeeAndPencilIcon());
 		interact.executeWithDelay(() -> ep.clickStatusDropDown());
 		interact.executeWithDelay(() -> ep.selectInActiveStatus());
 //		interact.executeWithDelay(() -> ep.clickSaveBtn());
@@ -319,106 +293,106 @@ public class EmployeesTest_Editor extends BaseTest {
 		EmployeesPage ep = new EmployeesPage(driver);
 		Interactions interact = new Interactions(driver);
 		interact.executeWithDelay(() -> ep.clickInactiveTab());
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickmodifyIcon());
+		interact.executeWithDelay(() -> ep.selectEmployeeAndPencilIcon());
 		interact.executeWithDelay(() -> ep.clickStatusDropDown());
 		interact.executeWithDelay(() -> ep.selectRelievedStatus());
 //		interact.executeWithDelay(() -> ep.clickSaveBtn());
 	}
 	
-	@Test(priority = 27, retryAnalyzer = RetryAnalyzer.class)
+	@Test(priority = 26, retryAnalyzer = RetryAnalyzer.class)
 	public void change_status_Relieved_to_Inactive_Editor_TC260() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
 		Interactions interact = new Interactions(driver);
 		interact.executeWithDelay(() -> ep.clickRelievedTab());
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickmodifyIcon());
+		interact.executeWithDelay(() -> ep.selectEmployeeAndPencilIcon());
 		interact.executeWithDelay(() -> ep.clickStatusDropDown());
 		interact.executeWithDelay(() -> ep.selectInActiveStatus());
 //		interact.executeWithDelay(() -> ep.clickSaveBtn());
 	}
 	
-	@Test(priority = 28, retryAnalyzer = RetryAnalyzer.class)
+	@Test(priority = 27, retryAnalyzer = RetryAnalyzer.class)
 	public void change_status_Relieved_to_Active_Editor_TC261() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
 		Interactions interact = new Interactions(driver);
 		interact.executeWithDelay(() -> ep.clickRelievedTab());
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickmodifyIcon());
+		interact.executeWithDelay(() -> ep.selectEmployeeAndPencilIcon());
+		interact.executeWithDelay(() -> ep.clickStatusDropDown());
+		interact.executeWithDelay(() -> ep.selectActiveStatus());
+//		interact.executeWithDelay(() -> ep.clickSaveBtn());
+	}
+	
+	@Test(priority = 28, retryAnalyzer = RetryAnalyzer.class)
+	public void change_status_Inactive_to_Active_Editor_TC262() {
+		initialTest();
+		EmployeesPage ep = new EmployeesPage(driver);
+		Interactions interact = new Interactions(driver);
+		interact.executeWithDelay(() -> ep.clickInactiveTab());
+		interact.executeWithDelay(() -> ep.selectEmployeeAndPencilIcon());
 		interact.executeWithDelay(() -> ep.clickStatusDropDown());
 		interact.executeWithDelay(() -> ep.selectActiveStatus());
 //		interact.executeWithDelay(() -> ep.clickSaveBtn());
 	}
 	
 	@Test(priority = 29, retryAnalyzer = RetryAnalyzer.class)
-	public void change_status_Inactive_to_Active_Editor_TC262() {
-		initialTest();
-		EmployeesPage ep = new EmployeesPage(driver);
-		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.clickInactiveTab());
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickmodifyIcon());
-		interact.executeWithDelay(() -> ep.clickStatusDropDown());
-		interact.executeWithDelay(() -> ep.selectActiveStatus());
-//		interact.executeWithDelay(() -> ep.clickSaveBtn());
-	}
-	
-	@Test(priority = 30, retryAnalyzer = RetryAnalyzer.class)
 	public void change_status_Active_to_Relieved_Editor_TC263() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
 		Interactions interact = new Interactions(driver);
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickmodifyIcon());
+		interact.executeWithDelay(() -> ep.selectEmployeeAndPencilIcon());
 		interact.executeWithDelay(() -> ep.clickStatusDropDown());
 		interact.executeWithDelay(() -> ep.selectRelievedStatus());
 //		interact.executeWithDelay(() -> ep.clickSaveBtn());
 	}
 	
-	@Test(priority = 31, retryAnalyzer = RetryAnalyzer.class)
-	public void components_of_past_and_persent_lead_info_screen_Editor_TC296() {
+	@Test(priority = 30, retryAnalyzer = RetryAnalyzer.class)
+	public void components_of_past_and_present_lead_info_screen_Editor_TC296() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
 		Interactions interact = new Interactions(driver);
 		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickEyeIconEditor());
+		interact.executeWithDelay(() -> ep.clickEyeIcon());
+		Assert.assertEquals(ep.verifyLeadName(), "Lead Name");
+		Assert.assertEquals(ep.verifyEffectiveFrom(), "Effective From");
+		Assert.assertEquals(ep.verifyEndDate(), "End Date");
+		Assert.assertEquals(ep.verifyRequestedBy(), "Requested By");
+		
 	}
 	
-	@Test(priority = 32, retryAnalyzer = RetryAnalyzer.class)
+	@Test(priority = 31, retryAnalyzer = RetryAnalyzer.class)
 	public void visibility_of_past_and_persent_lead_info_screen_Editor_TC297() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
 		Interactions interact = new Interactions(driver);
 		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickEyeIconEditor());
+		interact.executeWithDelay(() -> ep.clickEyeIcon());
+		Assert.assertEquals(ep.verifypastAndPresentInfo(), "Past and Present lead Info");
 	}
 	
-	@Test(priority = 33, retryAnalyzer = RetryAnalyzer.class)
+	@Test(priority = 32, retryAnalyzer = RetryAnalyzer.class)
 	public void closing_past_and_persent_lead_info_screen_Editor_TC298() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
 		Interactions interact = new Interactions(driver);
 		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickEyeIconEditor());
+		interact.executeWithDelay(() -> ep.clickEyeIcon());
 		
 		interact.executeWithDelay(() -> ep.clickCloseBtn());
 	}
 	
-	@Test(priority = 34, retryAnalyzer = RetryAnalyzer.class)
+	@Test(priority = 33, retryAnalyzer = RetryAnalyzer.class)
 	public void change_Effective_date_current_lead_of_inactive_employee_Editor_TC238() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
 		Interactions interact = new Interactions(driver);
 		interact.executeWithDelay(() -> ep.clickInactiveTab());
-		interact.executeWithDelay(() -> ep.employeeDetails());
-		interact.executeWithDelay(() -> ep.clickmodifyIcon());
+		interact.executeWithDelay(() -> ep.selectEmployeeAndPencilIcon());
 		interact.executeWithDelay(() -> ep.effectiveDate());
 //		interact.executeWithDelay(() -> ep.clickSaveBtn());
 	}
 	
-	@Test(priority = 35, retryAnalyzer = RetryAnalyzer.class)
+	@Test(priority = 34, retryAnalyzer = RetryAnalyzer.class)
 	public void relieved_Employees_only_in_relieved_tab_Editor_TC257() {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);

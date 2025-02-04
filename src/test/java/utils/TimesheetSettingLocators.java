@@ -4,48 +4,43 @@ import org.openqa.selenium.By;
 
 public class TimesheetSettingLocators {
 	// Locators for various elements on the Timesheet Setting Page
-    public By timesheetSettingTab_RL = By.cssSelector(".canvasContentDiv.container_1g5unre  .appmagic-content-control-name.appmagic-control-view.canvasContentDiv div[role='list']  .react-gallery-items-window > div:nth-of-type(4)");
+    public By timesheetSettingTab = By.xpath("(//div[contains(text(), 'Timesheet Setting')]//ancestor::div[@class='container_1f0sgyp']//child::div[position()=1])[1]");
     
-    public By timesheetSettingTab_Editor = By.cssSelector(".canvasContentDiv.container_1g5unre  .appmagic-content-control-name.appmagic-control-view.canvasContentDiv div[role='list']  .react-gallery-items-window > div:nth-of-type(6)");
+    public By TimesheetSettingPageTitle = By.xpath("//div[text() ='Project Timesheet']");
     
-    public By timesheetSettingTab_PL = By.cssSelector(".canvasContentDiv.container_1g5unre  .appmagic-content-control-name.appmagic-control-view.canvasContentDiv div[role='list']  .react-gallery-items-window > div:nth-of-type(6)");
+    public By isAddEmployeePage = By.xpath("//div[text() ='Timesheet Setting']");
     
-    public By timesheetSettingTab_Viewer = By.cssSelector(".canvasContentDiv.container_1g5unre  .appmagic-content-control-name.appmagic-control-view.canvasContentDiv div[role='list']  .react-gallery-items-window > div:nth-of-type(6)");
-    
-    public By timesheetSettingTab_HR = By.cssSelector(".canvasContentDiv.container_1g5unre  .appmagic-content-control-name.appmagic-control-view.canvasContentDiv div[role='list']  .react-gallery-items-window > div:nth-of-type(6)");
-    
-    public By TimesheetSettingPageTitle = By.cssSelector(".canvasContentDiv.container_gfluoe > div > div:nth-of-type(4) div[role='presentation'] > .appmagic-label-text");
-    
-    public By isAddEmployeePage = By.cssSelector(".canvasContentDiv.container_gfluoe > div > div:nth-of-type(8) div[role='presentation'] > .appmagic-label-text");
-    
-    public By ReclicktimesheetSettingTab = By.cssSelector("div.react-gallery-items-window > div.virtualized-gallery-item:nth-child(4)");
+    public By ReclicktimesheetSettingTab = By.xpath("//div[@aria-posinset='4']");
     
     public By employeeSelect = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(5) > div > div > div:nth-child(17) > div > div > div > div > div.virtualized-gallery.hideScrollbar > div > div > div > div.canvasContentDiv.container_1vt1y2p > div > div:nth-child(2) > div > div > div > div");
-    public By addEmployee = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(5) > div > div > div:nth-child(18) > div > div > div > div > button");   
-    public By enterName = By.cssSelector("#react-combobox-view-0");
-    public By selectName = By.cssSelector("#powerapps-flyout-react-combobox-view-0 > div > ul > li > div");
-    public By clientType = By.cssSelector("#react-combobox-view-1");
-    public By clientcategory = By.cssSelector("#powerapps-flyout-react-combobox-view-1 > div > ul > li:nth-child(2) > div");
-    public By Selectlocation = By.cssSelector("#react-combobox-view-2");
-    public By chooseLocation = By.cssSelector("#powerapps-flyout-react-combobox-view-2 > div > ul > li:nth-child(3) > div");
+    public By addEmployee = By.xpath("//div[contains(text(), 'Add')]//ancestor::button");
     
-    public By giveNotes = By.cssSelector(".appmagic-textbox > input[title='Note']");
+    public By enterName = By.xpath("//div[@title='EmployeeId']");
+    public By selectName = By.xpath("//span[contains(text(), 'Timezone  test2')]//parent::div");
+    public By clientType = By.xpath("//div[@data-control-name='ClientNameCB']");
+    public By clientcategory = By.xpath("//span[contains(text(), 'American Express')]//parent::div");
     
-    public By cancelButton = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(7) > div > div > div:nth-child(10) > div > div > div > div > button > div");
+    public By Selectlocation = By.xpath("//div[@title='Location']");
+    public By chooseLocation = By.xpath("//span[contains(text(), 'Shillong')]//parent::div");
     
-    public By saveBtn = By.cssSelector(".canvasContentDiv.container_gfluoe > div > div:nth-of-type(11)");
+    public By giveNotes = By.xpath("//input[@title='Note']");
     
-    public By selectNewEmployee = By.cssSelector("div:nth-of-type(1) > .canvasContentDiv.container_1vt1y2p > div > div:nth-of-type(2) .powerapps-icon");
+    public By periodStart = By.xpath("//input[@title='periodStart']");
     
+    public By periodEnd = By.xpath("//input[@title='periodEnd']");
     
-    public By editNewEmployeeBtn = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(6) > div > div > div:nth-child(11) > div > div > div > div");
-    public By selectNewEmployeeLocation = By.cssSelector("div:nth-of-type(3) .appmagic-typed-card.card_c5uw0h > div:nth-of-type(3)");
-    public By chooseEditedLocation = By.cssSelector("ul[role='listbox'] > li:nth-of-type(4)");
+    public By cancelButton = By.xpath("//div[contains(text(), 'Cancel')]//ancestor::button");
     
-    public By deleteEmployee = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(6) > div > div > div:nth-child(9) > div > div > div > div");
-    public By confirmEmploye = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(6) > div > div > div:nth-child(23) > div > div > div > div > button > div");
+    public By saveBtn = By.xpath("//div[contains(text(), 'Save')]//ancestor::div[@data-control-name='Emp-Client-AssociationSaveBTN']");
     
-    public By searchBox = By.cssSelector(".appmagic-textbox > input[title='Search by Client or Employee']");
+    public By selectNewEmployee = By.xpath("//div[@data-control-name='TSEmployeNavIcon']");
     
-    public By refreshBtn = By.cssSelector(".canvasContentDiv.container_gfluoe > div > div:nth-of-type(8) .powerapps-icon");
+    public By editNewEmployeeBtn = By.xpath("//div[@data-control-name='Icon1_19']");
+    
+    public By deleteEmployee = By.xpath("//div[@data-control-name='Icon1_19']");
+    public By confirmEmploye = By.xpath("//div[contains(text(), 'Yes')]//ancestor::button");
+    
+    public By searchBox = By.xpath("//input[@title='Search by Client or Employee']");
+    
+    public By refreshBtn = By.xpath("//div[@data-control-name='TSResetIcon']");
 }

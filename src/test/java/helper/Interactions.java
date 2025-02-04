@@ -170,5 +170,19 @@ public class Interactions {
 		WebElement option = wait.until(ExpectedConditions.elementToBeClickable(optionElement));
 		option.click();
 	}
+	
+	public void scroll(By element) {
+   	 try {
+            
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            WebElement elementToReach = wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+            js.executeScript("arguments[0].scrollIntoView(true);", elementToReach);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+   }
 
+	public WebDriver getDriver() {
+	    return this.driver;
+	}
 }

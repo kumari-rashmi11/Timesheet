@@ -76,12 +76,12 @@ public class ExportLocators {
 	public By monthDropdown = By.cssSelector(
 //			"//div[@aria-label='Year']//parent::div[@class='slicer-content-wrapper']");
 			"visual-container:nth-of-type(9) > .bringToFront > div[role='group']  .sub-selectable.themableBackgroundColor.themableBorderColorSolid.vcBody  visual-modern div[role='combobox'] > .slicer-restatement");
+	
+	public By workStartDate = By.xpath(
+			"//input[@aria-label='Start date. Available input range 9/6/2009 to 2/15/2025']");
 
 	public By workEndDate = By.xpath(
-			"//input[@aria-label='Start date. Available input range 4/1/2024 to 1/18/2025']");
-
-	public By workStartDate = By.xpath(
-			"//input[@aria-label=\"Start date. Available input range 9/6/2009 to 1/25/2025\"]");
+			"//input[@aria-label='End date. Available input range 9/6/2009 to 2/15/2025']");
 
 	public By chooseStatus = By.cssSelector(
 			"div:nth-of-type(11) div[role='listbox'] > div[role='none'] > div[role='none'] > div[role='none'] > div > div:nth-of-type(2) > div[role='option']");

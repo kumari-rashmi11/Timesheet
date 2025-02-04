@@ -52,17 +52,17 @@ public class BaseTest {
     	
     	
     	
-    	
-    	RoleSelection roleSelectionPage = new RoleSelection(driver);
-//        roleSelectionPage.switchToIframe();
-        // Select the desired role 
-    	roleSelectionPage.timesheetNavigation();
-        roleSelectionPage.iframeSwitch1();
-        roleSelectionPage.iframeSwitch2();
+   	
+   	RoleSelection roleSelectionPage = new RoleSelection(driver);
+////        roleSelectionPage.switchToIframe();
+//        // Select the desired role 
+   	roleSelectionPage.timesheetNavigation();
+       roleSelectionPage.iframeSwitch1();
+       roleSelectionPage.iframeSwitch2();
         roleSelectionPage.selectRLRole();
     	
 		
-    }
+    }   
     
     
 }

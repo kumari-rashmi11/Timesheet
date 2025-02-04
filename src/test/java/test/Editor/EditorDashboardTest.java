@@ -4,6 +4,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
+import DataProvider.DashboardTabDataProvider;
+import DataProvider.EmployeeTabDataProvider;
 import helper.BaseTest;
 import pages.DashboardPage;
 
@@ -90,10 +92,11 @@ public class EditorDashboardTest extends BaseTest{
 		js.executeScript("window.scrollBy(0,100)");
 		System.out.println("Scrolling operation completed successfully.");
 		dashboard.clickyeardd_Editor();
+		
 	}
 	
-	@Test (priority = 11)
-    public void TC_008__total_billable_and_non_billable_hour_according_to_year_dropdown(){
+	@Test (priority = 11, dataProvider = "dashboardData", dataProviderClass = DashboardTabDataProvider.class)
+    public void TC_008__total_billable_and_non_billable_hour_according_to_year_dropdown(String selectyear){
 		initial_test();
 		DashboardPage dashboard= new DashboardPage(driver);
 		dashboard.clickreportee_Editor();
@@ -101,7 +104,7 @@ public class EditorDashboardTest extends BaseTest{
 		js.executeScript("window.scrollBy(0,100)");
 		System.out.println("Scrolling operation completed successfully.");
 		dashboard.clickyeardd_Editor();
-		dashboard.selectyear_Editor();
+		dashboard.selectyear_Editor(selectyear);
 	}
 	
 	@Test (priority = 12)
@@ -116,8 +119,8 @@ public class EditorDashboardTest extends BaseTest{
     }
 	
 	
-	@Test (priority = 13)
-    public void TC_010_Verification_of_filter_operation_on_submitted_timesheets_using_reportee_dropdown() throws InterruptedException{
+	@Test (priority = 13, dataProvider = "selectreportee", dataProviderClass = DashboardTabDataProvider.class)
+    public void TC_010_Verification_of_filter_operation_on_submitted_timesheets_using_reportee_dropdown(String repnameeditor) throws InterruptedException{
 		initial_test();
 		DashboardPage dashboard= new DashboardPage(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -125,11 +128,11 @@ public class EditorDashboardTest extends BaseTest{
 		System.out.println("Scrolling operation completed successfully.");
 		dashboard.reporteedd_Editor();
 		Thread.sleep(2000);
-		dashboard.reporteename_Editor();
+		dashboard.reporteename_Editor(repnameeditor);
 	}
 	
 	@Test (priority = 14)
-    public void TC_011_Verification_of_filter_reset_operation() throws InterruptedException{
+    public void TC_011_Verification_of_filter_reset_operation(String repnameeditor) throws InterruptedException{
 		initial_test();
 		DashboardPage dashboard= new DashboardPage(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -137,7 +140,7 @@ public class EditorDashboardTest extends BaseTest{
 		System.out.println("Scrolling operation completed successfully.");
 		dashboard.reporteedd_Editor();
 		Thread.sleep(2000);
-		dashboard.reporteename_Editor();
+		dashboard.reporteename_Editor(repnameeditor);
 		Thread.sleep(2000);
 		dashboard.reporteefilter_Editor();
 	}
@@ -157,7 +160,7 @@ public class EditorDashboardTest extends BaseTest{
     }
 	
 	@Test (priority = 16)
-    public void TC_250_Verification_of_visibility_of_submitted_or_partially_submitted_timesheet_to_lead_from_the_date_lead_is_selected () throws InterruptedException{
+    public void TC_250_Verification_of_visibility_of_submitted_or_partially_submitted_timesheet_to_lead_from_the_date_lead_is_selected (String repnameeditor) throws InterruptedException{
 		initial_test(); 
 		DashboardPage dashboard= new DashboardPage(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -165,7 +168,7 @@ public class EditorDashboardTest extends BaseTest{
 		System.out.println("Scrolling operation completed successfully.");
 		dashboard.reporteedd_Editor();
 		Thread.sleep(2000);
-		dashboard.reporteename_Editor();
+		dashboard.reporteename_Editor(repnameeditor);
 		dashboard.submittedtimesheeteditor();
 	}
 	
