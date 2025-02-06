@@ -1,47 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-04T13:51:53 IST" name="Default suite" finished-at="2025-02-04T13:53:41 IST" duration-ms="107470">
+  <suite started-at="2025-02-06T13:30:16 IST" name="Default suite" finished-at="2025-02-06T13:31:05 IST" duration-ms="48696">
     <groups>
     </groups>
-    <test started-at="2025-02-04T13:51:53 IST" name="Default test" finished-at="2025-02-04T13:53:41 IST" duration-ms="107470">
+    <test started-at="2025-02-06T13:30:16 IST" name="Default test" finished-at="2025-02-06T13:31:05 IST" duration-ms="48696">
       <class name="test.ReportingLead.RLDashboardTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.ReportingLead.RLDashboardTest@747f281]" started-at="2025-02-04T13:51:54 IST" name="beforeMethod" finished-at="2025-02-04T13:52:31 IST" duration-ms="37764" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.ReportingLead.RLDashboardTest@747f281]" started-at="2025-02-06T13:30:16 IST" name="beforeMethod" finished-at="2025-02-06T13:30:45 IST" duration-ms="28582" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC_007_Verification_of_claimed_task_hours_change_with_Financial_year_dropdown(java.lang.String)[pri:5, instance:test.ReportingLead.RLDashboardTest@747f281]" started-at="2025-02-04T13:52:31 IST" name="TC_007_Verification_of_claimed_task_hours_change_with_Financial_year_dropdown" data-provider="dashboardData" finished-at="2025-02-04T13:52:37 IST" duration-ms="5413" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2024-2025]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="TC_010_Verification_of_filter_operation_on_submitted_timesheets_using_reportee_dropdown()[pri:7, instance:test.ReportingLead.RLDashboardTest@747f281]" started-at="2025-02-06T13:30:45 IST" name="TC_010_Verification_of_filter_operation_on_submitted_timesheets_using_reportee_dropdown" finished-at="2025-02-06T13:30:51 IST" duration-ms="6700" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC_007_Verification_of_claimed_task_hours_change_with_Financial_year_dropdown -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.ReportingLead.RLDashboardTest@747f281]" started-at="2025-02-04T13:52:37 IST" name="afterMethod" finished-at="2025-02-04T13:52:50 IST" duration-ms="13257" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.ReportingLead.RLDashboardTest@747f281]" started-at="2025-02-04T13:52:50 IST" name="beforeMethod" finished-at="2025-02-04T13:53:22 IST" duration-ms="31981" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC_007_Verification_of_claimed_task_hours_change_with_Financial_year_dropdown(java.lang.String)[pri:5, instance:test.ReportingLead.RLDashboardTest@747f281]" started-at="2025-02-04T13:53:22 IST" name="TC_007_Verification_of_claimed_task_hours_change_with_Financial_year_dropdown" data-provider="dashboardData" finished-at="2025-02-04T13:53:28 IST" duration-ms="5653" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2022-2023]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_007_Verification_of_claimed_task_hours_change_with_Financial_year_dropdown -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.ReportingLead.RLDashboardTest@747f281]" started-at="2025-02-04T13:53:28 IST" name="afterMethod" finished-at="2025-02-04T13:53:41 IST" duration-ms="13287" status="PASS">
+        </test-method> <!-- TC_010_Verification_of_filter_operation_on_submitted_timesheets_using_reportee_dropdown -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.ReportingLead.RLDashboardTest@747f281]" started-at="2025-02-06T13:30:51 IST" name="afterMethod" finished-at="2025-02-06T13:31:05 IST" duration-ms="13337" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

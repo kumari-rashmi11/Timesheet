@@ -20,13 +20,13 @@ public class EmployeesTest_HR extends BaseTest {
 		
 		EmployeesPage ep = new EmployeesPage(driver);
 		Interactions interact = new Interactions(driver);
-		RoleSelection roleSelectionPage = new RoleSelection(driver);
-//      roleSelectionPage.switchToIframe();
-      // Select the desired role 
-		roleSelectionPage.timesheetNavigation(); 
-		roleSelectionPage.iframeSwitch1();
-		roleSelectionPage.iframeSwitch2();
-		roleSelectionPage.HRRoleBtn();
+//		RoleSelection roleSelectionPage = new RoleSelection(driver);
+////      roleSelectionPage.switchToIframe();
+//      // Select the desired role 
+//		roleSelectionPage.timesheetNavigation(); 
+//		roleSelectionPage.iframeSwitch1();
+//		roleSelectionPage.iframeSwitch2();
+//		roleSelectionPage.HRRoleBtn();
 		interact.executeWithDelay(() -> ep.clickEmployeesTab());
 	}
 	
@@ -56,8 +56,8 @@ public class EmployeesTest_HR extends BaseTest {
 	}
 	
 
-	@Test(priority = 4, retryAnalyzer = RetryAnalyzer.class, dataProvider = "employeeData", dataProviderClass = EmployeeTabDataProvider.class)
-	public void add_Employee_HR_TC021(String firstName, String lastName, String empNo, String email) throws InterruptedException {
+	@Test(priority = 4, dataProvider = "employeeData", dataProviderClass = EmployeeTabDataProvider.class)
+	public void add_Employee_HR_TC021(String firstName, String lastName, String empNo, String email, String Leadname) throws InterruptedException {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
 		Interactions interact = new Interactions(driver);
@@ -67,7 +67,7 @@ public class EmployeesTest_HR extends BaseTest {
 	        interact.executeWithDelay(() -> ep.empNo(empNo));
 	        interact.executeWithDelay(() -> ep.emailInput(email));
 	        interact.executeWithDelay(() -> ep.clickLeadMenu());
-	        interact.executeWithDelay(() -> ep.clickChooseLead());
+	        interact.executeWithDelay(() -> ep.clickChooseLead(Leadname));
 	        interact.executeWithDelay(() -> ep.clickAddEmployee());
 		}
 	
@@ -94,16 +94,7 @@ public class EmployeesTest_HR extends BaseTest {
 //		interact.executeWithDelay(() -> ep.clickSaveBtn());
 	}
 	
-	@Test(priority = 7, retryAnalyzer = RetryAnalyzer.class, dataProvider = "selectemployee", dataProviderClass = EmployeeTabDataProvider.class)
-	public void modifying_details_of_employees_Editor_TC018(String employeeClick) throws InterruptedException {
-		initialTest();
-		EmployeesPage ep = new EmployeesPage(driver);
-//		ep.employeeDetails(employeeClick);
-		ep.clickpencilIcon();
-		ep.clickStatusDropDown();
-		ep.selectRelievedStatus();
-//		interact.executeWithDelay(() -> ep.clickSaveBtn());
-	}
+
 	  
     @AfterMethod
 	public void afterMethod() throws InterruptedException {

@@ -70,7 +70,7 @@ public class EmployeesLocators {
 	
 //	public By leadDropdown = By.xpath("//input[@id='PAPrefix0ee7fe8d392a5afield-3__control']");
 	
-	public By selectLeadDropdown = By.xpath("//input[@placeholder='Find lead name']");
+	public By selectLeadDropdown = By.xpath("//div[@id='publishedCanvas']//div[@class='app-canvas']//div[7]//div[@class='appmagic-borderfill-container']//div[@class='appmagic-border-inner']//div[contains(@class, 'scrollContainer')]//div[contains(@class, 'scrollContent')]//div[contains(@class, 'scrollContent')]//div//div[7]//div[contains(@class, 'appmagic-typed-card')]//div[2]//div[@role='presentation']//div[@role='presentation']//input[@role='combobox']");
 	
 	public By effectiveFromDate = By.xpath("//input[@class='datepicker-textbox']");
 	

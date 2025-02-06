@@ -3,6 +3,7 @@ package pages;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -421,9 +422,14 @@ public class DashboardPage {
 		clickingHelper.clickElement(reporteeElement);
 	}
 //	
-//	public void repname_RL() {
-//		clickingHelper.clickElement(this.locator.repnamePL);
-//	}
+//	public void choosereportee_RL(String reporteename) {
+//	WebElement leadMenu = wait.until(ExpectedConditions.visibilityOfElementLocated(locator.reporteedropdown_RL));
+//	clickingHelper.sendingKeys(locator.reporteedropdown_RL, reporteename);
+//	leadMenu.clear();
+//	clickingHelper.sendingKeys(locator.reporteedropdown_RL, reporteename);
+//	leadMenu.sendKeys(Keys.ENTER);
+//}
+
 
 	public void filterbtn_RL() {
 		clickingHelper.clickElement(this.locator.filterbtn_RL);

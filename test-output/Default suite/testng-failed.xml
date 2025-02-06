@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.HumanResource.EmployeesTest_HR">
+      <class name="test.HumanResource.TimesheetSettingTest_HR">
         <methods>
-          <include name="afterMethod"/>
-          <include name="add_Employee_HR_TC021" invocation-numbers="0 1"/>
+          <include name="Search_and_refresh_TC_051_HR"/>
           <include name="beforeMethod"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- test.HumanResource.EmployeesTest_HR -->
+      </class> <!-- test.HumanResource.TimesheetSettingTest_HR -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

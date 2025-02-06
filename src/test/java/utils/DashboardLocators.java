@@ -7,9 +7,9 @@ public class DashboardLocators {
 	//Locators for HR dashboard_tab
 	public By dashboardButton = By.xpath("//div[@class='appmagic-content-control-name appmagic-control-view canvasContentDiv _vst_']//div[text()='Timesheet Dashboard']");
 //    public By dashboardButton = By.cssSelector("#publishedCanvas > div > div.app-canvas > div:nth-child(4) > div > div > div:nth-child(9) > div > div > div > div > div:nth-child(2) > div > div > div > div > div.virtualized-gallery.hideScrollbar > div > div > div:nth-child(1) > div.canvasContentDiv.container_1vt1y2p > div > div:nth-child(2) > div > div > div > div > button");
-    public By greenrl = By.xpath("//div[text()='A test kim']");
-    public By purplepl = By.xpath("//div[text()='Harshita  Makode']");
-    public By blackuser = By.xpath("//div[text()='aa demo']");
+    public By greenrl = By.xpath("//div[text()='Amit Garu']");
+    public By purplepl = By.xpath("//div[text()='A test kim']");
+    public By blackuser = By.xpath("//div[text()='A test kim']");
 	
 	
 	//Locators for PL dashboard_tab

@@ -121,8 +121,8 @@ public class TasksAllocationPage {
 		interact.sendingKeys(locator.endDate, "30-Jan-2025");
 	}
 
-	public void searchEmployee() {
-		interact.sendingKeys(locator.search_Box, "Aarav");
+	public void searchEmployee(String search) {
+		interact.sendingKeys(locator.search_Box, search);
 	}
 
 	public void clickCreateBtn() {

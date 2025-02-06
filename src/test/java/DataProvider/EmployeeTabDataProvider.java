@@ -11,9 +11,9 @@ public class EmployeeTabDataProvider {
 	 @DataProvider(name = "employeeData")
 	    public Object[][] getEmployeeData() {
 		 return new Object[][] {
-			 {"John", "Doe", "1001", "john.doe@example.com"},
+			 {"John", "Doe", "1001", "john.doe@example.com", "Anubhav Ganguly"},
 			 
-	          {"Alice", "Johnson", "1003", "alice.johnson@example.com"} 
+	          {"Alice", "Johnson", "1003", "alice.johnson@example.com", "Anubhav Ganguly"} 
 	        	
 		 };
 

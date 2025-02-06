@@ -13,34 +13,34 @@ public class HRDashboardTest extends BaseTest {
 	
   
     public void initial_test() throws InterruptedException {
-		RoleSelection roleSelectionPage = new RoleSelection(driver);
-//      roleSelectionPage.switchToIframe();
-      // Select the desired role 
-		roleSelectionPage.timesheetNavigation(); 
-		roleSelectionPage.iframeSwitch1();
-		roleSelectionPage.iframeSwitch2();
-		roleSelectionPage.HRRoleBtn();
-	   
+//		RoleSelection roleSelectionPage = new RoleSelection(driver);
+////      roleSelectionPage.switchToIframe();
+//      // Select the desired role 
+//		roleSelectionPage.timesheetNavigation(); 
+//		roleSelectionPage.iframeSwitch1();
+//		roleSelectionPage.iframeSwitch2();
+//		roleSelectionPage.HRRoleBtn();
+//	   
         DashboardPage dashboard= new DashboardPage(driver);
         dashboard.navigateToDashboard_HR();
     }  
      
     @Test (priority = 1, retryAnalyzer = RetryAnalyzer.class)
-    public void GreenRlButton() throws InterruptedException {
+    public void Colour_Code_For_Different_User_Type_GreenRlButton_TC_003() throws InterruptedException {
     	initial_test();
     	DashboardPage dashboard= new DashboardPage(driver);
         dashboard.clickGreenRlButton_HR();
     }
     
     @Test (priority = 2, retryAnalyzer = RetryAnalyzer.class)
-    public void PurplePlButton() throws InterruptedException {
+    public void Colour_Code_For_Different_User_Type_PurplenRlButton_TC_003() throws InterruptedException {
     	initial_test();   
     	DashboardPage dashboard= new DashboardPage(driver);
       dashboard.clickPurplePlButton_HR();
     }
     
     @Test (priority = 3, retryAnalyzer = RetryAnalyzer.class)
-    public void BlackUserButton() throws InterruptedException {
+    public void Colour_Code_For_Different_User_Type_BlackRlButton_TC_003() throws InterruptedException {
     	initial_test();
     	DashboardPage dashboard= new DashboardPage(driver);
       dashboard.clickBlackUserButton_HR();

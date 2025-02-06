@@ -4,13 +4,17 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import helper.Interactions;
 import utils.Approval_Locators;
+import utils.DashboardLocators;
 
 public class ApprovalsTab {
 	private WebDriver driver;
@@ -67,6 +71,15 @@ public class ApprovalsTab {
 			interactions.click(By.xpath(statusPath));
 		}
 	}
+	public void dynamicStatusSelection(String status) throws InterruptedException {
+		Thread.sleep(2000);
+		interactions.click(Approval_Locators.SelectWeeks);
+		if(status != "Submitted") {
+			interactions.click(Approval_Locators.SelectStatus);
+			String statusPath = "//button[.//span[text()= '"+status+"']]";
+			interactions.click(By.xpath(statusPath));
+		}
+	}
 	public void dynamicWeekSelection(String date, String year) throws InterruptedException {
 		Thread.sleep(6000);
 		dynamicYearSelection(year);
@@ -84,17 +97,19 @@ public class ApprovalsTab {
 		interactions.click(By.xpath(plPath));
 	}
 	public void dynamicReporteesSelection(String reporteeName) throws InterruptedException {
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		interactions.sendingKeys(Approval_Locators.SelectReportees, reporteeName);
-		interactions.click(Approval_Locators.ConfirmReportee);
+	//	interactions.sendingKeys(Approval_Locators.Keys.ENTER);
+
+		//interactions.click(Approval_Locators.ConfirmReportee);
 	}
 	
-	public void dynamicYearSelection(String year) throws InterruptedException {
-		Thread.sleep(1000);
-		interactions.click(Approval_Locators.FyFilterBtn);
-	    String xpath = "//div[contains(@class, 'appmagic-dropdownListItem') and text()='" + year + "']";
-	    interactions.click(By.xpath(xpath));
-	}
+//	public void dynamicYearSelection(String year) throws InterruptedException {
+//		Thread.sleep(1000);
+//		interactions.click(Approval_Locators.FyFilterBtn);
+//	    String xpath = "//div[contains(@class, 'appmagic-dropdownListItem') and text()='" + year + "']";
+//	    interactions.click(By.xpath(xpath));
+//	}
  
 	public void reset_hr_editor() {
 		interactions.clickElement(Approval_Locators.SelectRefreshBtn);
@@ -157,7 +172,34 @@ public class ApprovalsTab {
 		      //  System.out.println("Div Text: " + element.getText()); 
 		    }
 		}
+	
+	public void timesheet_count_visibility() {
+		String filterCountText = interactions.getText(Approval_Locators.FilterCount);
+	    System.out.println(filterCountText);
+	    //Assert.assertTrue(filterCountText != null && !filterCountText.isEmpty(), "Filter count text is not visible!");
 
+	}
+	public void visibility_timesheet_Approval_Request(String r) {
+			interactions.click(new DashboardLocators().Leaddb);
+			String reporteePath="//div[contains(text(), '" + r + "')]";
+			interactions.click(By.xpath(reporteePath));
+
+	}
+
+	public void dynamicWeekSelection(String date) throws InterruptedException {
+		Thread.sleep(2000);
+		interactions.click(Approval_Locators.SelectWeeks);
+//		interactions.click(Approval_Locators.SelectWeeks);
+		String datePath = "//div[contains(text(), '"+date+"')]";
+		interactions.scroll(By.xpath(datePath));
+		interactions.click(By.xpath(datePath));
+	}
+	
+	public void dynamicYearSelection(String year) {
+		interactions.click(Approval_Locators.FyFilterBtn);
+	    String xpath = "//div[contains(@class, 'appmagic-dropdownListItem') and text()='" + year + "']";
+	    interactions.click(By.xpath(xpath));
+	}
 	public void bulk_approval() {
 		interactions.clickElement(Approval_Locators.Selectallbtn);
 		//interactions.clickElement(Approval_Locators.Bulkapprovedbtn);
@@ -171,5 +213,108 @@ public class ApprovalsTab {
 
 	public void attachement_visibility() {
 		interactions.clickElement(Approval_Locators.SelectAttachement);
+	}
+	//Sahil code
+	
+
+	
+	
+	public void searchprojectbydate(String status, String date, String year) throws InterruptedException {
+		 interactions.click(Approval_Locators.SelectApprovalsButtonRl);
+		 dynamicStatusSelection(status);
+		 dynamicWeekSelection(date);
+	}
+	
+	
+	public void searchprojectreportee(String name) {
+		interactions.enterText(Approval_Locators.reporteeInput, name);
+        WebElement button = driver.findElement(Approval_Locators.reporteeInput);
+        button.sendKeys(Keys.ENTER);
+
+	}
+	public void searchprojectreportee_hr_editor() {
+		interactions.click(Approval_Locators.SelectApprovalsButtonHr);
+		interactions.click(Approval_Locators.SelectPL);
+		interactions.click(Approval_Locators.ChoosePL);
+		interactions.enterText(Approval_Locators.SelectReportees, "Vivek Rajput(1508)");
+		interactions.click(Approval_Locators.SelectReportees);
+	}
+	public void reset() {
+		interactions.click(Approval_Locators.SelectRefreshBtn);
+	}
+	
+	public void approve_timesheet(String date, String year) throws InterruptedException {
+		interactions.click(Approval_Locators.SelectApprovalsButtonRl);
+		dynamicYearSelection(year);
+		dynamicWeekSelection(date);
+		interactions.click(Approval_Locators.SelectRigthArrow);
+		interactions.click(Approval_Locators.SelectApproveBtn);
+		interactions.enterText(Approval_Locators.SelectTextBox, "Good Job");
+	}
+	
+	public void reject_timesheet(String date, String year) throws InterruptedException {
+		interactions.click(Approval_Locators.SelectApprovalsButtonRl);
+		dynamicYearSelection(year);
+		dynamicWeekSelection(date);
+		interactions.click(Approval_Locators.SelectRigthArrow);
+		interactions.click(Approval_Locators.RejectBtn);
+		interactions.enterText(Approval_Locators.SelectTextBox, "need to improvement");
+	}
+	
+	
+	public void approved_partially(String status,String date, String year,String reportee) throws InterruptedException {
+		interactions.click(Approval_Locators.SelectApprovalsButtonRl);
+		dynamicYearSelection(year);
+		dynamicWeekSelection(date);
+		searchprojectreportee(reportee);
+		dynamicStatusSelection(status);
+		interactions.click(Approval_Locators.SelectRigthArrow);
+
+	}
+	public void fy_filter(String year) {
+		interactions.click(Approval_Locators.SelectApprovalsButtonRl);
+		dynamicYearSelection(year);
+	}
+	
+	
+	public void approve_timesheet_with_reportee(String date, String year,String name) throws InterruptedException {
+		interactions.click(Approval_Locators.SelectApprovalsButtonRl);
+		dynamicYearSelection(year);
+		dynamicWeekSelection(date);
+		searchprojectreportee(name);
+		interactions.click(Approval_Locators.SelectRigthArrow);
+		interactions.click(Approval_Locators.SelectApproveBtn);
+		interactions.enterText(Approval_Locators.SelectTextBox, "Good Job");
+//		interactions.click(this.Approval_Locators.Selectcontinuebtn);
+	}
+	public void reject_timesheet_with_reportee(String date, String year,String name) throws InterruptedException {
+		interactions.click(Approval_Locators.SelectApprovalsButtonRl);
+		dynamicYearSelection(year);
+		dynamicWeekSelection(date);
+		searchprojectreportee(name);
+		//dynamicStatusSelection(status);
+		interactions.click(Approval_Locators.SelectRigthArrow);
+		interactions.click(Approval_Locators.RejectBtn);
+		interactions.enterText(Approval_Locators.SelectTextBox, "need to improvement");
+//		interactions.click(this.Approval_Locators.Selectcontinuebtn);
+	}
+	
+	public void not_resetted(String date, String year,String name,String status) throws InterruptedException {
+		interactions.click(Approval_Locators.SelectApprovalsButtonRl);
+		dynamicYearSelection(year);
+		Thread.sleep(2000);
+		dynamicWeekSelection(date);
+		Thread.sleep(2000);
+		searchprojectreportee(name);
+		Thread.sleep(2000);
+		dynamicStatusSelection(status);
+		interactions.click(Approval_Locators.SelectRigthArrow);
+		interactions.click(Approval_Locators.SelectApprovalsButtonRl);
+	}
+	
+	public void data_visibility(String date, String year) throws InterruptedException {
+		interactions.click(Approval_Locators.SelectApprovalsButtonRl);
+		dynamicYearSelection(year);
+		dynamicWeekSelection(date);
 	}
 }

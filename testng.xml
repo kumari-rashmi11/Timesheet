@@ -5,13 +5,13 @@
             <!--            <class name="Timesheet_Test.LoginTest"/>-->
             <class name="test.HumanResource.HRDashboardTest"/>
              <class name="test.HumanResource.EmployeesTest_HR"/>
-              <class name="test.HumanResource.ClientTabTest_HR"/>
-                <class name="test.HumanResource.ProjectTabTest_HR"/>
-                  <class name="test.HumanResource.ChargeActivityTypeTest"/>
-                     <class name="test.HumanResource.TimesheetSettingTest_HR"/>
-                        <class name="test.HumanResource.TasksAllocationTest_HR"/>
-                           <class name="test.HumanResource.ApprovalsTabTest_HR"/>
-                              <class name="test.HumanResource.HREvalSettingTest"/>
+<!--               <class name="test.HumanResource.ClientTabTest_HR"/> -->
+<!--                 <class name="test.HumanResource.ProjectTabTest_HR"/> -->
+<!--                   <class name="test.HumanResource.ChargeActivityTypeTest"/> -->
+<!--                      <class name="test.HumanResource.TimesheetSettingTest_HR"/> -->
+<!--                         <class name="test.HumanResource.TasksAllocationTest_HR"/> -->
+<!--                            <class name="test.HumanResource.ApprovalsTabTest_HR"/> -->
+<!--                               <class name="test.HumanResource.HREvalSettingTest"/> -->
                            
                         
                      

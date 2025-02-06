@@ -157,12 +157,12 @@ public class TimesheetSettingPage {
 		interact.clickElement(locators.deleteEmployee);
 	}
 
-	public void searchEmployee() {
-		interact.sendingKeys(locators.searchBox, "Rashmi Kumari");
+	public void searchEmployee(String emp) {
+		interact.sendingKeys(locators.searchBox, emp);
 	}
 
-	public void searchClient() {
-		interact.sendingKeys(locators.searchBox, "Amazon");
+	public void searchClient(String client) {
+		interact.sendingKeys(locators.searchBox, client);
 	}
 
 	public void refreshEmployeelist() {

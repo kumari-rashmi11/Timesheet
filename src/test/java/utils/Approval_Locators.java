@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public class Approval_Locators {
 	
 	
-	public static By SelectApprovalsButtonRl = By.xpath("//div[@data-control-name='Navigation_Gallery']//div[@aria-posinset='8']");
+	public static By SelectApprovalsButtonRl = By.xpath("//div[@data-control-name='Navigation_Gallery']//div[@aria-posinset='7']");
   
 	public static By SelectApprovalsButtonPl = By.xpath("//div[@data-control-name='Navigation_Gallery']//div[@aria-posinset='8']");
     
@@ -30,6 +30,8 @@ public class Approval_Locators {
     public static By Selectcontinuebtn = By.xpath("//div[contains(text(), 'Continue')]//ancestor::button");
   
     public static By Selectallbtn = By.xpath("//label[contains(text(), 'Select all')]");
+    
+    public static By FilterCount = By.xpath("//div[@data-control-name='ApprovalsCount']");
 
     public static By Bulkapprovedbtn = By.xpath("//div[contains(text(), 'BulkApproval')]//ancestor::button");
     
@@ -54,5 +56,7 @@ public class Approval_Locators {
     public static By SelectPL= By.xpath("(//div[@class='react-knockout-control']/div/div/div[@class='appmagic-dropdownLabelArrow'])[3]");
     
     public static By ChoosePL= By.xpath("//div[@role='listbox']/child::div[1]");
+    
+    public static By reporteeInput = By.xpath("//input[@aria-controls=\"combobox-canvas-listbox\"]");
 
 }

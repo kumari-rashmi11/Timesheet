@@ -60,19 +60,20 @@ public class EmployeesTest_Editor extends BaseTest {
 		ep.clickRefreshBtn();
 	}
 	
-	@Test(priority = 5, retryAnalyzer = RetryAnalyzer.class)
-	public void add_Employee_Editor_TC021() {
+	@Test(priority = 5, retryAnalyzer = RetryAnalyzer.class, dataProvider = "employeeData", dataProviderClass = EmployeeTabDataProvider.class)
+	public void add_Employee_Editor_TC021(String firstName, String lastName, String empNo, String email) {
 		initialTest();
 		EmployeesPage ep = new EmployeesPage(driver);
-		ep.clickAddBtn();
-		ep.firstName();
-		ep.lastName();
-		ep.empNo();
-		ep.emailInput();
-		ep.clickLeadMenu();
-//		ep.clickChooseLead();
-		ep.clickPracticeLead();
-		ep.clickAddEmployee();
+		Interactions interact = new Interactions(driver);
+
+		interact.executeWithDelay(() -> ep.clickAddBtn());
+        interact.executeWithDelay(() -> ep.firstName(firstName));
+        interact.executeWithDelay(() -> ep.lastName(lastName));
+        interact.executeWithDelay(() -> ep.empNo(empNo));
+        interact.executeWithDelay(() -> ep.emailInput(email));
+        interact.executeWithDelay(() -> ep.clickLeadMenu());
+        interact.executeWithDelay(() -> ep.clickChooseLead());
+        interact.executeWithDelay(() -> ep.clickAddEmployee());
 	}
 	
 	@Test(priority = 6, retryAnalyzer = RetryAnalyzer.class)

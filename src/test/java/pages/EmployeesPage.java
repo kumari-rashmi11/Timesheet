@@ -271,11 +271,11 @@ public class EmployeesPage {
 		interact.clickElement(locators.selectLeadDropdown);
 	}
 
-	public void clickChooseLead() {
+	public void clickChooseLead(String Leadname) {
 		WebElement leadMenu = wait.until(ExpectedConditions.visibilityOfElementLocated(locators.selectLeadDropdown));
-		interact.sendingKeys(locators.selectLeadDropdown, "Anubhav Ganguly");
+		interact.sendingKeys(locators.selectLeadDropdown, Leadname);
 		leadMenu.clear();
-		interact.sendingKeys(locators.selectLeadDropdown, "Anubhav Ganguly");
+		interact.sendingKeys(locators.selectLeadDropdown, Leadname);
 		leadMenu.sendKeys(Keys.ENTER);
 	}
 

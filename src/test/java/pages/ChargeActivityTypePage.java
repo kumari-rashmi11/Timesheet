@@ -111,8 +111,8 @@ public class ChargeActivityTypePage {
     	interact.clickElement(locators.chargeActivityType);
     }
     
-    public void search_using_charge_code() {
-    	interact.sendingKeys(locators.search_Box, "HT");
+    public void search_using_charge_code(String code) {
+    	interact.sendingKeys(locators.search_Box, code);
     }
     
     public void search_using_project_Name() {
