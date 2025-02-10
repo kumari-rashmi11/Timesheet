@@ -1,36 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- Basic Identification -->
     <groupId>org.example</groupId>
     <artifactId>timesheet_automation</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
+    <name>Timesheet Automation</name>
+    <description>A Selenium-based automation project for submitting timesheets</description>
+    <url>https://example.org/timesheet_automation</url>
+
+    <!-- Properties -->
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Manage versions here so they can be reused -->
+        <selenium.version>4.23.0</selenium.version>
+        <dotenv.version>3.0.0</dotenv.version>
+        <testng.version>7.10.2</testng.version>
+        <!-- Java release version -->
+        <maven.compiler.release>17</maven.compiler.release>
     </properties>
 
+    <!-- Dependencies -->
     <dependencies>
+        <!-- Selenium -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.23.0</version>
+            <version>${selenium.version}</version>
         </dependency>
+
+        <!-- dotenv for loading environment variables -->
         <dependency>
             <groupId>io.github.cdimascio</groupId>
             <artifactId>dotenv-java</artifactId>
-            <version>3.0.0</version>
+            <version>${dotenv.version}</version>
         </dependency>
+
+        <!-- TestNG for testing -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.10.2</version>
+            <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
+    <!-- Build Plugins -->
+    <build>
+        <plugins>
+            <!-- Compiler Plugin to set Java version -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <!-- Uses <maven.compiler.release> from properties -->
+                    <release>${maven.compiler.release}</release>
+                </configuration>
+            </plugin>
+
+            <!-- Surefire Plugin for TestNG -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <!-- If you have a TestNG XML suite file, specify it here -->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
