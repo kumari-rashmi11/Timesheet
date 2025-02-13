@@ -17,7 +17,7 @@ public class BaseTest {
     private Properties properties = new Properties();
     
     private void loadProperties() {
-    	try(FileInputStream fileInput = new FileInputStream("C:\\Users\\KaushikBarman\\eclipse-workspace\\pursuit_Software\\config.properties")){
+    	try(FileInputStream fileInput = new FileInputStream("C:\\Users\\RashmiKumari\\eclipse-workspace\\pursuit_Software\\config.properties")){
     		properties.load(fileInput);
     	}catch(IOException e) {
     		e.printStackTrace();
@@ -29,7 +29,7 @@ public class BaseTest {
     	driver = new ChromeDriver();
     	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     	loadProperties();
-    	driver.get(properties.getProperty("https://www.pursuitsoftware.com/"));
+    	driver.get(properties.getProperty("URL"));
     	driver.manage().window().maximize();
     	wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
