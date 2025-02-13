@@ -2,16 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-10T21:15:13 IST" name="ptms" finished-at="2025-02-10T21:15:13 IST" duration-ms="67">
+  <suite started-at="2025-02-13T11:03:36 IST" name="Default suite" finished-at="2025-02-13T11:03:48 IST" duration-ms="11825">
     <groups>
     </groups>
-    <test started-at="2025-02-10T21:15:13 IST" name="ptms" finished-at="2025-02-10T21:15:13 IST" duration-ms="67">
+    <test started-at="2025-02-13T11:03:36 IST" name="Default test" finished-at="2025-02-13T11:03:48 IST" duration-ms="11825">
       <class name="Test.Hometest">
-        <test-method signature="printMessage()[pri:1, instance:Test.Hometest@6440112d]" started-at="2025-02-10T21:15:13 IST" name="printMessage" finished-at="2025-02-10T21:15:13 IST" duration-ms="14" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Test.Hometest@4b520ea8]" started-at="2025-02-13T11:03:36 IST" name="setup" finished-at="2025-02-13T11:03:40 IST" duration-ms="3913" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- printMessage -->
+        </test-method> <!-- setup -->
+        <test-method signature="openGooglePage()[pri:1, instance:Test.Hometest@4b520ea8]" started-at="2025-02-13T11:03:40 IST" name="openGooglePage" finished-at="2025-02-13T11:03:42 IST" duration-ms="2046" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openGooglePage -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Test.Hometest@4b520ea8]" started-at="2025-02-13T11:03:42 IST" name="afterMethod" finished-at="2025-02-13T11:03:48 IST" duration-ms="5811" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
       </class> <!-- Test.Hometest -->
-    </test> <!-- ptms -->
-  </suite> <!-- ptms -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
