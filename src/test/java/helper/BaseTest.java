@@ -29,7 +29,7 @@ public class BaseTest {
     	driver = new ChromeDriver();
     	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     	loadProperties();
-    	driver.get(properties.getProperty("URL"));
+    	driver.get(properties.getProperty("https://www.pursuitsoftware.com/"));
     	driver.manage().window().maximize();
     	wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
